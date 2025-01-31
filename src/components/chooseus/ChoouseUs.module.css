@@ -1,0 +1,12 @@
+.picChoose{
+    width: 1200px;
+    height: 900px;
+    background-image: url(../img/forest.jpg);
+    background-repeat: no-repeat;
+}
+.chooseUs{
+    width: 100%;
+    border-color: bisque;
+    height: 1300px;
+    justify-content: center;
+}
