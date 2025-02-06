@@ -1,0 +1,20 @@
+
+.mainHeader{
+    width: 100%;
+    height: 980px;
+    background-image: url(./img/house29\ \(1\).jpg);
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    background-position: center center;
+    display: flex;
+    align-items: end;
+}
+.headerTitle{
+    width: 1200px;
+    height: 220px;
+    color: white;
+    font-size: 70px;  
+    text-align: left;
+    margin-left: 50px;
+    font-weight: 500;  
+}

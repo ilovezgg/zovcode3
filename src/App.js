@@ -1,12 +1,10 @@
 
 import './App.css';
-import Main from './components/main/Main';
-import ChoouseUs from './components/chooseus/ChoouseUs';
+import Header from './components/header/Header';
 function App() {
   return (
     <div className="App">
-     <Main/>
-     <ChoouseUs/>
+      <Header/>
 
     </div>
   );
