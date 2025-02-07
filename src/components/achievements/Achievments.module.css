@@ -1,0 +1,37 @@
+.containerAch{
+    display: flex;
+    width: 85%;
+    height: 100px;
+    justify-content: space-between;
+    
+}
+.textHouses{
+   font-size: 50px;
+   color: white;
+}
+.textYears{
+    font-size: 50px;
+    color: white;
+}
+.textGaranti{
+    font-size: 50px;
+    color: white;
+    display: flex;
+    
+}
+.animated{
+    color: white;
+    font-size: 56px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.achievmentsMain{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(87, 87, 87);
+    align-items: center;
+}
