@@ -9,12 +9,14 @@
     background-image: url(../header/img/house222.jpg);
     background-size: cover;
     border-radius: 30px;
+    background-position: center center;
 
 }
 .textAbout{
     width: 50%;
     height: 500px;
     font-size: 46px;
+    color: white;
 }
 .container{
     width: 100%;
