@@ -5,7 +5,7 @@ const AnimatedCounter = ({ target }) => {
   const [count, setCount] = useState(0);
 
   // Анимация с помощью react-spring
-  const props = useSpring({ number: count, from: { number: 0 }, config: { duration: 3000 } });
+  const props = useSpring({ number: count, from: { number: 0 }, config: { duration: 5000 } });
 
   useEffect(() => {
     if (count < target) {

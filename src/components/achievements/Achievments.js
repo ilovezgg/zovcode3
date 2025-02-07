@@ -11,21 +11,21 @@ const Achievments = () => {
          <div className={z.containerAch}>
           <div className={z.first}>
           <div className={z.years}> 
-          <AnimatedCounter  target={10} className={z.animated} /> 
+          <AnimatedCounter  target={15} className={z.animated} /> 
           <div className={z.textYears}>Лет на рынке</div>
           </div>
           </div>
           
           <div className={z.second}>
           <div className={z.houses}>
-          <AnimatedCounter target={200} className={z.animated3}/>
+          <AnimatedCounter target={500} className={z.animated3}/>
           <div className={z.textHouses}> Построенных объектов</div>
           </div>
           </div>
          
           <div className={z.third}>
           <div className={z.garanti}>
-          <AnimatedCounter target={5} className={z.animated2} /> 
+          <AnimatedCounter target={3} className={z.animated2} /> 
           <div className={z.textGaranti}>Лет гарантии</div>
           </div>
           </div>

@@ -3,7 +3,7 @@ import z from './Header.module.css'
 const Header = () => {
   return (
     <div>
-      <div className={z.mainHeader}>
+      <div className={z.mainHeaderBackground}><div className={z.mainHeader}>
         <div className={z.mainHeaderTwo}> 
         <div className={z.headerButtons}>
             <button className={z.mainButton}>Главная</button>
@@ -19,7 +19,8 @@ const Header = () => {
             Мы - синоним слову "Надежность"
         </div>
        
-        </div>
+        </div></div>
+      
         
       </div>
   )

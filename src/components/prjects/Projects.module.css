@@ -1,0 +1,134 @@
+.projectsTitle{
+    height: 140px;
+    font-size: 56px;
+    font-weight: normal;
+    color: white;
+
+}
+
+.zasluga{
+    white-space: nowrap;
+    word-break: keep-all;
+    display: inline;
+    font-weight: 600;
+}
+.mainProjects{
+    width: 100%;
+    height: 1500px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerProjects{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: space-between;
+}
+.containerWith{
+    background-color: transparent;
+    width: 490px;
+    height: 690px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.secondContainer{
+    width: 90%;
+    height: 690px;
+    display: flex;
+    justify-content: space-between;
+}
+.totalContainer{
+    width: 95%;
+    height: 1400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.picIn2{
+    width: 490px;
+    height: 400px;
+    background-image: url(../header/img/2.jpg);
+    background-size: cover;
+    border-radius: 20px;
+}
+.picIn3{
+    width: 490px;
+    height: 400px;
+    background-image: url(../header/img/3.jpg);
+    background-size: cover;
+    border-radius: 20px;
+}
+.picIn4{
+    width: 490px;
+    height: 400px;
+    background-image: url(../header/img/4.jpg);
+    background-size: cover;
+    border-radius: 20px;
+}
+.picIn5{
+    width: 490px;
+    height: 400px;
+ background-image: url(../header/img/5.jpg);
+ background-size: cover;
+ border-radius: 20px;
+}
+.picIn6{
+    width: 490px;
+    height: 400px;
+ background-image: url(../header/img/6.jpg);
+ background-size: cover;
+ border-radius: 20px;
+}
+.textTitleContainer{
+    width: 370px;
+    font-size: 60px;
+    color: white;
+    margin-left: 15px;
+    text-transform: uppercase;
+}
+.textContainer{
+    font-size: 22px;
+    margin-left: 15px;
+    color: white;
+}
+.containerButton{
+    width: 390px;
+    height: 50px;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: rgb(35, 35, 35);
+    font-size: 24px;
+    color: white;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.5s ease-in-out 0.2s; /* Добавлена задержка 0.2s */
+}
+.containerButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); 
+    clip-path: polygon(0 0, 0 100%, 0% 100%, 0 0); 
+    transition: clip-path 0.5s ease-in-out;
+    z-index: -1; 
+    color: rgb(35, 35, 35);
+  }
+  
+  .containerButton:hover::before {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); 
+  }
+  .containerButton:hover {
+    color: rgb(35, 35, 35); /* Цвет текста при наведении */
+}
+
