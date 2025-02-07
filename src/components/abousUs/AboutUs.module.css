@@ -1,0 +1,24 @@
+.aboutUsMain{
+    width: 100%;
+    height: 520px;
+    background-color: rgb(87, 87, 87);
+}
+.pic{
+    width: 1000px;
+    height: 500px;
+    background-image: url(../header/img/house222.jpg);
+    background-size: cover;
+    border-radius: 30px;
+
+}
+.textAbout{
+    width: 50%;
+    height: 500px;
+    font-size: 46px;
+}
+.container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-around;
+}
