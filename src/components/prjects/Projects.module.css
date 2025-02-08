@@ -109,7 +109,7 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: color 0.5s ease-in-out 0.2s; /* Добавлена задержка 0.2s */
+    transition: color 0.5s ease-in-out 0.2s; 
 }
 .containerButton::before {
     content: "";
@@ -129,6 +129,6 @@
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); 
   }
   .containerButton:hover {
-    color: rgb(35, 35, 35); /* Цвет текста при наведении */
+    color: rgb(35, 35, 35); 
 }
 

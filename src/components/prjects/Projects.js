@@ -1,6 +1,6 @@
 import React from 'react'
 import z from './Projects.module.css'
-import QuestionButton from './QuestionButton'
+import LShapePolygon from './QuestionButton'
 const projects = () => {
   return (
     <div>
@@ -39,6 +39,7 @@ const projects = () => {
           </div>
           <button className={z.containerButton}>Подробнее</button>
          </div>
+      
          <div className={z.containerWith}>
           <div className={z.picIn4}>
            

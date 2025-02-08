@@ -10,10 +10,10 @@ const AnimatedCounter = ({ target }) => {
   useEffect(() => {
     if (count < target) {
       const interval = setInterval(() => {
-        setCount(prevCount => Math.min(prevCount + 1, target)); // Увеличиваем счетчик до целевого значения
-      }, 1); // Интервал обновления (50 мс)
+        setCount(prevCount => Math.min(prevCount + 1, target)); 
+      }, 1);
 
-      return () => clearInterval(interval); // Очищаем интервал при размонтировании
+      return () => clearInterval(interval); 
     }
   }, [count, target]);
 
