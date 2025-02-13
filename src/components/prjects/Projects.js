@@ -1,6 +1,6 @@
 import React from 'react'
 import z from './Projects.module.css'
-import LShapePolygon from './QuestionButton'
+
 const projects = () => {
   return (
     <div>
@@ -69,7 +69,29 @@ const projects = () => {
            <p className={z.floors}>Этажность - 1</p> 
           </div>
           <button className={z.containerButton}>Подробнее</button>
-         </div><div className={z.containerWith}>
+         </div>
+         <div className={z.mainContainerButton}>
+           <div className={z.upContainer}>
+          <div className={z.buttonRight}>
+           <div className={z.buttonTitleUp}>
+             Проекты бань
+           </div>
+          </div>
+          <div className={z.buttonLeft}>
+          <div className={z.buttonTitleBottom}>
+             Проекты домов
+           </div>
+          </div>
+           </div>
+           <div className={z.bottomContainer}>
+          <div className={z.bigButton}>
+           <div className={z.buttonTitleSecond}>
+            Перейти ко всем проектам
+           </div>
+          </div>
+           </div>
+          </div>
+         <div className={z.containerWith}>
           <div className={z.picIn6}>
            
           </div>
