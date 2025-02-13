@@ -1,0 +1,13 @@
+.whyUsMain{
+width: 100%;
+height: 1200px;
+background-color: rgb(87, 87, 87);
+display: flex;
+justify-content: center;
+}
+.backgroundBig{
+    width: 99%;
+    border-radius: 20px;
+    height: 850px;
+    background-color: rgb(255, 255, 255);
+}
