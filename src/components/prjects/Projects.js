@@ -1,11 +1,12 @@
 import React from 'react'
 import z from './Projects.module.css'
 
-const projects = () => {
+
+const Projects = () => {
+ 
   return (
     <div>
         <div className={z.mainProjects}>
-            
         <div className={z.projectsTitle}>
           Посмотрите самые частопродаваемые дома. Они <p className={z.zasluga}>заслужили</p> доверие покупателей.
         </div>
@@ -115,4 +116,4 @@ const projects = () => {
   )
 }
 
-export default projects
+export default Projects

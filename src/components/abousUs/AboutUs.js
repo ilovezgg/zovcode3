@@ -1,5 +1,6 @@
 import React from 'react'
 import z from './AboutUs.module.css'
+
 const AboutUs = () => {
   return (
     <div>
