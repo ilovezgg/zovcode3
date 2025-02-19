@@ -7,6 +7,7 @@ import Projects from './components/prjects/Projects'
 import WhyUs from './components/whyUs/WhyUs';
 import Buttons from './components/header/Buttons';
 import Footer from './components/footer/Footer';
+import CallUs from './components/callUs/CallUs'
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <AboutUs/>
       <Projects/>
       <WhyUs/>
+      <CallUs/>
       <Footer/>
     </div>
   );

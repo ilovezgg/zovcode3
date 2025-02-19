@@ -44,7 +44,7 @@ const Buttons = () => {
               <button
                 className={`${z.callbackButton} ${isTransparent ? z.transparentButton : ''}`}
               >
-                Обратный звонок
+                Личный кабинет
               </button>
               </div>
     </div>

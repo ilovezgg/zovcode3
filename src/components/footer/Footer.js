@@ -6,7 +6,11 @@ const Footer = () => {
       <div>
         <div className={z.footerBackground}>
            <div className={z.footerMain}>
-
+            <div className={z.footLeft}>
+              <div className={z.footerLeftWe}>
+                 
+              </div>
+            </div>
            </div>
         </div>
       </div>
