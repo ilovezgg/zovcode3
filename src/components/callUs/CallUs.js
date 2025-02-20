@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React from "react";
 import z from "./CallUs.module.css"; // Замените на путь к вашему файлу стилей
 
 const CallUs= () => {
@@ -27,10 +27,10 @@ const CallUs= () => {
     <form className={z.callUsForm}>
       <input
        className={z.callUsInput}
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="+7 (000) 000-00-00"
+        type="name"
+        id="name"
+        name="imya"
+        placeholder="Введите ваше имя"
       />
     </form>
           </div>

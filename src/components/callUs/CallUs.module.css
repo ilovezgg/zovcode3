@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .callUsBackground {
     width: 100%;
     height: 500px;
@@ -40,12 +43,14 @@
    border: none;
    border-radius: 10px;
    outline: none;
+   text-transform: uppercase;
    font-size: 35px;
    background-color: rgb(221, 221, 221);
    border-radius: 30px;
+   letter-spacing: 1.5px;
  }
   .callUsForm{
-    width: 40%;
+    width: 45%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -56,28 +61,30 @@
     width: 100%;
     height: 60%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
   }
   .callUsButton{
     width: 100%;
     height: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 0; 
+    margin: 0; 
   }
   .callUsSubmit {
-    width: 100%;
     height: 70%;
     border-radius: 30px;
+    flex-grow: 1;
     border-color: transparent;
     background-color: rgb(35, 35, 35);
     font-size: 50px;
     color: white;
-    margin-top: 15px;
     position: relative;
     overflow: hidden;
     z-index: 1;
     transition: color 0.5s ease-in-out 0.2s;
+    
   }
   
   .callUsSubmit::before {
@@ -103,12 +110,13 @@
   .titleCallUs{
     width: 80%;
     height: 40%;
+    font-weight: 500;
     font-size: 60px;
-   transform: translateX(15px)  translateY(15px);
+    transform: translateX(3%) translateY(10%);
   }
   .textCallUs{
     width: 80%;
     height: 60%;
     font-size: 50px;
-    transform: translateX(15px);
+    transform: translateX(3%) translateY(3%);
   }
