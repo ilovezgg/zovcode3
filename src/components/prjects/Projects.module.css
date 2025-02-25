@@ -2,10 +2,12 @@
     box-sizing: border-box;
 }
 .projectsTitle{
-    height: 140px;
-    font-size: 56px;
+    height: 6%;
+    font-size: 67px;
     font-weight: normal;
     color: white;
+    display: flex;
+    justify-content: center;
 }
 .zasluga{
     white-space: nowrap;
@@ -185,13 +187,15 @@
     align-items: end;
 }
 .buttonTitleUp{
-    font-size: 30px;
+    font-size: 40px;
+    font-weight: 600;
     color: white;
     text-transform: uppercase;
 }
 .buttonTitleBottom{
-    font-size: 30px;
+    font-size: 40px;
     color: white;
+    font-weight: 600;
     text-transform: uppercase;
 }
 .bigButton{
@@ -237,7 +241,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    font-size: 40px;
+    font-size: 60px;
     color: white;
     text-transform: uppercase;
     z-index: 1;

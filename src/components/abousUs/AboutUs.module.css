@@ -13,9 +13,9 @@
 
 }
 .textAbout{
-    width: 900px;
+    width: 50%;
     height: 500px;
-    font-size: 46px;
+    font-size: 51px;
     color: white;
     text-align: justify;
 }

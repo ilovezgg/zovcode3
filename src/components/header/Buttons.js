@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import z from './Buttons.module.css'
+import { Link } from 'react-router-dom';
 const Buttons = () => {
     const [isTransparent, setIsTransparent] = useState(false);
 
@@ -26,6 +27,7 @@ const Buttons = () => {
               >
                 Главная
               </button>
+              
               <button
                 className={`${z.aboutusButton} ${isTransparent ? z.transparentButton : ''}`}
               >
