@@ -22,27 +22,30 @@ const Buttons = () => {
   return (
     <div>
        <div className={z.headerButtons}>
-                 <button
-                className={`${z.mainButton} ${isTransparent ? z.transparentButton : ''}`}
-              >
-                Главная
-              </button>
-              
-              <button
-                className={`${z.aboutusButton} ${isTransparent ? z.transparentButton : ''}`}
-              >
-                О нас
-              </button>
-              <button
-                className={`${z.contactsButton} ${isTransparent ? z.transparentButton : ''}`}
-              >
-                Контакты
-              </button>
-              <button
-                className={`${z.catalogButton} ${isTransparent ? z.transparentButton : ''}`}
-              >
-                Каталог
-              </button>
+       <Link
+  to="/" 
+  className={`${z.mainButton} ${isTransparent ? z.transparentButton : ''}`} // Динамические классы
+>
+ Главная
+</Link>
+              <Link
+  to="/we" 
+  className={`${z.aboutusButton} ${isTransparent ? z.transparentButton : ''}`} // Динамические классы
+>
+  О нас
+</Link>
+<Link
+  to="/contacts" 
+  className={`${z.contactsButton} ${isTransparent ? z.transparentButton : ''}`} // Динамические классы
+>
+  Контакты
+</Link>
+<Link
+  to="/catalog" 
+  className={`${z.catalogButton} ${isTransparent ? z.transparentButton : ''}`} // Динамические классы
+>
+  Контакты
+</Link>
               <button
                 className={`${z.callbackButton} ${isTransparent ? z.transparentButton : ''}`}
               >

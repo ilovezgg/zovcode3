@@ -14,9 +14,13 @@
     color: white;
     border-color: transparent;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer;
     font-size: 20px;
-  transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .callbackButton{
     width: 18%;
@@ -36,6 +40,10 @@
     color: white;
     border-color: transparent;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer;
     font-size: 20px;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -47,6 +55,10 @@
     color: white;
     border-color: transparent;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer;
     font-size: 20px;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -58,9 +70,13 @@
     color: white;
     border-color: transparent;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     cursor: pointer;
     font-size: 20px;
-    transition: background-color 0.1s ease-out, color 0.3s ease-out, border-color 0.3s ease-out;
+    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .transparentButton {
     background-color: black;
