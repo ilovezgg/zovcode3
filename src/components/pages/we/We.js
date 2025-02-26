@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from '../home/header/Header'
 import Footer from '../home/footer/Footer'
 import Buttons from '../home/header/Buttons'
+import Cards  from './cards/Cards'
 const We = () => {
   return (
     <div>
        <Buttons />
-      <Header />
+       <Cards />
       <Footer />
     </div>
   )
