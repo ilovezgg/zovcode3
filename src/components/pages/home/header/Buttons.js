@@ -12,7 +12,7 @@ const Buttons = () => {
       } else {
         setIsTransparent(false);
       }
-      if (window.scrollY > 100) {
+      if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

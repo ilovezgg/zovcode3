@@ -59,6 +59,7 @@
     color: white;
     font-size: 35px;
     transform: translateX(5%) translateY(5%);
+    font-size: clamp(1.9rem, 10vw, 1.9rem);
 }
 .subTitleInfo{
     width: 100%;

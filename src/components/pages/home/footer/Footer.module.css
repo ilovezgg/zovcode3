@@ -1,45 +1,143 @@
-.footerBackground{
-    width: 100%;
-    height: 700px;
-    background-color: rgb(87, 87, 87);
-    z-index: -1;
-    display: flex;
-    align-items: end;
+
+.footerBackground {
+  width: 100%;
+  height: 700px;
+  background-color: rgb(87, 87, 87);
+  z-index: -1;
+  display: flex;
+  align-items: end;
+  overflow: hidden; 
 }
-.footerMain{
-    width: 100%;
-    height: 600px;
-    background-color: #181818;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    z-index: 1;
-    display: flex;
+.footerMain {
+  width: 100%;
+  height: 600px;
+  background-color: #181818;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  z-index: 1;
+  display: flex;
 }
-.footLeft{
-    width: 50%;
-    height: 100%;
+.footLeft {
+  width: 50%;
+  height: 100%;
+  display: flex;
 }
-.footRight{
-    width: 50%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.footRight {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .map {
-    height: 90%;
-    width: 90%;
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0; 
-    transform: translateY(20px); 
-    transition: opacity 1s ease, transform 0.5s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+  height: 90%;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
+.urls{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transform: translateX(10%) translateY(10%);
+  row-gap: 20px;
+}
+.infoFooter {
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
 .mapVisible {
-    opacity: 1; /* Конечная прозрачность */
-    transform: translateY(0); /* Конечное положение */
+  opacity: 1;
+  transform: translateY(0);
+}
+.mainPageUrl {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+.contactsPageUrl {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+.aboutUsPageUrl {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+.catalogPageUrl {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+.callbackPageUrl {
+  font-size: 50px;
+  color: white;
+  text-decoration: none;
+}
+.infoFooter{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+    color: white;
+    text-decoration: none;
+    transform: translateY(10%);
+    row-gap: 10px;
+}
+.socialMedia{
+    width: 80%;
+    font-size: 50px;
+}
+.icons{
+    display: flex;
+    gap: 15px;
+    
+}
+.telegram{
+    width: 50px;
+    height: 50px;
+    background-image: url(./pics/telegram.png);
+    background-size: cover;
+}
+.whatsapp{
+    width: 50px;
+    height: 50px;
+    background-image: url(./pics/whatsapp.png);
+    background-size: cover;
+}
+.adress{
+    width: 80%;
+    display: flex;
+    justify-content: left;
+    font-size: 40px;
+}
+.email{
+    width: 80%;
+    display: flex;
+    justify-content: left;
+    font-size: 40px;
+}
+.phoneNumber1{
+    width: 80%;
+    display: flex;
+    justify-content: left;
+    font-size: 40px;
+}
+.phoneNumber2{
+    width: 80%;
+    display: flex;
+    justify-content: left;
+    font-size: 40px;
 }
