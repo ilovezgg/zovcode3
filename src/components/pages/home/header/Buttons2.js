@@ -5,6 +5,8 @@ const Buttons2 = () => {
   const [isTransparent, setIsTransparent] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 290) {
@@ -12,11 +14,14 @@ const Buttons2 = () => {
       } else {
         setIsTransparent(false);
       }
+
       if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -26,11 +31,13 @@ const Buttons2 = () => {
     };
   }, []);
   return (
+
     <div className={z.svo}>
       <div className={z.containerButtons}>
       <div className={`${z.backgroundBlur} ${
               isScrolled ? z.scrollyButton : ""
             }`} ></div>
+
         <div className={z.headerButtons}>
           <Link
             to="/"
@@ -79,3 +86,4 @@ const Buttons2 = () => {
 };
 
 export default Buttons2;
+
