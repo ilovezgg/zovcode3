@@ -14,38 +14,37 @@ const Footer = () => {
         <div className={z.footerMain}>
           <div className={z.footLeft}>
             <div className={z.urls}>
-            <Link to="/" className={z.mainPageUrl}>Главная</Link>
-    <Link to="/contacts" className={z.contactsPageUrl}>Контакты</Link>
-    <Link to="/catalog" className={z.catalogPageUrl}>Каталог</Link>
-    <Link to="/we" className={z.aboutUsPageUrl}>О нас</Link>
-    <Link to="/callback" className={z.callbackPageUrl}>Личный кабинет</Link>
+              <Link to="/" className={z.mainPageUrl}>
+                Главная
+              </Link>
+              <Link to="/contacts" className={z.contactsPageUrl}>
+                Контакты
+              </Link>
+              <Link to="/catalog" className={z.catalogPageUrl}>
+                Каталог
+              </Link>
+              <Link to="/we" className={z.aboutUsPageUrl}>
+                О нас
+              </Link>
+              <Link to="/callback" className={z.callbackPageUrl}>
+                Личный кабинет
+              </Link>
             </div>
             <div className={z.infoFooter}>
               <div className={z.socialMedia}>
-               <div className={z.titleMedia}>
-                Наши соцсети:
-               </div>
-               <div className={z.icons}>
-               <div className={z.telegram}>
-
-</div>
-<div className={z.whatsapp}>
-
-</div>
-               </div>
+                <div className={z.titleMedia}>Наши соцсети:</div>
+                <div className={z.icons}>
+                  <div className={z.telegram}></div>
+                  <div className={z.whatsapp}></div>
+                </div>
               </div>
+
               <div className={z.adress}>
-              174510, Новгородская область, г. Пестово, Устюженское шоссе, 4
+                174510, Новгородская область, г. Пестово, Устюженское шоссе, 4
               </div>
-              <div className={z.email}>
-              srub-dom53@yandex.ru
-              </div>
-              <div className={z.phoneNumber1}>
-              8 (921) 730-24-66
-              </div>
-              <div className={z.phoneNumber2}>
-              8 (8162) 90-24-66
-              </div>
+              <div className={z.email}>srub-dom53@yandex.ru</div>
+              <div className={z.phoneNumber1}>8 (921) 730-24-66</div>
+              <div className={z.phoneNumber2}>8 (8162) 90-24-66</div>
             </div>
           </div>
           <div className={z.footRight}>

@@ -1,5 +1,6 @@
 import React from "react";
 import z from "./CallUs.module.css"; // Замените на путь к вашему файлу стилей
+import PhoneInput from "./PhoneInput";
 
 const CallUs = () => {
   return (
@@ -18,24 +19,8 @@ const CallUs = () => {
         </div>
         <div className={z.callUsRight}>
           <div className={z.callUsForms}>
-            <form className={z.callUsForm}>
-              <input
-                className={z.callUsInput}
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="+7 (XXX) XXX-XX-XX"
-              />
-            </form>
-            <form className={z.callUsForm}>
-              <input
-                className={z.callUsInput}
-                type="name"
-                id="name"
-                name="imya"
-                placeholder="Введите ваше имя"
-              />
-            </form>
+            <PhoneInput />
+            <PhoneInput />
           </div>
           <div className={z.callUsButton}>
             <button className={z.callUsSubmit}>Заказать звонок</button>

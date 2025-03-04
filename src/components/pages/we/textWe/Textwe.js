@@ -1,5 +1,6 @@
 import React from "react";
 import z from "./TextWe.module.css";
+
 const Textwe = () => {
   return (
     <div>

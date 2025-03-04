@@ -1,0 +1,13 @@
+.catalogMain{
+    height: 12000px;
+    row-gap: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(78, 78, 78);
+}
+.first3{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,70 @@
+.phone {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    width: 45%;
+    height: 50%;
+    border: 0.5px solid rgb(107, 107, 107);
+    border-radius: 20px;
+    color: rgb(96, 96, 96);
+    font-size: 50px;
+    font-weight: 400;
+    padding-left: 20px;
+    padding-right: 20px;
+  position: relative;
+    
+    cursor: text;
+
+    .phones {
+      display: block;
+      width: 100%;
+      height: 100%;
+      outline: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      cursor: text;
+    }
+  }
+
+  .cursor {
+    position: absolute;
+    width: 2px;
+    height: 33px;
+    background-color: rgb(76, 76, 76);
+    transition: left 0.1s;
+    animation: blink 1s ease-in infinite;
+  }
+  .cursorHidden {
+   display: none;
+  }
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1; /* Полная видимость */
+    }
+    50% {
+      opacity: 0; /* Полная прозрачность */
+    }
+  }
+
+
+  @media screen and (max-width: 1224px) {
+    .phone {
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      width: 390px;
+      height: 53px;
+      border: 0.5px solid rgb(255, 0, 0);
+      border-radius: 10px;
+      color: rgb(255, 0, 0);
+      font-size: 16px;
+      font-weight: 400;
+      padding-left: 20px;
+      padding-right: 20px;
+    position: relative;
+      
+      cursor: text;
+    }
+  }
