@@ -4,12 +4,12 @@ import style from "./PhoneInput.module.css";
 const PhoneInput = () => {
   const [mask, setMask] = useState("+7 900 000 00 00");
   const [cursorPosition, setCursorPosition] = useState(9.9);
-  const [value, setValue] = useState({ mode: "onChange" });
+  const [setValue] = useState({ mode: "onChange" });
   const [label, setLabel] = useState(false);
 
   const handlePhone = (event) => {
     let result = event.target.value.replace(/\D/g, "");
-    if (result.length == 0) {
+    if (result.length === 0) {
       setCursorPosition(11);
     }
     if (result.length > 0) {
