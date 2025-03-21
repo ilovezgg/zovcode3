@@ -235,8 +235,7 @@
     background-color: rgb(255, 255, 255); 
     clip-path: polygon(0 0, 0 100%, 0% 100%, 0 0); 
     transition: clip-path 0.5s ease-in-out;
-    z-index: -1; 
-    
+    z-index: -1; ;
   }
   
   .bigButton:hover::before {
