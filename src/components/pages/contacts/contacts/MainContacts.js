@@ -1,5 +1,6 @@
 import React from 'react'
 import z from './MainContacts.module.css'
+import Accordion from '../faq/Accordion'
 const MainContacts = () => {
   return (
     <div className={z.main}> 
@@ -15,7 +16,6 @@ const MainContacts = () => {
             
            </div>
            <div className={z.contactInfo}>
-
            </div>
          </div>
         </div>
