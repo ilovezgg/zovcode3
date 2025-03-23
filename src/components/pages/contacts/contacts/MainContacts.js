@@ -1,6 +1,5 @@
 import React from 'react'
 import z from './MainContacts.module.css'
-import Accordion from '../faq/Accordion'
 const MainContacts = () => {
   return (
     <div className={z.main}> 
@@ -23,4 +22,4 @@ const MainContacts = () => {
   )
 }
 
-export default MainContacts
+export default MainContacts;

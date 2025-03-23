@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
-import z from './Accordion.module.css';
-const Accordion = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
+import React from 'react';
+import z from './Accordion.module.css'; 
 
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Accordion = ({ question, answer, isOpen, onToggle }) => {
   return (
     <div className={z.accordion}>
-      <button className={z.accordionQuestion} onClick={toggleAccordion}>
+      <button className={z.accordionQuestion} onClick={onToggle}>
         {question}
         <span className={`${z.accordionIcon} ${isOpen ? z.open : ''}`}>
           {isOpen ? '-' : '+'}
