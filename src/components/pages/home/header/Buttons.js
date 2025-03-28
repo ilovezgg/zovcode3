@@ -65,7 +65,7 @@ const Buttons = () => {
             Каталог
           </Link>
           <Link
-            to="/catalog"
+            to="/cabinet"
             className={`${z.callbackButton} ${
               isTransparent ? z.transparentButton : ""
             }`} 

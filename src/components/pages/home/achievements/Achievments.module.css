@@ -1,27 +1,34 @@
 .containerAch{
     display: flex;
     width: 85%;
-    height: 150px;
+    height: 250px;
     justify-content: space-between;
+    align-items: center;
     
 }
 .textHouses{
-   font-size: 70px;
+    font-size: 80px;
    color: white;
+   text-transform: uppercase;
+   font-weight: bold;
 }
 .textYears{
-    font-size: 70px;
+    font-size: 80px;
     color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .textGaranti{
-    font-size: 70px;
+    font-size: 80px;
     color: white;
+    text-transform: uppercase;
+    font-weight: bold;
     display: flex;
     
 }
 .animated{
     color: white;
-    font-size: 60px;
+    font-size: 100px;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -29,7 +36,7 @@
 
 .achievmentsMain{
     width: 100%;
-    height: 250px;
+    height: 350px;
     display: flex;
     justify-content: center;
     background-color: rgb(87, 87, 87);

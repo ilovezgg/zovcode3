@@ -7,8 +7,7 @@ const Projects = () => {
       <div className={z.mainProjects}>
         <div className={z.a}>
           <div className={z.projectsTitle}>
-            Посмотрите самые частопродаваемые дома. Они{" "}
-            <p className={z.zasluga}>заслужили</p> доверие покупателей.
+            Посмотрите самые частопродаваемые дома. Они заслужили доверие покупателей.
           </div>
         </div>
         <div className={z.totalContainer}>
