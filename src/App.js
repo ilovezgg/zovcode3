@@ -4,7 +4,7 @@ import Home from './components/pages/home/Home';
 import We from './components/pages/we/We';
 import Catalog  from './components/pages/catalog/Catalog';
 import Contacts  from './components/pages/contacts/Contacts';
-import Cabinet from './components/pages/cabinet/Cabinet';
+import Gallery from './components/pages/cabinet/Gallery';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/we" element={<We />} /> 
         <Route path="/catalog" element={<Catalog />} /> 
         <Route path="/contacts" element={<Contacts />} /> 
-        <Route path="/cabinet" element={<Cabinet />} /> 
+        <Route path="/cabinet" element={<Gallery />} /> 
       </Routes>
     </Router>
     </div>

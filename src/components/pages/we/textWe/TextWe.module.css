@@ -17,7 +17,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 }
 .blackCube{
