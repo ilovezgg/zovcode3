@@ -26,7 +26,7 @@ const Achievments = () => {
           <div className={z.third}>
           <div className={z.garanti}>
           <AnimatedCounter target={3} className={z.animated2} /> 
-          <div className={z.textGaranti}>Лет гарантии</div>
+          <div className={z.textGaranti}>Года гарантии</div>
           </div>
           </div>
           

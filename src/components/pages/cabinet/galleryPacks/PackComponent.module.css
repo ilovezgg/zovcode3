@@ -1,19 +1,20 @@
+/* Основные стили */
 .pack1 {
     width: 100%;
     height: 800px;
+    position: relative;
 }
 
 .topPack {
     width: 100%;
     height: 150px;
-   
     border-bottom: transparent;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для лучшей читаемости */
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .packTitle {
@@ -32,14 +33,19 @@
 }
 
 .pic1, .pic2, .pic3 {
-    width: 33%;
+    width: 33.33%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    position: relative; 
-    overflow: hidden;
+    position: relative;
     cursor: pointer;
+    transition: transform 0.3s;
 }
+
+.pic1:hover, .pic2:hover, .pic3:hover {
+    transform: scale(1.03);
+}
+
 .pic1:hover::after, 
 .pic2:hover::after, 
 .pic3:hover::after {
@@ -49,11 +55,191 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
 }
-@font-face {
-    font-family: 'Bounded';
-    src: url(../../../../fonts/ofont.ru_Bounded.ttf) ;
+
+.plusIcon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Анимации */
+@keyframes zoomIn {
+  0% {
+    transform: translate(var(--start-x), var(--start-y));
+    width: var(--start-width);
+    height: var(--start-height);
+    opacity: 0;
+    border-radius: 0;
   }
-  
+  100% {
+    transform: translate(0, 0);
+    width: 90vw;
+    height: 90vh;
+    opacity: 1;
+    border-radius: 10px;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(0, 0);
+    width: 90vw;
+    height: 90vh;
+    opacity: 1;
+    border-radius: 10px;
+  }
+  100% {
+    transform: translate(var(--start-x), var(--start-y));
+    width: var(--start-width);
+    height: var(--start-height);
+    opacity: 0;
+    border-radius: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Модальное окно */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.97);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modalOverlay.closing {
+  animation: fadeOut 0.4s ease-out;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  position: absolute;
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  animation: zoomIn 0.5s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+  will-change: transform;
+}
+
+.modalOverlay.closing .modalImage {
+  animation: zoomOut 0.4s ease-in forwards;
+}
+
+/* Кнопки */
+.closeButton {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton, .nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton {
+  left: 30px;
+}
+
+.nextButton {
+  right: 30px;
+}
+
+/* Счетчик и заголовки */
+.counter {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: white;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 20px;
+  z-index: 1001;
+}
+
+.titleOverlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  z-index: 1001;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subTitle {
+  font-size: 16px;
+}
+
+@font-face {
+  font-family: 'Bounded';
+  src: url(../../../../fonts/ofont.ru_Bounded.ttf);
+}

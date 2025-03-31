@@ -5,8 +5,6 @@ const Buttons2 = () => {
   const [isTransparent, setIsTransparent] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 290) {
@@ -20,8 +18,6 @@ const Buttons2 = () => {
       } else {
         setIsScrolled(false);
       }
-
-
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,19 +27,18 @@ const Buttons2 = () => {
     };
   }, []);
   return (
-
     <div className={z.svo}>
       <div className={z.containerButtons}>
-      <div className={`${z.backgroundBlur} ${
-              isScrolled ? z.scrollyButton : ""
-            }`} ></div>
+        <div
+          className={`${z.backgroundBlur} ${isScrolled ? z.scrollyButton : ""}`}
+        ></div>
 
         <div className={z.headerButtons}>
           <Link
             to="/"
             className={`${z.mainButton} ${
               isTransparent ? z.transparentButton : ""
-            }`} 
+            }`}
           >
             Главная
           </Link>
@@ -51,7 +46,7 @@ const Buttons2 = () => {
             to="/we"
             className={`${z.aboutusButton} ${
               isTransparent ? z.transparentButton : ""
-            }`} 
+            }`}
           >
             О нас
           </Link>
@@ -59,7 +54,7 @@ const Buttons2 = () => {
             to="/contacts"
             className={`${z.contactsButton} ${
               isTransparent ? z.transparentButton : ""
-            }`} 
+            }`}
           >
             Контакты
           </Link>
@@ -67,7 +62,7 @@ const Buttons2 = () => {
             to="/catalog"
             className={`${z.catalogButton} ${
               isTransparent ? z.transparentButton : ""
-            }`} 
+            }`}
           >
             Каталог
           </Link>
@@ -75,7 +70,7 @@ const Buttons2 = () => {
             to="/cabinet"
             className={`${z.callbackButton} ${
               isTransparent ? z.transparentButton : ""
-            }`} 
+            }`}
           >
             Личный кабинет
           </Link>
@@ -86,4 +81,3 @@ const Buttons2 = () => {
 };
 
 export default Buttons2;
-

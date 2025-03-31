@@ -6,7 +6,9 @@ const HouseCard = ({ image, title, description, price }) => {
     <div className={z.card}>
       <div
         className={z.cardImage}
-        style={{ backgroundImage: image ? `url(${image.default || image})` : "none" }}
+        style={{
+          backgroundImage: image ? `url(${image.default || image})` : "none",
+        }}
       />
       <div className={z.cardContent}>
         <div className={z.cardTitle}>{title}</div>

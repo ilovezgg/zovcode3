@@ -20,25 +20,25 @@ export const Cards = () => {
             </div>
           </div>
           <div className={z.cardsBottom}>
-              <div className={z.card3}>
-                <div className={z.card3Info}>
-                  <div className={z.card3Title}>3</div>
-                  <div className={z.card3SubTitle}>года гарантии</div>
-                </div>
-              </div>
-              <div className={z.card4}>
-                <div className={z.card4Info}>
-                  <div className={z.card4Title}>100%</div>
-                  <div className={z.card4SubTitle}>довольных клиентов</div>
-                </div>
-              </div>
-              <div className={z.card5}>
-                <div className={z.card5Info}>
-                  <div className={z.card5Title}>100+</div>
-                  <div className={z.card5SubTitle}>проектов в каталоге</div>
-                </div>
+            <div className={z.card3}>
+              <div className={z.card3Info}>
+                <div className={z.card3Title}>3</div>
+                <div className={z.card3SubTitle}>года гарантии</div>
               </div>
             </div>
+            <div className={z.card4}>
+              <div className={z.card4Info}>
+                <div className={z.card4Title}>100%</div>
+                <div className={z.card4SubTitle}>довольных клиентов</div>
+              </div>
+            </div>
+            <div className={z.card5}>
+              <div className={z.card5Info}>
+                <div className={z.card5Title}>100+</div>
+                <div className={z.card5SubTitle}>проектов в каталоге</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
