@@ -1,0 +1,53 @@
+.packsMain{
+    width: 100%;
+    height: 10000px;
+    background-color: rgb(87, 87, 87);
+}
+.pack1{
+    width: 100%;
+    height: 800px;
+}
+.topPack{
+    width: 100%;
+    height: 150px;
+    border: 2px solid white;
+    border-bottom: transparent;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.packTitle{
+    font-size: 80px;
+    color: white;
+    font-weight: bold;
+}
+.bottomPack{
+    width: 100%;
+    height: 550px;
+    border: 1px solid white;
+    border-top: transparent;
+    display: flex;
+}
+.pic1{
+  width: 33%;
+  height: 100%;
+  background-image: url(./img/tosno1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.pic2{
+    width: 33%;
+    height: 100%;
+    background-image: url(./img/tosno2.jpg);
+    background-size: cover;
+   
+}
+.pic3{
+    width: 33%;
+    height: 100%;
+    background-image: url(./img/tosno3.jpg);
+    background-size: cover;
+    background-position: center;
+}

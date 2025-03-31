@@ -1,0 +1,59 @@
+.pack1 {
+    width: 100%;
+    height: 800px;
+}
+
+.topPack {
+    width: 100%;
+    height: 150px;
+   
+    border-bottom: transparent;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для лучшей читаемости */
+}
+
+.packTitle {
+    font-size: 38px; 
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Bounded';
+}
+
+.bottomPack {
+    width: 100%;
+    height: 550px;
+    border-top: transparent;
+    display: flex;
+}
+
+.pic1, .pic2, .pic3 {
+    width: 33%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    overflow: hidden;
+    cursor: pointer;
+}
+.pic1:hover::after, 
+.pic2:hover::after, 
+.pic3:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+@font-face {
+    font-family: 'Bounded';
+    src: url(../../../../fonts/ofont.ru_Bounded.ttf) ;
+  }
+  
