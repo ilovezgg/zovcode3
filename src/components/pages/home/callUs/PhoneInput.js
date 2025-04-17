@@ -4,7 +4,7 @@ import style from "./PhoneInput.module.css";
 const PhoneInput = () => {
   const [mask, setMask] = useState("+7 900 000 00 00");
   const [cursorPosition, setCursorPosition] = useState(9.9);
-  const [setValue] = useState({ mode: "onChange" });
+  const [phoneValue, setPhoneValue] = useState(""); 
   const [label, setLabel] = useState(false);
 
   const handlePhone = (event) => {
@@ -72,14 +72,10 @@ const PhoneInput = () => {
 
     event.target.value = result.slice(0, 9);
 
-    setValue("phone", result.slice(0, 9));
+    setPhoneValue("phone", result.slice(0, 9));
   };
   return (
-    <label
-      className={style.phone}
-      htmlFor="phone"
-      onClick={() => setLabel(true)}
-    >
+<label className={style.phone} htmlFor="phone" onClick={() => setLabel(true)}>
       {mask}
       <input
         id="phones"

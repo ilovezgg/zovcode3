@@ -8,12 +8,11 @@ const PackComponent = ({ title, images }) => {
   const [animationStyle, setAnimationStyle] = useState({});
   const imageRefs = useRef([]);
 
-  // Запоминаем рефы для фоток
   useEffect(() => {
     imageRefs.current = imageRefs.current.slice(0, 3);
   }, []);
 
-  // Блокируем скролл при открытии модалки
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
