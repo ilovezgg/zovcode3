@@ -3,3 +3,15 @@
     height: 400px;
     background-color: rgb(87, 87, 87);
 }
+.filters{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.resetButton{
+    width: 150px;
+    height: 70px;
+    border-radius: 10px;
+}

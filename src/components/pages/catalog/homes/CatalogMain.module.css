@@ -17,3 +17,10 @@
     display: flex;
     justify-content: space-around;
 }
+.noResults{
+    width: 100%;
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    font-weight: 600;
+}

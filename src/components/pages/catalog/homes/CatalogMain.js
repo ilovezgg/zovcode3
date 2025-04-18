@@ -20,14 +20,14 @@ const CatalogMain = ({ houses }) => {
               title={house.title}
               description={house.description}
               price={house.price}
-              floors={house.floors} // Добавляем этажность
+              floors={house.floors} 
             />
           ))}
         </div>
       ))}
       
       {houses.length === 0 && (
-        <p className={z.noResults}>Ничего не найдено, братиш</p>
+        <p className={z.noResults}>Ничего не найдено</p>
       )}
     </div>
   );

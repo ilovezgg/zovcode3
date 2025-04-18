@@ -3,7 +3,7 @@
   border-radius: 20px;
   overflow: hidden;
   width: 32%;
-  height: 100%;
+  height: 700px;
   text-align: center;
   background-color: #d6d6d6;
 }
@@ -14,6 +14,8 @@
    background-size: cover;
    border-radius: 20px;
    background-image: url(../imgHouses/house1.jpg);
+   min-width: 100%;
+   min-height: 490px;
 }
 .cardContent{
   font-size: 50px;

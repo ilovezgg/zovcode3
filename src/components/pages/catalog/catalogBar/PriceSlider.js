@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import z from './PriceSlider.module.css'; // Создашь стили потом
+import z from './PriceSlider.module.css'; 
 
 const PriceSlider = ({ onPriceChange }) => {
-  const [price, setPrice] = useState(3000000); // Дефолт = максимум (2 ляма)
+  const [price, setPrice] = useState(1850000); 
 
-  // Обработчик изменения цены
+ 
   const handlePriceChange = (e) => {
     const newPrice = parseInt(e.target.value);
     setPrice(newPrice);
-    if (onPriceChange) onPriceChange(newPrice); // Пробрасываем в родитель
+    if (onPriceChange) onPriceChange(newPrice); 
   };
 
-  // Форматируем цену (1 500 000 ₽)
+  
   const formatPrice = (price) => {
     return new Intl.NumberFormat('ru-RU').format(price) + ' ₽';
   };
@@ -24,7 +24,7 @@ const PriceSlider = ({ onPriceChange }) => {
       <input
         type="range"
         min="640000"    
-        max="3000000"   
+        max="1850000"   
         step="10000"    
         value={price}
         onChange={handlePriceChange}
