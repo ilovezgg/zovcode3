@@ -1,29 +1,24 @@
-// components/SearchBar.js
-import React, { useState } from "react";
-import z from "./CatalogBar.module.css"; 
+import React from 'react';
+import z from './CatalogBar.module.css';
 
-const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
-
+const CatalogBar = ({ searchTerm, onSearch }) => {
   const handleSearch = (e) => {
-    const value = e.target.value;
-    setSearchTerm(value);
-    onSearch(value);
+    if (typeof onSearch === 'function') {
+      onSearch(e.target.value);
+    }
   };
 
   return (
-    <div className={z.mainBar}>
-    <div className={z.searchContainer}>
+    <div >
       <input
         type="text"
-        placeholder="Найти дом (например, Д1)"
+        placeholder="Найти дом..."
         value={searchTerm}
         onChange={handleSearch}
         className={z.searchInput}
       />
     </div>
-    </div>
   );
 };
 
-export default SearchBar;
+export default CatalogBar;
