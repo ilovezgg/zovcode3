@@ -1,5 +1,5 @@
 const houseData = [
-  { id: 1, image: require("../imgHouses/d1.jpg"), title: "Проект Д1", description: "6х6", price: "613 000 ₽", floors: 1 },
+    { id: 1, image: require("../imgHouses/d1.jpg"), title: "Проект Д1", description: "6х6", price: "613 000 ₽", floors: 1 },
   { id: 2, image: require("../imgHouses/d2.jpg"), title: "Проект Д2", description: "6х6", price: "623 000 ₽", floors: 1  },
   { id: 3, image: require("../imgHouses/d3.jpg"), title: "Проект Д3", description: "6х6", price: "630 000 ₽", floors: 1  },
   { id: 4, image: require("../imgHouses/d4.jpg"), title: "Проект Д4", description: "6х6", price: "613 000 ₽", floors: 1  },
@@ -54,7 +54,6 @@ const houseData = [
   { id: 53, image: require("../imgHouses/d52.jpg"), title: "Проект Д52", description: "9x9", price: "1 329 000 ₽", floors: 1 },
   { id: 54, image: require("../imgHouses/d53.jpg"), title: "Проект Д53", description: "8x10", price: "1 779 000 ₽", floors: 1.5 },
   { id: 55, image: require("../imgHouses/d54.jpg"), title: "Проект Д54", description: "10x10", price: "1 445 000 ₽", floors: 1 },
-
 
 ];
 

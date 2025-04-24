@@ -29,6 +29,7 @@ const FilterPage = ({
           activeSize={activeSize}
         />
         
+        
        
         <div className={z.buttonsContainer}>
           <button 

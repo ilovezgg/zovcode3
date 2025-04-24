@@ -1,0 +1,37 @@
+
+.container {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.container > div {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff6b6b;
+}
+
+
+.container2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px; 
+}
+
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+
+.container > p {
+  font-size: 18px;
+  color: #888;
+}

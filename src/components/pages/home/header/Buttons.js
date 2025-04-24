@@ -72,6 +72,14 @@ const Buttons = () => {
           >
             Личный кабинет
           </Link>
+          <Link
+            to="/favourites"
+            className={`${z.FavButton} ${
+              isTransparent ? z.transparentButton : ""
+            }`} 
+          >
+            <span className={z.heart}></span>
+          </Link>
         </div>
       </div>
     </div>

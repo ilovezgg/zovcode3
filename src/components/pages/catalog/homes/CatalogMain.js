@@ -1,9 +1,12 @@
 import React from "react";
-import z from "./CatalogMain.module.css";
 import HouseCard from "../homes/HouseCard";
+import { useFavorites } from "../../favourites/useFavourites";
+import z from "./CatalogMain.module.css";
 
-const CatalogMain = ({ houses }) => {
-  // Группируем по 3 карточки в ряд
+const CatalogMain = ({ houses = [] }) => {
+  const { favorites, toggleFavorite } = useFavorites();
+
+  // Группировка по 3 карточки
   const groupedHouses = [];
   for (let i = 0; i < houses.length; i += 3) {
     groupedHouses.push(houses.slice(i, i + 3));
@@ -16,19 +19,13 @@ const CatalogMain = ({ houses }) => {
           {group.map(house => (
             <HouseCard
               key={house.id}
-              image={house.image}
-              title={house.title}
-              description={house.description}
-              price={house.price}
-              floors={house.floors} 
+              {...house}
+              onToggleFavorite={toggleFavorite}
+              isFavorite={favorites.includes(house.id)}
             />
           ))}
         </div>
       ))}
-      
-      {houses.length === 0 && (
-        <p className={z.noResults}>Ничего не найдено</p>
-      )}
     </div>
   );
 };
