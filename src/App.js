@@ -6,7 +6,7 @@ import Catalog  from './components/pages/catalog/Catalog';
 import Contacts  from './components/pages/contacts/Contacts';
 import Gallery from './components/pages/cabinet/Gallery';
 import Favourites from './components/pages/favourites/Favourites';
-
+import SignUp from './components/pages/signup/SignUp';
 function App() {
   return (
     <div className="App">
@@ -18,6 +18,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} /> 
         <Route path="/cabinet" element={<Gallery />} /> 
         <Route path="/favourites" element={<Favourites />} /> 
+        <Route path="/signup" element={<SignUp />} /> 
       </Routes>
     </Router>
     </div>

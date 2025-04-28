@@ -70,7 +70,7 @@ const Buttons = () => {
               isTransparent ? z.transparentButton : ""
             }`} 
           >
-            Личный кабинет
+            Галерея
           </Link>
           <Link
             to="/favourites"
@@ -79,6 +79,14 @@ const Buttons = () => {
             }`} 
           >
             <span className={z.heart}></span>
+          </Link>
+          <Link
+            to="/signup"
+            className={`${z.signUpButton} ${
+              isTransparent ? z.transparentButton : ""
+            }`} 
+          >
+            Личный кабинет
           </Link>
         </div>
       </div>

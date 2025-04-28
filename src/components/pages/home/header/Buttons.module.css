@@ -36,7 +36,7 @@
     z-index: -1;
 }
 .catalogButton{
-    width: 18%;
+    width: 14%;
     height: 60px;
     background-color: transparent;
     color: white;
@@ -51,7 +51,7 @@
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .callbackButton{
-    width: 18%;
+    width: 14%;
     height: 60px;
     background-color: transparent;
     color: white;
@@ -66,7 +66,7 @@
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .contactsButton{
-    width: 18%;
+    width: 14%;
     height: 60px;
     background-color: transparent;
     color: white;
@@ -81,7 +81,7 @@
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .aboutusButton{
-    width: 18%;
+    width: 14%;
     height: 60px;
     background-color: transparent;
     color: white;
@@ -97,7 +97,22 @@
     
 }
 .mainButton{
-    width: 18%;
+    width: 14%;
+    height: 60px;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 40px;
+    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.signUpButton{
+    width: 14%;
     height: 60px;
     background-color: transparent;
     color: white;
