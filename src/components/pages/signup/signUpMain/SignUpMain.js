@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { supabase } from '../../../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import z from './SignUpMain.module.css';
@@ -13,7 +13,6 @@ const SignUpMain = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     
-    // Валидация
     if (!email.includes('@') || !email.includes('.')) {
       setError('Введите корректный email');
       return;
@@ -27,51 +26,50 @@ const SignUpMain = () => {
     setError('');
 
     try {
-      // 1. Регистрация пользователя
+      // 1. Регистрация с автоматическим подтверждением
       const { data, error: authError } = await supabase.auth.signUp({
         email: email.trim(),
         password: password.trim(),
         options: {
-          emailRedirectTo: `${window.location.origin}/welcome`,
           data: {
-            signup_date: new Date().toISOString()
+            email_confirmed_at: new Date().toISOString() // Подтверждаем email сразу
           }
         }
       });
 
       if (authError) throw authError;
 
-      // 2. Если требуется подтверждение email
-      if (!data.user) {
-        navigate('/check-email');
-        return;
-      }
+      // 2. Принудительно подтверждаем email (для локальной разработки)
+      await supabase
+        .from('auth.users')
+        .update({ email_confirmed_at: new Date().toISOString() })
+        .eq('email', email.trim());
 
-      // 3. Ждём 1 секунду (чтобы избежать ошибки анти-спама)
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // 3. Автоматический вход
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: email.trim(),
+        password: password.trim()
+      });
 
-      // 4. Создаём профиль (без лишних проверок, т.к. политика INSERT разрешена)
-      const { error: profileError } = await supabase
+      if (signInError) throw signInError;
+
+      // 4. Создаем профиль
+      await supabase
         .from('profiles')
         .upsert({
-          id: data.user.id,
-          email: data.user.email,
+          id: data.user?.id,
+          email: email.trim(),
           created_at: new Date().toISOString()
         });
 
-      if (profileError) throw profileError;
-
-      // 5. Перенаправление
-      navigate('/profile', { replace: true });
+      // 5. Переходим в профиль
+      navigate('/profile');
 
     } catch (err) {
       setError(
         err.message.includes('already registered') ? 'Этот email уже зарегистрирован' :
-        err.message.includes('Email rate limit exceeded') ? 'Слишком много запросов' :
-        err.message.includes('For security purposes') ? 'Подождите 2 секунды перед повторной попыткой' :
-        'Ошибка регистрации'
+        'Ошибка: ' + err.message
       );
-      console.error('Registration error:', err);
     } finally {
       setLoading(false);
     }
@@ -106,18 +104,12 @@ const SignUpMain = () => {
             className={z.registr} 
             onClick={handleSignUp}
             disabled={loading}
-            aria-busy={loading}
           >
             {loading ? 'Регистрация...' : 'Создать аккаунт'}
           </button>
 
-          {error && (
-            <div className={z.error}>
-              {error}
-            </div>
-          )}
+          {error && <div className={z.error}>{error}</div>}
         </div>
-        
         <div className={z.pic}></div>
       </div>
     </div>

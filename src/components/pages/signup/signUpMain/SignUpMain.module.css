@@ -41,6 +41,11 @@
     font-size: 30px;
     margin-bottom: 20px;
   }
+  .error{
+    font-size: 30px;
+    color: red;
+    font-weight: 600;
+  }
 .password{
     width: 90%;
     height: 15%;

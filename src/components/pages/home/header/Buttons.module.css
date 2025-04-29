@@ -139,3 +139,48 @@
         position: relative;
         transform: rotate(-45deg);
    transition: all 0.3s ease}
+.FavButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #ffffff; 
+    transition: all 0.3s ease;
+  }
+  
+ 
+  .transparentButton {
+    background-color: transparent;
+  }
+  
+ 
+  .heartIcon {
+    transition: transform 0.2s ease;
+  }
+  
+
+  .FavButton:hover {
+    color: red;
+  }
+  
+  .FavButton:hover .heartIcon {
+    transform: scale(1.1);
+  }
+  
+
+  .FavButton.active {
+    color: red;
+  }
+  .defPic{
+    width: 60px;
+    height: 60px;
+    background-image: url(./img/speaker-placeholder.png);
+    background-size: cover;
+    border-radius: 90px;
+  
+  }
