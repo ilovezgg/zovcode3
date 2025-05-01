@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import z from './Achievments.module.css';
-const AnimatedCounter = ({ target }) => {
+
+const AnimatedCounter = ({ target, shouldStart }) => {  // Добавляем пропс shouldStart
   const [count, setCount] = useState(0);
 
-  // Анимация с помощью react-spring
-  const props = useSpring({ number: count, from: { number: 0 }, config: { duration: 5000 } });
+  const props = useSpring({ 
+    number: count, 
+    from: { number: 0 }, 
+    config: { duration: 5000 } 
+  });
 
   useEffect(() => {
+    if (!shouldStart) return; // Не начинаем анимацию, если shouldStart=false
+    
     if (count < target) {
       const interval = setInterval(() => {
         setCount(prevCount => Math.min(prevCount + 1, target)); 
       }, 1);
 
-      return () => clearInterval(interval); 
+      return () => clearInterval(interval);
     }
-  }, [count, target]);
+  }, [count, target, shouldStart]); // Добавляем shouldStart в зависимости
 
   return (
     <div className={z.animated}>
@@ -23,9 +29,7 @@ const AnimatedCounter = ({ target }) => {
         {props.number.to(n => Math.floor(n))}
       </animated.span>
     </div>
-    
   );
 };
 
 export default AnimatedCounter;
-

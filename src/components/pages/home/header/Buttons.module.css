@@ -184,3 +184,191 @@
     border-radius: 90px;
   
   }
+  @media (max-width: 480px) {
+    *{
+      box-sizing: border-box;
+  }
+  .headerButtons{
+      position: fixed; 
+      width: 100%;
+      z-index: 9999;      
+      display: flex;
+      justify-content: space-around;
+  }
+  .mainHeader{
+      height: 130px;
+      display: flex;
+      justify-content: center;
+      background-color: rgb(87, 87, 87);
+  }
+  .containerButtons{
+      width: 100%;
+      height: 130px;
+      position: fixed;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+  }
+  .backgroundBlur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(10px); 
+      z-index: -1;
+  }
+  .catalogButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .callbackButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .contactsButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .aboutusButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      
+  }
+  .mainButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .signUpButton{
+      width: 14%;
+      height: 60px;
+      background-color: transparent;
+      color: white;
+      border-color: transparent;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 40px;
+      transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  .transparentButton {
+      background-color: black;
+      color: white;
+      border: 2px solid rgb(156, 156, 156);; 
+    }
+     .heart {
+          width: 18px;
+          height: 18px;
+          background: #ccc;
+          display: inline-block;
+          position: relative;
+          transform: rotate(-45deg);
+     transition: all 0.3s ease}
+  .FavButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 8px;
+      color: #ffffff; 
+      transition: all 0.3s ease;
+    }
+    
+   
+    .transparentButton {
+      background-color: transparent;
+    }
+    
+   
+    .heartIcon {
+      transition: transform 0.2s ease;
+    }
+    
+  
+    .FavButton:hover {
+      color: red;
+    }
+    
+    .FavButton:hover .heartIcon {
+      transform: scale(1.1);
+    }
+    
+  
+    .FavButton.active {
+      color: red;
+    }
+    .defPic{
+      width: 60px;
+      height: 60px;
+      background-image: url(./img/speaker-placeholder.png);
+      background-size: cover;
+      border-radius: 90px;
+    
+    }
+  }

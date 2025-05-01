@@ -30,7 +30,7 @@ const FavMain = ({ allHouses = houseData }) => {
         </div>
         </div>
       ) : (
-        <p>Пусто, как в космосе... (´• ω •`)</p>
+        <p>Пока что нет избранного</p>
       )}
     </div>
   );

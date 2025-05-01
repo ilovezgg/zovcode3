@@ -1,0 +1,44 @@
+.container {
+    width: 500px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f8f9fa;
+  }
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 30px;
+    border: 1px solid #ddd;
+  }
+  
+  .error {
+    color: #dc3545;
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+  
+  .button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background 0.3s;
+  }
+  .buttonLoading {
+    opacity: 0.7;
+  }

@@ -1,6 +1,7 @@
 import React from 'react'
 import z from './Profile.module.css'
 import RegionSelector from '../russianSities/RegionSelector'
+import PhoneInput from '../PhoneForm/PhoneForm'
 const ProfileMain = () => {
   return (
     <div className={z.main}>
@@ -37,7 +38,10 @@ const ProfileMain = () => {
       
     </div>
     <div className={z.rightPart}>
-<RegionSelector/>
+      <div className={z.topRight}>
+      <PhoneInput/>
+      <RegionSelector/>
+      </div>
       </div>
     </div>
   )
