@@ -8,6 +8,7 @@ import Gallery from './components/pages/cabinet/Gallery';
 import Favourites from './components/pages/favourites/Favourites';
 import SignUp from './components/pages/signup/SignUp';
 import Profile from './components/pages/profile/Profile';
+import Login from './components/pages/login/Login';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
         <Route path="/favourites" element={<Favourites />} /> 
         <Route path="/signup" element={<SignUp />} /> 
         <Route path="/profile" element={<Profile />} /> 
+        <Route path="/login" element={<Login />} /> 
       </Routes>
     </Router>
     </div>

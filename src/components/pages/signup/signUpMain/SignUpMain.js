@@ -107,6 +107,12 @@ const SignUpMain = () => {
           >
             {loading ? 'Регистрация...' : 'Создать аккаунт'}
           </button>
+          <button 
+            className={z.loginLink} 
+            onClick={() => navigate('/login')} 
+          >
+            Уже есть аккаунт? Войти
+          </button>
 
           {error && <div className={z.error}>{error}</div>}
         </div>
