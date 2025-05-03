@@ -67,3 +67,53 @@
     display: flex;
     transform: translateX(3%);
 }
+@media (max-width: 768px) {
+    .mainText, .containerPic {
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .backgroundPic {
+        border-radius: 0;
+        padding: 20px 0;
+    }
+    
+    .blackCube {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        backdrop-filter: blur(5px);
+    }
+    
+    .info1, .info2, .info3 {
+        width: 100% !important;
+        height: auto;
+        padding: 20px 0;
+        border-right: none !important;
+        border-left: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+    }
+    
+    .info3 {
+        border-bottom: none;
+    }
+    
+    .titleInfo {
+        font-size: 32px !important;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    
+    .textInfo {
+        width: 100%;
+        font-size: 18px !important;
+        transform: none !important;
+        padding: 10px 0;
+    }
+    
+    .subTitleInfo {
+        transform: none !important;
+        font-size: 16px;
+    }
+}

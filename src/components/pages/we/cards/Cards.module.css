@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 }
-/* HoverWrapText.css */
+
 .hoverwraptext {
     position: relative;
     display: inline-block;
@@ -44,7 +44,7 @@
     background-color: #007bff;
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform 0.3s ease-in-out 0.3s; /* Задержка для синхронизации */
+    transition: transform 0.3s ease-in-out 0.3s; 
   }
   
   .hoverwraptext:hover::before {
@@ -70,7 +70,7 @@
     height: 2px;
     transform: scaleX(0);
     transform-origin: right;
-    transition-delay: 0.6s; /* Задержка для синхронизации */
+    transition-delay: 0.6s; 
   }
   
   .hoverwraptext .left-line {
@@ -80,7 +80,7 @@
     height: 100%;
     transform: scaleY(0);
     transform-origin: bottom;
-    transition-delay: 0.9s; /* Задержка для синхронизации */
+    transition-delay: 0.9s; 
   }
   
   .hoverwraptext:hover .bottom-line {
@@ -229,4 +229,46 @@ letter-spacing: 3px;
     font-weight: bold;
     transform: translateY(-20%);
     letter-spacing: 3px;
+}
+@media (max-width: 768px) {
+    .cardsMain {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .cards {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .cardsTop, .cardsBottom {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .card1, .card2, .card3, .card4, .card5 {
+        width: 100% !important;
+        height: 300px !important;
+        border-right: none !important;
+        border-bottom: 1px solid white;
+    }
+    
+    /* Адаптивные размеры шрифтов */
+    .card1Title { font-size: 80px !important; }
+    .card1SubTitle { font-size: 40px !important; transform: none !important; }
+    .card2Title { font-size: 60px !important; }
+    .card2SubTitle { font-size: 24px !important; }
+    .card3Title, .card4Title, .card5Title { font-size: 50px !important; }
+    .card3SubTitle, .card4SubTitle, .card5SubTitle { 
+        font-size: 28px !important; 
+        transform: none !important;
+    }
+    
+    /* Адаптация hover-эффектов для тач-устройств */
+    .hoverwraptext::before,
+    .hoverwraptext::after,
+    .hoverwraptext .bottom-line,
+    .hoverwraptext .left-line {
+        display: none; /* Отключаем сложные hover-эффекты на мобильных */
+    }
 }
