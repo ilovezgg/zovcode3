@@ -372,3 +372,18 @@
     
     }
   }
+  @media (max-width: 768px) {
+    .headerButtons {
+        display: none;
+    }
+    
+    .FavButton {
+        right: 60px;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobileMenuButton, .mobileMenu {
+        display: none;
+    }
+}
