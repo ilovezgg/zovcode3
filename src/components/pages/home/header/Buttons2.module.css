@@ -6,144 +6,19 @@
     display: flex;
     justify-content: space-around;
 }
-@media (max-width: 480px) {
-    .headerButtons{
-        position: fixed; 
-        width: 45%;
-        z-index: 9999;      
-        display: flex;
-        justify-content: space-around;
-    }
-    .svo{
-        width: 100%;
-        height: 50px;
-        position: fixed;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-        z-index: 100;
-    }
-    .containerButtons{
-        width: 60%;
-        height: 60px;
-        position: fixed;
-        z-index: 2000;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-    .backgroundBlur {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(10px); 
-        z-index: -1;
-    }
-    .catalogButton{
-        width: 18%;
-        height: 30px;
-        background-color: rgb(78, 78, 78);
-        color: white;
-        border-color: transparent;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 10px;
-        transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    .callbackButton{
-        width: 18%;
-        height: 30px;
-        background-color: rgb(78, 78, 78);
-        color: white;
-        border-color: transparent;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 10px;
-        transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    .contactsButton{
-        width: 18%;
-        height: 30px;
-        background-color: rgb(78, 78, 78);
-        color: white;
-        border-color: transparent;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 10px;
-        transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    .aboutusButton{
-        width: 18%;
-        height: 30px;
-        background-color: rgb(78, 78, 78);
-        color: white;
-        border-color: transparent;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 10px;
-        transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        
-    }
-    .mainButton{
-        width: 18%;
-        height: 30px;
-        background-color: rgb(78, 78, 78);
-        color: white;
-        border-color: transparent;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 10px;
-        transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    }
-    .transparentButton {
-        background-color: black;
-        color: white;
-        border: 2px solid rgb(156, 156, 156);; 
-      }
-      .scrollyButton{
-        background: rgba(255, 255, 255, 0.805);
-        transition: all 0.3s ease;
-      }
-  }
 .svo{
     width: 100%;
-    height: 150px;
+    height: 120px;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: transparent;
     z-index: 100;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .containerButtons{
-    width: 60%;
+    width: 100%;
     height: 120px;
     position: fixed;
     z-index: 2000;
@@ -153,21 +28,17 @@
     justify-content: center;
     overflow: hidden;
 }
-.backgroundBlur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(10px); 
-    z-index: -1;
+.svo:not(.scrolled) .backgroundBlur {
+    opacity: 1;
+}
+.svo.scrolled {
+    height: 80px;
+    background-color: rgb(24, 24, 24);
 }
 .catalogButton{
-    width: 18%;
+    width: 10%;
     height: 60px;
-    background-color: rgb(78, 78, 78);
+    background-color: transparent;
     color: white;
     border-color: transparent;
     border-radius: 5px;
@@ -176,13 +47,30 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.signUpButton{
+    width: 20%;
+    height: 60px;
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 600;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .callbackButton{
-    width: 18%;
+    width: 10%;
     height: 60px;
-    background-color: rgb(78, 78, 78);
+    background-color: transparent;
     color: white;
     border-color: transparent;
     border-radius: 5px;
@@ -191,13 +79,14 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .contactsButton{
-    width: 18%;
+    width: 10%;
     height: 60px;
-    background-color: rgb(78, 78, 78);
+    background-color: transparent;
     color: white;
     border-color: transparent;
     border-radius: 5px;
@@ -206,13 +95,14 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 .aboutusButton{
-    width: 18%;
+    width: 10%;
     height: 60px;
-    background-color: rgb(78, 78, 78);
+    background-color: transparent;
     color: white;
     border-color: transparent;
     border-radius: 5px;
@@ -221,14 +111,15 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     
 }
 .mainButton{
-    width: 18%;
+    width: 10%;
     height: 60px;
-    background-color: rgb(78, 78, 78);
+    background-color: transparent;
     color: white;
     border-color: transparent;
     border-radius: 5px;
@@ -237,15 +128,82 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 600;
     transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
-.transparentButton {
-    background-color: black;
-    color: white;
-    border: 2px solid rgb(156, 156, 156);; 
-  }
   .scrollyButton{
     background: rgba(255, 255, 255, 0.805);
     transition: all 0.3s ease;
+    color: black;
   }
+  .favButton {
+    width: 5%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+.heartIcon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+    fill: white; 
+    stroke: white; 
+}
+.heartIcon:hover {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+    fill: transparent; 
+    stroke: white; 
+    stroke-width: 1.5;
+}
+.svo.scrolled .heartIcon {
+    stroke: black;
+    fill: transparent;
+}
+.svo.scrolled .heartIcon:hover{
+    fill: white;
+}
+.profileButton {
+    width: 5%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.profileIcon {
+    width: 35px;
+    height: 35px;
+    transition: all 0.3s ease;
+    fill: white; 
+    stroke: white;
+    stroke-width: 1.5;
+}
+.svo.scrolled .profileIcon {
+    stroke: black;
+    fill: transparent;
+}
+.svo.scrolled .profileIcon:hover {
+    stroke: black;
+    fill: white;
+}
+.profileIcon:hover {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+    fill: transparent; 
+    stroke: white; 
+}

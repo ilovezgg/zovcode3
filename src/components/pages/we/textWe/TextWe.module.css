@@ -7,7 +7,7 @@
 .containerPic{
     width: 100%;
     height: 800px;
-  
+}
 .backgroundPic{
     width: 100%;
     height: 100%;
@@ -20,7 +20,6 @@
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
-}
 .blackCube{
     width: 80%;
     height: 80%;
@@ -29,6 +28,7 @@
     border-radius: 20px;
     display: flex;
     justify-content: space-around;
+    
 }
 .info1{
     width: 33%;
@@ -48,7 +48,7 @@
     width: 100%;
     height: 20%;
     color: white;
-    font-size: 65px;
+    font-size: 75px;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -60,7 +60,8 @@
     color: white;
     font-size: 35px;
     transform: translateX(5%) translateY(5%);
-    font-size: 30px;
+    font-size: 40px;
+    
 }
 .subTitleInfo{
     width: 100%;
@@ -107,8 +108,8 @@
     
     .textInfo {
         width: 100%;
-        font-size: 18px !important;
-        transform: none !important;
+        font-size: 18px ;
+        transform: none ;
         padding: 10px 0;
     }
     

@@ -1,78 +1,89 @@
 import React, { useState, useEffect } from "react";
 import z from "./Buttons2.module.css";
 import { Link } from "react-router-dom";
+
 const Buttons2 = () => {
-  const [isTransparent, setIsTransparent] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isProfileActive, setIsProfileActive] = useState(false); // Добавили состояние для профиля
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 290) {
-        setIsTransparent(true);
-      } else {
-        setIsTransparent(false);
-      }
-
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return (
-    <div className={z.svo}>
-      <div className={z.containerButtons}>
-        <div
-          className={`${z.backgroundBlur} ${isScrolled ? z.scrollyButton : ""}`}
-        ></div>
 
+  return (
+    <div className={`${z.svo} ${isScrolled ? z.scrolled : ""}`}>
+      <div className={z.containerButtons}>
+        <div className={z.backgroundBlur}></div>
+        
         <div className={z.headerButtons}>
-          <Link
-            to="/"
-            className={`${z.mainButton} ${
-              isTransparent ? z.transparentButton : ""
-            }`}
-          >
+          <Link to="/" className={z.mainButton}>
             Главная
           </Link>
-          <Link
-            to="/we"
-            className={`${z.aboutusButton} ${
-              isTransparent ? z.transparentButton : ""
-            }`}
-          >
+          <Link to="/we" className={z.aboutusButton}>
             О нас
           </Link>
-          <Link
-            to="/contacts"
-            className={`${z.contactsButton} ${
-              isTransparent ? z.transparentButton : ""
-            }`}
-          >
+          <Link to="/contacts" className={z.contactsButton}>
             Контакты
           </Link>
-          <Link
-            to="/catalog"
-            className={`${z.catalogButton} ${
-              isTransparent ? z.transparentButton : ""
-            }`}
-          >
+          <Link to="/catalog" className={z.catalogButton}>
             Каталог
           </Link>
-          <Link
-            to="/cabinet"
-            className={`${z.callbackButton} ${
-              isTransparent ? z.transparentButton : ""
-            }`}
-          >
+          <Link to="/cabinet" className={z.callbackButton}>
+            Галерея
+          </Link>
+          <Link to="/signup" className={z.signUpButton}>
             Личный кабинет
+          </Link>
+          <div className={z.rightContainer}>
+
+          </div>
+          <Link 
+            to="/favourites" 
+            className={`${z.favButton} ${isFavorite ? 'active' : ''}`}
+            onClick={() => setIsFavorite(!isFavorite)}
+          >
+            <svg 
+              width="30" 
+              height="30" 
+              viewBox="0 0 24 24" 
+              fill={isFavorite ? "#ff0000" : "none"} 
+              xmlns="http://www.w3.org/2000/svg"
+              className={z.heartIcon}
+            >
+              <path
+                d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+          </Link>
+          <Link 
+            to="/profile" 
+            className={`${z.profileButton} ${isProfileActive ? 'active' : ''}`}
+            onClick={() => setIsProfileActive(!isProfileActive)}
+          >
+            <svg 
+              width="30" 
+              height="30" 
+              viewBox="0 0 24 24" 
+              fill={isProfileActive ? "#4285F4" : "none"} 
+              xmlns="http://www.w3.org/2000/svg"
+              className={z.profileIcon}
+            >
+              <path
+                d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C7.58172 14 4 15.7909 4 18V20H20V18C20 15.7909 16.4183 14 12 14Z"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
           </Link>
         </div>
       </div>

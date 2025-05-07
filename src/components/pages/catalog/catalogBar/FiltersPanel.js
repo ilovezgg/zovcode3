@@ -5,13 +5,14 @@ const FiltersPanel = ({
   onFloorChange, 
   onSizeChange,
   activeFloor,
-  activeSize 
+  activeSize,
+  width = "100%"
 }) => {
   const floorOptions = [1, 1.5, 2];
   const sizeOptions = ['6х6','6х8','6х7.5','6x9','7x9','7.5x8','8x8.5','8x8','8x9','8.5x9','9x9','8x10','10х10'];
 
   return (
-    <div className={z.filtersPanel}>
+    <div className={z.filtersPanel} style={{ width }}>
       <div className={z.filterGroup}>
         <h3>Этажность:</h3>
         <div className={z.buttonsContainer}>

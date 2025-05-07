@@ -17,20 +17,21 @@ const FilterPage = ({
   return (
     <div className={z.main}> 
       <div className={z.filters}>
+        <div className={z.leftPart}>
         <CatalogBar 
           searchTerm={searchTerm}
           onSearch={onSearch} 
         />
         <PriceSlider onPriceChange={onPriceChange} /> 
+        </div>
+        <div className={z.rightPart}>
         <FiltersPanel 
           onFloorChange={onFloorChange}
           onSizeChange={onSizeChange}
           activeFloor={activeFloor}
           activeSize={activeSize}
+          width="100%" 
         />
-        
-        
-       
         <div className={z.buttonsContainer}>
           <button 
             className={z.resetButton}
@@ -40,6 +41,7 @@ const FilterPage = ({
           </button>
           
         </div>
+        </div> 
       </div>
     </div>
   );
