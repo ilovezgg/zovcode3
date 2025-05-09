@@ -12,7 +12,7 @@ const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0); // Прокрутка в начало страницы при изменении маршрута
+    window.scrollTo(0, 0); 
   }, [location.pathname]);
   return (
     <div>

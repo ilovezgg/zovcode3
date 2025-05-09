@@ -5,8 +5,6 @@ import z from "./CatalogMain.module.css";
 
 const CatalogMain = ({ houses = [] }) => {
   const { favorites, toggleFavorite } = useFavorites();
-
-  // Группировка по 3 карточки
   const groupedHouses = [];
   for (let i = 0; i < houses.length; i += 3) {
     groupedHouses.push(houses.slice(i, i + 3));
