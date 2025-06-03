@@ -1,0 +1,210 @@
+.anotherInfo {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+background-color: rgb(87, 87, 87);
+}
+.main{
+    width: 100%;
+    height: 550px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    align-items: center;
+}
+.infoContainer {
+  width: 97%;
+  height: 100%;
+  border: 1px solid white;
+  display: flex;
+}
+.leftPartInfo {
+  width: 50%;
+  border-right: 1px solid white;
+}
+.rightPartInfo {
+  width: 50%;
+}
+.obvyazka {
+  width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+   display: flex;
+}
+.fund {
+  width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+  display: flex;
+}
+.pol {
+  width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+   display: flex;
+}
+.lag {
+  width: 100%;
+  height: 25%;
+   display: flex;
+}
+.fundTitle{
+  width: 50.3%;
+   border-right: 1px solid white;
+    font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.fundSubTitle{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.obvyazkaTitle{
+ width: 50.3%;
+   border-right: 1px solid white;
+  font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.obvyazkaSubTitle{
+ font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.polTitle{
+ width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.polSubTitle{
+ font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.lagTitle{
+ width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.lagSubTitle{
+ font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.floorOne{
+width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+   display: flex;
+}
+.floorOneTitle{
+width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.floorOneSubTitle{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.venz{
+width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+   display: flex;
+}
+.venzTitle{
+width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.venzSubTitle{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.skrep{
+width: 100%;
+  height: 25%;
+  border-bottom: 1px solid white;
+   display: flex;
+}
+.skrepTitle{
+width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.skrepSubTitle{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.ugol{
+width: 100%;
+  height: 25%;
+   display: flex;
+}
+.ugolTitle{
+width: 50.3%;
+   border-right: 1px solid white;
+   font-size: 45px;
+   color: white;
+   display: grid;
+  place-items: center;
+}
+.ugolSubTitle{
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}

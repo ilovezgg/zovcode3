@@ -11,6 +11,8 @@ import SignUp from './components/pages/signup/SignUp';
 import Profile from './components/pages/profile/Profile';
 import Login from './components/pages/login/Login';
 import Preloader from './components/pages/preloader/Preloader';
+import houseData2 from './components/pages/housePages/firstCardHouse/houseData2/houseData2.js'
+import FirstCardHouse from './components/pages/housePages/firstCardHouse/FirstCardHouse';
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
@@ -28,6 +30,8 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Catalog houses={houseData2} />} />
+        <Route path="/house/:id" element={<FirstCardHouse />} />
         </Routes>
       </Router>
       

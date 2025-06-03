@@ -1,15 +1,23 @@
 import React from 'react';
 import { useFavorites } from '../../favourites/FavouritesContext';
+import { useNavigate } from 'react-router-dom';
 import z from './HouseCard.module.css';
 
 const HouseCard = ({ id, image, title, description, price }) => {
   const { favorites, toggleFavorite } = useFavorites();
+  const navigate = useNavigate();
   const isFavorite = favorites.includes(id);
 
- 
+  const handleCardClick = () => {
+    navigate(`/house/${id}`);
+  };
 
   return (
-    <div className={z.card} style={{ position: 'relative' }}> 
+    <div 
+      className={z.card} 
+      style={{ position: 'relative', cursor: 'pointer' }}
+      onClick={handleCardClick}
+    > 
       <div 
         className={z.cardImage}
         style={{ backgroundImage: `url(${image})` }}
@@ -22,30 +30,14 @@ const HouseCard = ({ id, image, title, description, price }) => {
       </div>
 
       <button
-  onClick={(e) => {
-    e.stopPropagation();
-    toggleFavorite(id);
-  }}
-  style={{
-    position: 'absolute',
-    top: '10px',
-    right: '10px',
-    background: 'rgba(255, 255, 255, 0.9)',
-    border: 'none',
-    borderRadius: '50%',
-    width: '32px',
-    height: '32px',
-    fontSize: '20px',
-    cursor: 'pointer',
-    zIndex: 10,
-    color: isFavorite ? 'gold' : 'gray',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }}
->
-  {isFavorite ? '❤️' : '🤍'} {/* Используем эмодзи для гарантии */}
-</button>
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleFavorite(id);
+        }}
+        className={z.favoriteButton}
+      >
+        {isFavorite ? '❤️' : '🤍'}
+      </button>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Buttons2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [isProfileActive, setIsProfileActive] = useState(false); // Добавили состояние для профиля
+  const [isProfileActive, setIsProfileActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
