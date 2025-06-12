@@ -4,7 +4,7 @@ import houseData2 from "./houseData2/houseData2.js";
 import HouseSlider from "./HouseSlider";
 import z from "./FirstCardHouse.module.css";
 import AllPart from './allInfoPart/AllPart.js'
-import Buttons2 from "../../home/header/Buttons2.js";
+import Buttons from "../../home/header/Buttons.js";
 
 const FirstCardHouse = () => {
   const { id } = useParams();
@@ -20,7 +20,7 @@ const FirstCardHouse = () => {
 
   return (
     <div className={z.main}>
-      <Buttons2 />
+      <Buttons />
       <div className={z.sliderContainer}>
         <HouseSlider images={house.image} />
       </div>

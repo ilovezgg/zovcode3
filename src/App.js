@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Добавляем useEffect
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/home/Home';
@@ -13,9 +13,30 @@ import Login from './components/pages/login/Login';
 import Preloader from './components/pages/preloader/Preloader';
 import houseData2 from './components/pages/housePages/firstCardHouse/houseData2/houseData2.js'
 import FirstCardHouse from './components/pages/housePages/firstCardHouse/FirstCardHouse';
+import { supabase } from './components/lib/supabase.js'
 
 function App() {
   const [showPreloader, setShowPreloader] = useState(true);
+
+  useEffect(() => {
+    const keepSupabaseActive = async () => {
+      try {
+        await supabase.from('contacts').select('email').limit(1);
+        console.log('Supabase активен');
+      } catch (error) {
+        console.error('Ошибка проверки Supabase:', error);
+      }
+    };
+
+
+    keepSupabaseActive();
+
+
+    const interval = setInterval(keepSupabaseActive, 5 * 24 * 60 * 60 * 1000);
+
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="App">
@@ -31,7 +52,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Catalog houses={houseData2} />} />
-        <Route path="/house/:id" element={<FirstCardHouse />} />
+          <Route path="/house/:id" element={<FirstCardHouse />} />
         </Routes>
       </Router>
       

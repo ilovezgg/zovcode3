@@ -1,137 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .anotherInfo {
   width: 100%;
-  height: 400px;
+  height: 1100px;
   display: flex;
   justify-content: center;
-  align-items: center; 
-background-color: rgb(87, 87, 87);
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(87, 87, 87);
 }
-.main{
-    width: 100%;
-    height: 550px;
-    background-color: rgb(87, 87, 87);
-    display: flex;
-    align-items: center;
+.contentContainer {
+  position: relative;
+  overflow: hidden;
+  height: 1800px;
+  width: 100%;
+}
+.content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
+.slideInFromRight {
+  transform: translateX(0);
+  opacity: 1;
+  animation: slideInFromRight 0.6s forwards;
+}
+
+.slideInFromLeft {
+  transform: translateX(0);
+  opacity: 1;
+  animation: slideInFromLeft 0.6s forwards;
+}
+
+.slideOutToLeft {
+  animation: slideOutToLeft 0.6s forwards;
+}
+
+.slideOutToRight {
+  animation: slideOutToRight 0.6s forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.title {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  font-family: "Bounded";
+  transform: translateX(1%);
+}
+.main {
+  width: 100%;
+  height: 1300px;
+  background-color: rgb(87, 87, 87);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .infoContainer {
   width: 97%;
   height: 100%;
-  border: 1px solid white;
-  display: flex;
+  display: grid;
+  align-items: stretch;
+  padding: 1%;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  grid-auto-rows: minmax(100px, auto);
+  background-color: rgb(51, 51, 51);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  align-items: center;
 }
+
 .leftPartInfo {
-  width: 50%;
-  border-right: 1px solid white;
+  width: 40%;
+  display: contents;
+  gap: 15px;
 }
 .rightPartInfo {
-  width: 50%;
+  width: 40%;
+  display: contents;
+  flex-direction: column;
+  gap: 15px;
 }
 .obvyazka {
   width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
-   display: flex;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
 }
 .fund {
   width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
+  height: 100%;
   display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
 }
 .pol {
   width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
-   display: flex;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
 }
 .lag {
   width: 100%;
-  height: 25%;
-   display: flex;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
 }
-.fundTitle{
+.fundTitle {
   width: 50.3%;
-   border-right: 1px solid white;
-    font-size: 45px;
-   color: white;
-   display: grid;
-  place-items: center;
-}
-.fundSubTitle{
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  width: 49.7%;
-  font-weight: 600;
-  display: grid;
-  place-items: center;
-}
-.obvyazkaTitle{
- width: 50.3%;
-   border-right: 1px solid white;
+  border-radius: 15px;
   font-size: 45px;
-   color: white;
-   display: grid;
-  place-items: center;
-}
-.obvyazkaSubTitle{
- font-size: 30px;
   color: white;
-  text-align: center;
-  width: 49.7%;
-  font-weight: 600;
   display: grid;
   place-items: center;
 }
-.polTitle{
- width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
-  place-items: center;
-}
-.polSubTitle{
- font-size: 30px;
-  color: white;
-  text-align: center;
-  width: 49.7%;
-  font-weight: 600;
-  display: grid;
-  place-items: center;
-}
-.lagTitle{
- width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
-  place-items: center;
-}
-.lagSubTitle{
- font-size: 30px;
-  color: white;
-  text-align: center;
-  width: 49.7%;
-  font-weight: 600;
-  display: grid;
-  place-items: center;
-}
-.floorOne{
-width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
-   display: flex;
-}
-.floorOneTitle{
-width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
-  place-items: center;
-}
-.floorOneSubTitle{
+.fundSubTitle {
   font-size: 30px;
   color: white;
   text-align: center;
@@ -140,21 +198,16 @@ width: 50.3%;
   display: grid;
   place-items: center;
 }
-.venz{
-width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
-   display: flex;
-}
-.venzTitle{
-width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
+.obvyazkaTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
   place-items: center;
 }
-.venzSubTitle{
+
+.obvyazkaSubTitle {
   font-size: 30px;
   color: white;
   text-align: center;
@@ -163,21 +216,15 @@ width: 50.3%;
   display: grid;
   place-items: center;
 }
-.skrep{
-width: 100%;
-  height: 25%;
-  border-bottom: 1px solid white;
-   display: flex;
-}
-.skrepTitle{
-width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
+.polTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
   place-items: center;
 }
-.skrepSubTitle{
+.polSubTitle {
   font-size: 30px;
   color: white;
   text-align: center;
@@ -186,20 +233,15 @@ width: 50.3%;
   display: grid;
   place-items: center;
 }
-.ugol{
-width: 100%;
-  height: 25%;
-   display: flex;
-}
-.ugolTitle{
-width: 50.3%;
-   border-right: 1px solid white;
-   font-size: 45px;
-   color: white;
-   display: grid;
+.lagTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
   place-items: center;
 }
-.ugolSubTitle{
+.lagSubTitle {
   font-size: 30px;
   color: white;
   text-align: center;
@@ -207,4 +249,522 @@ width: 50.3%;
   font-weight: 600;
   display: grid;
   place-items: center;
+}
+.floorOne {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.floorOneTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.floorOneSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.venz {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.venzTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.venzSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.skrep {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.skrepTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.skrepSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.ugol {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.ugolTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.ugolSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.pereg {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.peregTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.peregSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.windows {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.windowsTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.windowsSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.strop {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.stropTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.stropSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.front {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.frontTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.frontSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.ondulin {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.ondulinTitle {
+  width: 50.3%;
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.ondulinSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.time {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.timeTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.timeSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.usadka {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.usadkaTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.usadkaSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.sborka {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  display: flex;
+}
+.sborkaTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.sborkaSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.oplata {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.oplataTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.oplataSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.dostavka {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+}
+.dostavkaTitle {
+  width: 50.3%;
+
+  font-size: 45px;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.dostavkaSubTitle {
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 49.7%;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+}
+.firstTitle{
+ color: white;
+ font-size: 45px;
+ transform: translateX(1%);
+  font-family: "Bounded";
+  padding-bottom: 15px;
+}
+.bigContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.containerForPics{
+width: 97%;
+height: 600px;
+display: flex;
+justify-content: space-around;
+background-color: rgb(51, 51, 51);
+align-items: center;
+border-radius: 15px;
+}
+.garantySrub{
+width: 25%;
+height: 95%;
+background-image: url(./picall/klen.jpeg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+justify-content: end;
+align-items: center;
+}
+.garantyProtek{
+width: 25%;
+height: 95%;
+background-image: url(./picall/krysa-i-oblaka-sovremennogo-doma-s-nizkim-uglom.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+border-radius: 15px;
+display: flex;
+flex-direction: column;
+justify-content: end;
+align-items: center;
+}
+.titleSrub{
+ width: 90%;
+font-size: 35px;
+ font-family: "Bounded";
+ color: white;
+}
+.titleProtek{
+   width: 90%;
+font-size: 35px;
+ font-family: "Bounded";
+ color: white;
+}
+.textProtek{
+   width: 90%;
+font-size: 25px;
+color: white;
+font-weight: 600;
+}
+.textSrub{
+   width: 90%;
+font-size: 25px;
+color: white;
+font-weight: 600;
+}
+.containerForTextBig{
+  width: 40%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+}
+.textBig{
+  width: 100%;
+  height: 18%;
+   font-family: "Bounded";
+   font-size: 35px;
+color: white;
+ background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  text-align: center;
+   overflow: hidden; 
+  transition: height 0.5s ease, padding 0.3s ease; 
+  position: relative; 
+  cursor: pointer; 
+  box-sizing: border-box; 
+   transform: translateZ(0);
+}
+.textBig:hover {
+  height: 100%; 
+}
+.textBig::after {
+  content: "Гарантия вступает в силу с момента полной оплаты договорной стоимости окончания работ по Договору и не распространяются на ущерб, нанесённый третьими лицами, либо Заказчиком, вследствие изменения проекта и при неправильной эксплуатации сооружения";
+  display: block;
+  font-size: 35px; 
+  opacity: 0;
+  margin: 20px auto 0; 
+  transition: opacity 0.3s ease 0.1s; 
+  margin-top: 20px;
+  line-height: 1.5;
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  width: 96%;
+text-align: center; 
+  box-sizing: border-box;
+}
+.textBig:hover::after {
+  opacity: 1; 
+}
+.textBig > div {
+  transition: transform 0.3s ease;
+}
+.textBig:hover > div {
+  transform: translateY(0); 
 }
