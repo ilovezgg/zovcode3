@@ -14,8 +14,9 @@ import Preloader from './components/pages/preloader/Preloader';
 import houseData2 from './components/pages/housePages/firstCardHouse/houseData2/houseData2.js'
 import FirstCardHouse from './components/pages/housePages/firstCardHouse/FirstCardHouse';
 import { supabase } from './components/lib/supabase.js'
-
+import useSmoothScroll from './components/smoothScroll/useSmoothScroll.js';
 function App() {
+   useSmoothScroll();
   const [showPreloader, setShowPreloader] = useState(true);
 
   useEffect(() => {
