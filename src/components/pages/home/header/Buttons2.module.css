@@ -1,12 +1,13 @@
-
-.headerButtons{
+/* Основные стили шапки */
+.headerButtons {
     position: fixed; 
     width: 45%;
     z-index: 9999;      
     display: flex;
     justify-content: space-around;
 }
-.svo{
+
+.svo {
     width: 100%;
     height: 120px;
     position: fixed;
@@ -17,7 +18,8 @@
     z-index: 100;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.containerButtons{
+
+.containerButtons {
     width: 100%;
     height: 120px;
     position: fixed;
@@ -28,15 +30,20 @@
     justify-content: center;
     overflow: hidden;
 }
+
 .svo:not(.scrolled) .backgroundBlur {
     opacity: 1;
 }
+
+/* Стили для скролла (только десктоп) */
 .svo.scrolled {
     height: 80px;
     background-color: rgb(24, 24, 24);
 }
-.catalogButton{
-    width: 10%;
+
+/* Стили кнопок */
+.catalogButton, .signUpButton, .callbackButton, 
+.contactsButton, .aboutusButton, .mainButton {
     height: 60px;
     background-color: transparent;
     color: white;
@@ -49,96 +56,23 @@
     cursor: pointer;
     font-size: 30px;
     font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.signUpButton{
-    width: 20%;
-    height: 60px;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.callbackButton{
-    width: 10%;
-    height: 60px;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.contactsButton{
-    width: 10%;
-    height: 60px;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.aboutusButton{
-    width: 10%;
-    height: 60px;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    
-}
-.mainButton{
-    width: 10%;
-    height: 60px;
-    background-color: transparent;
-    color: white;
-    border-color: transparent;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    font-size: 30px;
-    font-weight: 600;
-    transition: opacity 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-  .scrollyButton{
-    background: rgba(255, 255, 255, 0.805);
     transition: all 0.3s ease;
+}
+
+.mainButton { width: 10%; }
+.catalogButton { width: 10%; }
+.signUpButton { width: 20%; }
+.callbackButton { width: 10%; }
+.contactsButton { width: 10%; }
+.aboutusButton { width: 10%; }
+
+.scrollyButton {
+    background: rgba(255, 255, 255, 0.805);
     color: black;
-  }
-  .favButton {
-    width: 5%;
+}
+
+/* Стили иконок */
+.favButton, .profileButton {
     height: 60px;
     display: flex;
     justify-content: center;
@@ -150,60 +84,206 @@
     transition: all 0.3s ease;
     padding: 0;
 }
+
+.favButton { width: 5%; }
+.profileButton { width: 5%; }
+
+.heartIcon, .profileIcon {
+    transition: all 0.3s ease;
+}
+
 .heartIcon {
     width: 30px;
     height: 30px;
-    transition: all 0.2s ease;
     fill: white; 
     stroke: white; 
 }
-.heartIcon:hover {
-    width: 30px;
-    height: 30px;
-    transition: all 0.2s ease;
-    fill: transparent; 
-    stroke: white; 
-    stroke-width: 1.5;
-}
-.svo.scrolled .heartIcon {
-    stroke: black;
-    fill: transparent;
-}
-.svo.scrolled .heartIcon:hover{
-    fill: white;
-}
-.profileButton {
-    width: 5%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+
 .profileIcon {
     width: 35px;
     height: 35px;
-    transition: all 0.3s ease;
     fill: white; 
     stroke: white;
     stroke-width: 1.5;
 }
+
+.svo.scrolled .heartIcon,
 .svo.scrolled .profileIcon {
     stroke: black;
     fill: transparent;
 }
-.svo.scrolled .profileIcon:hover {
-    stroke: black;
-    fill: white;
+
+
+.hamburger {
+    display: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    margin-left: 15px;
+    margin-top: 20px;
 }
-.profileIcon:hover {
-    width: 30px;
-    height: 30px;
-    transition: all 0.2s ease;
-    fill: transparent; 
-    stroke: white; 
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 8px; }
+.hamburger span:nth-child(2) { top: 18px; }
+.hamburger span:nth-child(3) { top: 28px; }
+
+.hamburger.active span:nth-child(1) {
+    top: 18px;
+    transform: rotate(135deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+    top: 18px;
+    transform: rotate(-135deg);
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.5s ease, height 0s 0.5s;
+}
+
+.overlay.active {
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.mobileMenu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: #f0f0f0;
+    z-index: 999;
+    overflow-y: auto;
+    transition: left 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobileMenu.active {
+    left: 0;
+}
+
+.mobileMenuContent {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    height: 100%;
+}
+
+.mobileMenuButton {
+    width: 100%;
+    padding: 15px 0;
+    margin: 10px 0;
+    font-size: 22px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.mobileMenuButton:hover {
+    background-color: #e0e0e0;
+    padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .headerButtons {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .svo, .containerButtons {
+        height: 70px;
+    }
+
+    .svo.scrolled {
+        height: 70px !important;
+        background-color: transparent !important;
+    }
+    
+    .svo.scrolled .heartIcon,
+    .svo.scrolled .profileIcon,
+    .svo.scrolled .hamburger span {
+        stroke: white !important;
+        fill: transparent;
+        background: white !important;
+    }
+    
+
+    .catalogButton, .signUpButton, 
+    .callbackButton, .contactsButton, 
+    .aboutusButton, .mainButton {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+
+    .favButton, .profileButton {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .heartIcon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .profileIcon {
+        width: 30px;
+        height: 30px;
+    }
+    
+
+    .svo {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .mobileMenu {
+        background: #333;
+    }
+    
+    .mobileMenuButton {
+        color: #f0f0f0;
+        border-bottom: 1px solid #444;
+    }
+    
+    .mobileMenuButton:hover {
+        background-color: #444;
+    }
 }
