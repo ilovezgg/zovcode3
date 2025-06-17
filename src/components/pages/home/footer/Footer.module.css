@@ -141,3 +141,98 @@
     justify-content: left;
     font-size: 40px;
 }
+@media(max-width:393px){
+/* Основные стили футера */
+.footerBackground {
+  width: 100%;
+  background-color: rgb(87, 87, 87);
+  display: flex;
+  justify-content: center; /* Центрируем содержимое */
+  align-items: flex-end;
+  padding-top: 50px; /* Отступ сверху (если нужно) */
+}
+
+.footerMain {
+  width: 100%;
+  max-width: 1200px; /* Ограничиваем ширину (опционально) */
+  background-color: #181818;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px; /* Внутренние отступы */
+}
+
+/* Контейнер для ссылок */
+.footLeft {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Стили для блока ссылок */
+.urls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 10px; /* Чтобы ссылки не прилипали к краям */
+}
+
+/* Стили для каждой ссылки */
+.mainPageUrl,
+.aboutUsPageUrl,
+.catalogPageUrl,
+.callbackPageUrl,
+.contactsPageUrl {
+  width: 100%;
+  max-width: 500px; /* Фиксируем максимальную ширину */
+  height: 45px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Эффект при наведении (опционально) */
+.mainPageUrl:hover,
+.aboutUsPageUrl:hover,
+.catalogPageUrl:hover,
+.callbackPageUrl:hover,
+.contactsPageUrl:hover {
+  transform: scale(1.02);
+}
+
+/* Блок с картой */
+.map {
+  width: 100%;
+  max-width: 500px; /* Можно регулировать */
+  height: 200px;
+  margin-top: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимация появления карты */
+.mapVisible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Скрываем ненужные блоки */
+.infoFooter,
+.footRight {
+  display: none;
+}
+}

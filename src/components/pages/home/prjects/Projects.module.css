@@ -440,7 +440,7 @@ height: 100%;
     padding: 0 1%;
 }
 .bottomContainer{
-    width: 100%;
+    width: 96%;
     height: 40%;
     display: flex;
     justify-content: center;
@@ -489,12 +489,10 @@ height: 100%;
     justify-content: center;
     font-size: 24px;
     color: white;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-top: 80px;
     cursor: pointer;
     user-select: none;
-    
-    /* Только эти свойства будут анимироваться */
     transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
@@ -683,26 +681,6 @@ height: 100%;
     transition: color 0.5s ease-in-out 0.2s; 
     cursor: pointer;
 }
-.containerButton::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255); 
-    clip-path: polygon(0 0, 0 100%, 0% 100%, 0 0); 
-    transition: clip-path 0.5s ease-in-out;
-    z-index: -1; 
-    color: rgb(35, 35, 35);
-  }
-  
-  .containerButton:hover::before {
-    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); 
-  }
-  .containerButton:hover {
-    color: rgb(35, 35, 35); 
-}
 .buttonsContainer{
     width: 100%; 
         height: 170px;
@@ -721,10 +699,11 @@ height: 100%;
     padding: 0 1%;
 }
 .bottomContainer{
-    width: 100%;
+    width: 96%;
     height: 40%;
     display: flex;
     justify-content: center;
+    margin: 0 auto; 
     color: white;
 }
 .buttonRight{
@@ -770,12 +749,10 @@ height: 100%;
     justify-content: center;
     font-size: 24px;
     color: white;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-top: 80px;
     cursor: pointer;
     user-select: none;
-    
-    /* Только эти свойства будут анимироваться */
     transition: transform 0.1s ease, background-color 0.1s ease;
 }
 

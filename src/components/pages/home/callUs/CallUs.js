@@ -19,8 +19,12 @@ const CallUs = () => {
         </div>
         <div className={z.callUsRight}>
           <div className={z.callUsForms}>
-            <PhoneInput />
-            <PhoneInput />
+            <div className={z.inputOne}>
+<PhoneInput />
+            </div>
+            <div className={z.inputTwo}>
+<PhoneInput />
+            </div>     
           </div>
           <div className={z.callUsButton}>
             <button className={z.callUsSubmit}>Заказать звонок</button>
