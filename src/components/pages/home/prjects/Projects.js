@@ -27,31 +27,18 @@ const Projects = () => {
         </div>
         
         <div className={z.totalContainer}>
-
           {isMobile ? (
-            <>
-              <div className={z.containerProjects}>
-                {projects.slice(0, 2).map((project) => (
+            <div className={z.mobileProjectsContainer}>
+              {projects.map((project) => (
+                <div key={project.id} className={z.mobileProjectRow}>
                   <ProjectCard 
-                    key={project.id} 
                     project={project} 
                     onDetailsClick={handleDetailsClick}
                     isMobile={true}
                   />
-                ))}
-              </div>
-
-              <div className={z.secondContainer}>
-                {projects.slice(2, 4).map((project) => (
-                  <ProjectCard 
-                    key={project.id} 
-                    project={project} 
-                    onDetailsClick={handleDetailsClick}
-                    isMobile={true}
-                  />
-                ))}
-              </div>
-            </>
+                </div>
+              ))}
+            </div>
           ) : (
             <>
               <div className={z.containerProjects}>

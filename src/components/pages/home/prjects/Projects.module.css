@@ -265,6 +265,10 @@
     scrollbar-width: none; 
     -ms-overflow-style: none; 
   }
+.mobileProjectRow{
+    width: 100%;
+  flex: 1;
+}
 .projectsTitle{
     width: 95%;
     height: 2%;
@@ -278,82 +282,89 @@
 }
 .mainProjects{
     width: 100%;
-    height: 1100px;
+    height: auto;
     background-color: rgb(87, 87, 87);
     display: flex;
     flex-direction: column;
+    padding: 0;
 }
 .containerProjects {
   width: 92%;
-    height: 300px;
+    height: 500px;
     display: flex;
 justify-content: center;
 gap: 20px;
 }
 .containerWith {
-        width: 50%; 
-        height: 170px;
+        width: 99%; 
+        height: 300px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-         flex-shrink: 0;
+        padding: 0 10px;
 }
+.mobileProjectsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
 .secondContainer{
     width: 92%;
-    height: 300px;
+     height: auto;
     display: flex;
 justify-content: center;
-gap: 20px;
+gap: 30px;
 }
 .totalContainer {
     width: 100%;
-     height: 1200px;
+    height: 1800px;
     display: flex;
     flex-direction: column;
     align-items: center; 
     gap: 80px;
-    
+    transform: translateY(1%);
 }
 
 .picIn2{
     width: 100%;
     height: 100%;
-    background-image: url(../header/img/2.jpg);
+    background-image: url(./imgprojects/11111.png);
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 15px;
     background-position: center;
      object-fit: cover;
-      flex-shrink: 0;
+  
 }
 .picIn3{
     width: 100%;
     height: 100%;
-    background-image: url(../header/img/3.jpg);
+    background-image: url(./imgprojects/22222.png);
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 15px;
     background-position: center;
     object-fit: cover;
-      flex-shrink: 0;
+  
 }
 .picIn4{
     width: 100%;
   height: 100%;
-    background-image: url(../header/img/4.jpg);
+    background-image: url(./imgprojects/33333.png);
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 15px;
     background-position: center;
     object-fit: cover;
-      flex-shrink: 0;
+ 
 }
 .picIn5{
     width: 100%;
 height: 100%;
- background-image: url(../header/img/5.jpg);
+ background-image: url(./imgprojects/44444.png);
  background-size: cover;
- border-radius: 20px;
+ border-radius: 15px;
  background-position: center;
  object-fit: cover;
-      flex-shrink: 0;
+   
 }
 .textTitleContainer{
     width: 100%;
@@ -522,10 +533,18 @@ height: 100%;
 }
 }
 @media (hover: none) {
-    .bigButton {
-        transition: none; 
-    }
-    .bigButton:active {
-        transform: scale(0.95); 
-    }
+  .containerButton:hover::before,
+  .containerButton:hover,
+  .buttonTitleSecond:hover,
+  .bigButton:hover {
+    clip-path: none !important;
+    color: inherit !important;
+    background-color: transparent !important;
+    transform: none !important;
+  }
+
+  .containerButton,
+  .bigButton {
+    cursor: default !important;
+  }
 }
