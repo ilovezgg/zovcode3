@@ -119,3 +119,119 @@
     font-size: 50px;
     transform: translateX(3%) translateY(3%);
   }
+@media (max-width:393px){
+
+.callUsBackground {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(87, 87, 87);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .callUsMain {
+    width: 96%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .callUsLeft {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .callUsRight {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-30px);
+  }
+ .callUsInput{
+   width: 100%;
+   height: 20%;
+   padding: 10px;
+   border: none;
+   border-radius: 10px;
+   outline: none;
+   text-transform: uppercase;
+   font-size: 20px;
+   background-color: rgb(221, 221, 221);
+   border-radius: 30px;
+   letter-spacing: 1.5px;
+ }
+  .callUsForms{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .callUsButton{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0; 
+    margin: 0; 
+  }
+  .callUsSubmit {
+    height:40%;
+    border-radius: 30px;
+    flex-grow: 1;
+    border-color: transparent;
+    background-color: rgb(35, 35, 35);
+    font-size: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.5s ease-in-out 0.2s;
+    
+  }
+  .callUsSubmit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    clip-path: polygon(0 0, 0 100%, 0% 100%, 0 0);
+    transition: clip-path 0.5s ease-in-out;
+    z-index: -1;
+  }
+  
+  .callUsSubmit:hover::before {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+  
+  .callUsSubmit:hover {
+    color: rgb(35, 35, 35);
+  }
+  .titleCallUs{
+    width: 80%;
+    height: 20%;
+    font-weight: 600;
+     font-size: 20px;
+    transform: translateX(3%) translateY(10%);
+  }
+  .textCallUs{
+    width: 80%;
+    height: 20%;
+     font-size: 20px;
+    transform: translateX(3%) translateY(10%);
+  }
+}

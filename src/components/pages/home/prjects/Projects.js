@@ -13,10 +13,10 @@ const Projects = () => {
   const handleDetailsClick = () => navigate('/catalog'); 
 
   const projects = [
-    { id: 1, image: z.picIn2, title: "Дом 48", size: "6х6", floors: 2 },
-    { id: 2, image: z.picIn3, title: "Дом 48", size: "6х6", floors: 2 },
-    { id: 3, image: z.picIn4, title: "Дом 48", size: "6х6", floors: 2 },
-    { id: 4, image: z.picIn5, title: "Дом 48", size: "6х6", floors: 1 },
+    { id: 1, image: z.picIn2, title: "Проект Д2", size: "6х6", floors: 2 },
+    { id: 2, image: z.picIn3, title: "Проект Д5", size: "6х6", floors: 2 },
+    { id: 3, image: z.picIn4, title: "Проект Д7", size: "6х6", floors: 2 },
+    { id: 4, image: z.picIn5, title: "Проект Д12", size: "6х6", floors: 1 },
   ];
 
   return (

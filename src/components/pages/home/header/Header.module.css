@@ -61,7 +61,67 @@
     align-items:start;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 393px) {
+   .mainHeaderBackground{
+    width: 100%;
+      height: 350px;
+       background-color: rgb(87, 87, 87);
+    position: relative; 
+    z-index: -1; 
+}
+.mainHeader{
+    width: 100%;
+    height: 350px;
+    background-image: url(../../cabinet/img/dom77\ \(1\).jpg);
+    background-size: cover;
+
+    background-position: center center;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    align-items: end;
+    position: relative;
+    z-index: 10;
+   
+    
+}
+.mainHeader:before {
+	display: block;
+    z-index: 100;
+	width: 100%;
+	height: 980px;
+	position: absolute;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:rgba(0, 0, 0, 0.164);
+}
+.headerTitle{
+    width: 90%;
+    height: 38%;
+    color: white;
+    font-size: 20px;  
+    text-align: left;
+    margin-left: 20px;
+    font-weight: 600;  
+    position: absolute;
+    font-family: 'Bounded';
+
+}
+.mainHeaderTwo{
+    width: 100%;
+    height: 980px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+    border-radius: 20px;
+}
+}
+@media(max-width: 480px) {
    .mainHeaderBackground{
     width: 100%;
       height: 350px;

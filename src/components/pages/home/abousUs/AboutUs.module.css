@@ -36,7 +36,7 @@
     justify-content: space-around;
     align-items: center;
 }
-@media (max-width: 768px){
+@media (max-width: 393px){
     .aboutUsMain{
     width: 100%;
     height: 450px;
@@ -78,3 +78,46 @@
     align-items: center;
 }
 }
+@media (max-width: 480px){
+    .aboutUsMain{
+    width: 100%;
+    height: 450px;
+    background-color: rgb(87, 87, 87);
+}
+.pic{
+    width: 95%;
+    height: 240px;
+    background-image: url(../header/img/house444\ \(1\).jpg);
+    background-size: cover;
+    border-radius: 30px;
+    background-position: center center;
+    transform: translateY(-12%);
+}
+.textAbout{
+    width: 95%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+.titleAbout{
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+}
+.textOne{
+    transform: translateY(5%);
+    font-size: 18px ;
+}
+
+.container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+}
+

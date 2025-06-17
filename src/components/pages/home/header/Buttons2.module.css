@@ -1,4 +1,4 @@
-/* Основные стили шапки */
+
 .headerButtons {
     position: fixed; 
     width: 45%;
@@ -35,13 +35,13 @@
     opacity: 1;
 }
 
-/* Стили для скролла (только десктоп) */
+
 .svo.scrolled {
     height: 80px;
     background-color: rgb(24, 24, 24);
 }
 
-/* Стили кнопок */
+
 .catalogButton, .signUpButton, .callbackButton, 
 .contactsButton, .aboutusButton, .mainButton {
     height: 60px;
@@ -71,7 +71,6 @@
     color: black;
 }
 
-/* Стили иконок */
 .favButton, .profileButton {
     height: 60px;
     display: flex;
@@ -214,7 +213,7 @@
     padding-left: 15px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 393px) {
     .headerButtons {
         width: 100%;
         justify-content: space-between;
@@ -271,7 +270,63 @@
         backdrop-filter: blur(10px);
     }
 }
+@media (max-width: 480px) {
+    .headerButtons {
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .svo, .containerButtons {
+        height: 70px;
+    }
 
+    .svo.scrolled {
+        height: 70px !important;
+        background-color: transparent !important;
+    }
+    
+    .svo.scrolled .heartIcon,
+    .svo.scrolled .profileIcon,
+    .svo.scrolled .hamburger span {
+        stroke: white !important;
+        fill: transparent;
+        background: white !important;
+    }
+    
+
+    .catalogButton, .signUpButton, 
+    .callbackButton, .contactsButton, 
+    .aboutusButton, .mainButton {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+
+    .favButton, .profileButton {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .heartIcon {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .profileIcon {
+        width: 30px;
+        height: 30px;
+    }
+    
+
+    .svo {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     .mobileMenu {

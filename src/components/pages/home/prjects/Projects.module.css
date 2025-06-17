@@ -257,7 +257,7 @@
 .buttonTitleSecond:hover {
     color: rgb(35, 35, 35); 
 }
-@media (max-width:768px){
+@media (max-width:393px){
 ::-webkit-scrollbar {
     display: none; 
   }
@@ -271,7 +271,7 @@
 }
 .projectsTitle{
     width: 95%;
-    height: 2%;
+    height: 4%;
     padding-top: 5%;
     font-size: 24px;
     font-weight: bold;
@@ -282,26 +282,31 @@
 }
 .mainProjects{
     width: 100%;
-    height: auto;
+    height: 1750px;
     background-color: rgb(87, 87, 87);
     display: flex;
     flex-direction: column;
     padding: 0;
 }
 .containerProjects {
-  width: 92%;
+  width: 100%;
     height: 500px;
     display: flex;
 justify-content: center;
+align-items: center;
 gap: 20px;
 }
 .containerWith {
-        width: 99%; 
+        width: 96%; 
         height: 300px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        padding: 0 10px;
+         margin: 0 auto;
+         background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2)
 }
 .mobileProjectsContainer {
     display: flex;
@@ -310,10 +315,11 @@ gap: 20px;
     width: 100%;
   }
 .secondContainer{
-    width: 92%;
+    width: 100%;
      height: auto;
     display: flex;
 justify-content: center;
+align-items: center;
 gap: 30px;
 }
 .totalContainer {
@@ -334,7 +340,7 @@ gap: 30px;
     border-radius: 15px;
     background-position: center;
      object-fit: cover;
-  
+     display: block;
 }
 .picIn3{
     width: 100%;
@@ -371,18 +377,19 @@ height: 100%;
     font-size: 28px;
     color: white;
     margin-left: 15px;
-    text-align: center;
+    text-align: left;
+    font-weight: 600;
     text-transform: uppercase;
 }
 .textContainer{
-    font-size: 22px;
+    font-size: 25px;
     margin-left: 15px;
     color: white;
 }
 .containerButton{
-    width: 100%;
+    width: 95%;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 15px;
     border-color: transparent;
     background-color: rgb(35, 35, 35);
     font-size: 24px;
@@ -391,10 +398,290 @@ height: 100%;
     position: relative;
     overflow: hidden;
     z-index: 1;
+    transform: translateX(1%) translateY(-15%);
     transition: color 0.5s ease-in-out 0.2s; 
     cursor: pointer;
-     min-width: 150px;
-     min-height: 30px;
+}
+.containerButton::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); 
+    clip-path: polygon(0 0, 0 100%, 0% 100%, 0 0); 
+    transition: clip-path 0.5s ease-in-out;
+    z-index: -1; 
+    color: rgb(35, 35, 35);
+  }
+  
+  .containerButton:hover::before {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0); 
+  }
+  .containerButton:hover {
+    color: rgb(35, 35, 35); 
+}
+.buttonsContainer{
+    width: 100%; 
+        height: 170px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+         flex-shrink: 0;
+}
+.upContainer{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 0 1%;
+}
+.bottomContainer{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.buttonRight{
+   width: 50%; 
+    height: 170px; 
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+
+}
+.buttonLeft{
+ width: 50%; 
+    height: 170px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+ 
+}
+.buttonTitleUp{
+    font-size: 25px;
+    color: rgb(75, 75, 75);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.buttonTitleBottom{
+    font-size: 25px;
+    color: rgb(37, 37, 37);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.bigButton {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(45, 45, 45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    border-radius: 20px;
+    margin-top: 80px;
+    cursor: pointer;
+    user-select: none;
+    
+    /* Только эти свойства будут анимироваться */
+    transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+.buttonTitleSecond{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+    z-index: 1;
+    transition: color 0.2s ease-in-out 0.1s;
+}
+.buttonTitleSecond:hover {
+    color: rgb(35, 35, 35); 
+}
+.buttonTitleDesktop {
+    display: none  ;
+  }
+  .bigButton:active {
+    transform: scale(0.98);
+    background-color: rgb(65, 65, 65);
+}
+  .buttonTitleMobile {
+    display: block ; 
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin-top: 8px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+  }
+
+  .buttonRight,
+  .buttonLeft {
+    height: 170px;
+    width: 100%;
+  }
+  .bigButton * {
+    pointer-events: none; 
+}
+}
+@media (max-width:480px){
+::-webkit-scrollbar {
+    display: none; 
+  }
+  html {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+.mobileProjectRow{
+    width: 100%;
+  flex: 1;
+}
+.projectsTitle{
+    width: 95%;
+    height: 4%;
+    padding-top: 5%;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.mainProjects{
+    width: 100%;
+    height: 1750px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.containerProjects {
+  width: 100%;
+    height: 500px;
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+}
+.containerWith {
+        width: 96%; 
+        height: 300px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+         margin: 0 auto;
+         background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2)
+}
+.mobileProjectsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+.secondContainer{
+    width: 100%;
+     height: auto;
+    display: flex;
+justify-content: center;
+align-items: center;
+gap: 30px;
+}
+.totalContainer {
+    width: 100%;
+    height: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 80px;
+    transform: translateY(1%);
+}
+
+.picIn2{
+    width: 100%;
+    height: 100%;
+    background-image: url(./imgprojects/11111.png);
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+     object-fit: cover;
+     display: block;
+}
+.picIn3{
+    width: 100%;
+    height: 100%;
+    background-image: url(./imgprojects/22222.png);
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+    object-fit: cover;
+  
+}
+.picIn4{
+    width: 100%;
+  height: 100%;
+    background-image: url(./imgprojects/33333.png);
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+    object-fit: cover;
+ 
+}
+.picIn5{
+    width: 100%;
+height: 100%;
+ background-image: url(./imgprojects/44444.png);
+ background-size: cover;
+ border-radius: 15px;
+ background-position: center;
+ object-fit: cover;
+   
+}
+.textTitleContainer{
+    width: 100%;
+    font-size: 28px;
+    color: white;
+    margin-left: 15px;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.textContainer{
+    font-size: 25px;
+    margin-left: 15px;
+    color: white;
+}
+.containerButton{
+    width: 95%;
+    height: 50px;
+    border-radius: 15px;
+    border-color: transparent;
+    background-color: rgb(35, 35, 35);
+    font-size: 24px;
+    color: white;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transform: translateX(1%) translateY(-15%);
+    transition: color 0.5s ease-in-out 0.2s; 
+    cursor: pointer;
 }
 .containerButton::before {
     content: "";
