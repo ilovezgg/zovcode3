@@ -47,7 +47,7 @@
       opacity: 0; 
     }
   }
-@media (min-width:393px){
+@media (max-width:393px){
   .phone {
     display: flex;
     align-items: center;
@@ -61,7 +61,7 @@
   position: relative;
 }
 }
-@media (min-width:480px){
+@media (max-width:480px){
   .phone {
     display: flex;
     align-items: center;
