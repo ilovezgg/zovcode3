@@ -141,98 +141,221 @@
     justify-content: left;
     font-size: 40px;
 }
-@media(max-width:393px){
-/* Основные стили футера */
-.footerBackground {
-  width: 100%;
-  background-color: rgb(87, 87, 87);
-  display: flex;
-  justify-content: center; /* Центрируем содержимое */
-  align-items: flex-end;
-  padding-top: 50px; /* Отступ сверху (если нужно) */
-}
+@media (max-width: 393px) {
+  .footerBackground {
+    width: 100%;
+ height: 500px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
-.footerMain {
-  width: 100%;
-  max-width: 1200px; /* Ограничиваем ширину (опционально) */
-  background-color: #181818;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 20px; /* Внутренние отступы */
-}
+  .footerMain {
+    width: 100%;
+    height: 500px;
+    background-color: #181818;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-/* Контейнер для ссылок */
-.footLeft {
+  .footLeft, .infoFooter, .urls {
+    display: none;
+  }
+.footRight{
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-/* Стили для блока ссылок */
-.urls {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 0 10px; /* Чтобы ссылки не прилипали к краям */
-}
-
-/* Стили для каждой ссылки */
-.mainPageUrl,
-.aboutUsPageUrl,
-.catalogPageUrl,
-.callbackPageUrl,
-.contactsPageUrl {
-  width: 100%;
-  max-width: 500px; /* Фиксируем максимальную ширину */
-  height: 45px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-  font-size: 16px;
-  transition: transform 0.2s ease;
-}
-
-/* Эффект при наведении (опционально) */
-.mainPageUrl:hover,
-.aboutUsPageUrl:hover,
-.catalogPageUrl:hover,
-.callbackPageUrl:hover,
-.contactsPageUrl:hover {
-  transform: scale(1.02);
-}
-
-/* Блок с картой */
-.map {
-  width: 100%;
-  max-width: 500px; /* Можно регулировать */
   height: 200px;
-  margin-top: 30px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
 }
 
-/* Анимация появления карты */
-.mapVisible {
-  opacity: 1;
-  transition: opacity 0.5s ease;
+  .mobileFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+    .mobileUrls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobileLink {
+    width: 100%;
+    height: 75px;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    transition: transform 0.2s;
+    border-bottom: 0.5px solid rgb(85, 85, 85);
+  }
+
+  .mobileLink:hover,
+  .backToTopButton:hover {
+    transform: scale(1.02);
+    background-color: #333;
+  }
+  .backToTopButton {
+    position: static;
+    width: 100%;
+    height: 60px;
+    box-shadow: none;
+    z-index: auto;
+  }
+  .backToTopButton:hover {
+    transform: scale(1.1);
+    background-color: #0069d9;
+  }
+   .map {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .containerForNew{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+  }
+  .tg{
+    width: 15%;
+    height: 85%;
+    background-image: url(./pics/icons8-телеграм-150.png);
+    background-size: cover;
+  }
+  .whats{
+width: 15%;
+    height: 85%;
+    background-image: url(./pics/icons8-whatsapp-150.png);
+    background-size: cover;
+  }
+  .mapVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 480px) {
+  .footerBackground {
+    width: 100%;
+ height: 500px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .footerMain {
+    width: 100%;
+    height: 500px;
+    background-color: #181818;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footLeft, .infoFooter, .urls {
+    display: none;
+  }
+.footRight{
+  width: 100%;
+  height: 200px;
+
 }
 
-/* Скрываем ненужные блоки */
-.infoFooter,
-.footRight {
-  display: none;
-}
+  .mobileFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+    .mobileUrls {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobileLink {
+    width: 100%;
+    height: 75px;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    transition: transform 0.2s;
+    border-bottom: 0.5px solid rgb(85, 85, 85);
+  }
+
+  .mobileLink:hover,
+  .backToTopButton:hover {
+    transform: scale(1.02);
+    background-color: #333;
+  }
+  .backToTopButton {
+    position: static;
+    width: 100%;
+    height: 60px;
+    box-shadow: none;
+    z-index: auto;
+  }
+  .backToTopButton:hover {
+    transform: scale(1.1);
+    background-color: #0069d9;
+  }
+   .map {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .containerForNew{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+  }
+  .tg{
+    width: 15%;
+    height: 85%;
+    background-image: url(./pics/icons8-телеграм-150.png);
+    background-size: cover;
+  }
+  .whats{
+width: 15%;
+    height: 85%;
+    background-image: url(./pics/icons8-whatsapp-150.png);
+    background-size: cover;
+  }
+  .mapVisible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
