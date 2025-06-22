@@ -54,7 +54,7 @@
 .picIn2{
     width: 100%;
     height: 70%;
-    background-image: url(../header/img/2.jpg);
+    background-image: url(../header/img/house2.jpg);
     background-size: cover;
     border-radius: 20px;
     background-position: center;
@@ -62,7 +62,7 @@
 .picIn3{
     width: 100%;
     height: 70%;
-    background-image: url(../header/img/3.jpg);
+    background-image: url(../header/img/house5.jpg);
     background-size: cover;
     border-radius: 20px;
     background-position: center;
@@ -70,7 +70,7 @@
 .picIn4{
     width: 100%;
     height: 70%;
-    background-image: url(../header/img/4.jpg);
+    background-image: url(../header/img/house7.jpg);
     background-size: cover;
     border-radius: 20px;
     background-position: center;
@@ -78,7 +78,7 @@
 .picIn5{
     width: 100%;
     height: 70%;
- background-image: url(../header/img/5.jpg);
+ background-image: url(../header/img/house12.jpg);
  background-size: cover;
  border-radius: 20px;
  background-position: center;
@@ -86,7 +86,7 @@
 .picIn6{
     width: 100%;
     height: 70%;
- background-image: url(../header/img/6.jpg);
+ background-image: url(../header/img/house19.jpg);
  background-size: cover;
  border-radius: 20px;
  background-position: center;
