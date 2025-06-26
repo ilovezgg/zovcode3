@@ -24,6 +24,7 @@ const Projects = () => {
       <div className={z.mainProjects}>
         <div className={z.projectsTitle}>
           Посмотрите самые частопродаваемые дома. Они заслужили доверие покупателей.
+          https://github.com/ilovezgg/loh.git
         </div>
         
         <div className={z.totalContainer}>
