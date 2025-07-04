@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import z from "./Buttons2.module.css";
 import { Link } from "react-router-dom";
-
+import AboutUsDropdown from "./aboutUsDropdown/AboutUsDropdown";
 const Buttons2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -9,7 +9,7 @@ const Buttons2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // Обработчик скролла (только для десктопа)
+  
   useEffect(() => {
     if (!isMobile) {
       const handleScroll = () => {
@@ -18,9 +18,8 @@ const Buttons2 = () => {
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }
-  }, [isMobile]); // Добавили зависимость от isMobile
+  }, [isMobile]);
 
-  // Блокировка скролла при открытом меню
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -33,7 +32,7 @@ const Buttons2 = () => {
     };
   }, [isMenuOpen]);
 
-  // Закрытие меню
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -60,9 +59,7 @@ const Buttons2 = () => {
               <Link to="/" className={z.mainButton}>
                 Главная
               </Link>
-              <Link to="/we" className={z.aboutusButton}>
-                О нас
-              </Link>
+              <AboutUsDropdown/>
               <Link to="/contacts" className={z.contactsButton}>
                 Контакты
               </Link>

@@ -1,0 +1,153 @@
+.main{
+     padding-top:80px;
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(87, 87, 87);
+}
+.containerForPics{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: space-around;
+}
+.picWater{
+    width: 20%;
+    border-radius: 15px;
+    height: 100%;
+    background-image: url(./pics/premium_photo-1681589433923-33ea0898397f.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    transition: all 0.5s ease; 
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; 
+}
+.picBit{
+    width: 20%;
+    border-radius: 15px;
+    height: 100%;
+    background-image: url(./pics/bit.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    transition: all 0.5s ease; 
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; 
+}
+.picRoad{
+    width: 20%;
+    border-radius: 15px;
+    height: 100%;
+    background-image: url(./pics/elizabeth-mindra-mNLWR2Ta9Kk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    transition: all 0.5s ease; 
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; 
+}
+.picDost{
+     width: 20%;
+    border-radius: 15px;
+    height: 100%;
+    background-image: url(./pics/2222222.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    transition: all 0.5s ease;
+    position: relative; 
+    z-index: 1;
+    overflow: hidden; 
+}
+.picWater:hover, .picBit:hover, .picRoad:hover, .picDost:hover {
+    width: 45%; 
+    background-size: cover; 
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
+}
+.containerForInfo{
+    width: 40%;
+    height: 100%;
+}
+
+.titleWater, .titleDost, .titleRoad, .titleBit,
+.textWater, .textDost, .textRoad, .textBit {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  color: white;
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateY(-10px);
+}
+
+
+.titleWater, .titleDost, .titleRoad, .titleBit {
+  top: 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+.textWater, .textDost, .textRoad, .textBit {
+  bottom: 15px;
+  font-size: 25px;
+  transition-delay: 0.1s;
+   font-weight: bold;
+}
+
+
+.picWater:hover {
+  width: 45%;
+  z-index: 2;
+}
+.picWater:hover .titleWater,
+.picWater:hover .textWater {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.picDost:hover {
+  width: 45%;
+  z-index: 2;
+}
+.picDost:hover .titleDost,
+.picDost:hover .textDost {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.picRoad:hover {
+  width: 45%;
+  z-index: 2;
+}
+.picRoad:hover .titleRoad,
+.picRoad:hover .textRoad {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.picBit:hover {
+  width: 45%;
+  z-index: 2;
+}
+.picBit:hover .titleBit,
+.picBit:hover .textBit {
+  opacity: 1;
+  transform: translateY(0);
+}

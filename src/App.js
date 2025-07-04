@@ -15,6 +15,7 @@ import houseData2 from './components/pages/housePages/firstCardHouse/houseData2/
 import FirstCardHouse from './components/pages/housePages/firstCardHouse/FirstCardHouse';
 import { supabase } from './components/lib/supabase.js'
 import useSmoothScroll from './components/smoothScroll/useSmoothScroll.js';
+import Sotrud from './components/pages/we/sotrud/Sotrud.js'
 function App() {
    useSmoothScroll();
   const [showPreloader, setShowPreloader] = useState(true);
@@ -54,6 +55,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Catalog houses={houseData2} />} />
           <Route path="/house/:id" element={<FirstCardHouse />} />
+          <Route path="/sotrud" element={<Sotrud />} />
         </Routes>
       </Router>
       

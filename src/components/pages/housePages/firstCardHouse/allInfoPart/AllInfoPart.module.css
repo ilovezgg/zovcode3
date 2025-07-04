@@ -716,7 +716,7 @@ font-weight: 600;
 }
 .containerForTextBig{
   width: 40%;
-  height: 950%;
+  height: 95%;
   display: flex;
   justify-content: center;
   align-items: self-start;
