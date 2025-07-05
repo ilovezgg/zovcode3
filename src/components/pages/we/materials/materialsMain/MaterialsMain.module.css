@@ -1,0 +1,111 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 150px;
+  background-color: rgb(87, 87, 87);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.titleMaterials {
+  font-family: 'Bounded';
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.brusCont {
+  width: 100%;
+  max-width: 1600px;
+}
+
+.brusTitle {
+  color: white;
+  font-size: 45px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.brusText {
+  color: white;
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 95%;
+}
+
+.containerPics {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.brusPic {
+  flex: 2;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.secondPic {
+flex: 2;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+.container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.contFirst, .contTwo {
+  flex: 0.7;
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+.titleCont {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.textCont {
+  color: white;
+  font-size: 23px;
+  line-height: 1.5;
+}
+
+
+.brusPic:hover::before,
+.secondPic:hover::before {
+  transform: scale(1.05);
+}
+

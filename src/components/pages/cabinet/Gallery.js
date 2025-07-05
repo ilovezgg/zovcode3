@@ -1,11 +1,11 @@
 import React from 'react'
-import Buttons from '../home/header/Buttons'
+import Buttons2 from '../home/header/Buttons2'
 import GalleryMain from './GalleryMain/GalleryMain'
 import GalleryPacks from './galleryPacks/GalleryPacks'
 const Gallery = () => {
   return (
     <div>
-      <Buttons/>
+      <Buttons2/>
       <GalleryMain/>
       <GalleryPacks/>
     </div>

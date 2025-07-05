@@ -1,6 +1,25 @@
 import React from 'react'
 import z from './SotrudMain.module.css'
+import dogovor from './dog/dogovor.rtf'
 const SotrudMain = () => {
+   const handleDownload = () => {
+    // Для RTF лучше использовать fetch
+    fetch(dogovor)
+      .then(response => response.blob())
+      .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'Договор_строительный.rtf'; // Имя файла при скачивании
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url); // Освобождаем память
+      })
+      .catch(error => {
+        console.error('Ошибка при загрузке файла:', error);
+      });
+  };
   return (
     <div className={z.main}>
       <div className={z.containerForPics}>
@@ -39,7 +58,25 @@ const SotrudMain = () => {
          </div>
       </div>
       <div className={z.containerForInfo}>
-
+      <div className={z.topCont}>
+       <div className={z.topTitle}>
+1-й платёж
+       </div>
+       <div className={z.topText}>
+70% от суммы договора после привоза материала на ваш участок
+       </div>
+      </div>
+      <div className={z.bottomCont}>
+ <div className={z.bottomTitle}>
+2-й платёж
+       </div>
+       <div className={z.bottomText}>
+30% от суммы договора по завершению строительных работ
+       </div>
+      </div>
+      <button className={z.download} onClick={handleDownload}>
+      Скачать образец типового договора (.rtf)
+      </button>
       </div>
     </div>
   )

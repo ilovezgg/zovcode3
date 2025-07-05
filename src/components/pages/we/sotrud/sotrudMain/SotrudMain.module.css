@@ -70,10 +70,7 @@
     background-size: cover; 
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
 }
-.containerForInfo{
-    width: 40%;
-    height: 100%;
-}
+
 
 .titleWater, .titleDost, .titleRoad, .titleBit,
 .textWater, .textDost, .textRoad, .textBit {
@@ -150,4 +147,59 @@
 .picBit:hover .textBit {
   opacity: 1;
   transform: translateY(0);
+}
+.topCont{
+  width: 90%;
+  height: 40%;
+  background-image: url(./pics/Group\ 1.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+.bottomCont{
+  width: 90%;
+  height: 40%;
+    background-image: url(./pics/Group\ 2.png);
+    background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+.containerForInfo{
+    width: 40%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.download{
+  width: 90%;
+  height: 20%;
+  border-radius: 20px;
+  border: none;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.topTitle, .bottomTitle{
+ width: 40%;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  font-weight: bold; 
+}
+.topText{
+ width: 60%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold; 
+}
+.bottomText{
+  width: 60%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  padding-left: 10px;
 }

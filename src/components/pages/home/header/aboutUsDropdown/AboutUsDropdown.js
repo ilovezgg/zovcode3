@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import z from './AboutUsDropdown.module.css'; 
-
+import Materials from '../../../we/materials/Materials';
 const AboutUsDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,9 +25,10 @@ const AboutUsDropdown = () => {
           onMouseEnter={() => setIsOpen(true)}
           onMouseLeave={() => setIsOpen(false)}
         >
-          <Link to="/sotrud" className={z.dropdownItem}>Наша история</Link>
-          <Link to="/team" className={z.dropdownItem}>Команда</Link>
-          <Link to="/reviews" className={z.dropdownItem}>Отзывы</Link>
+          <Link to="/sotrud" className={z.dropdownItem}>Оплата и работы</Link>
+          <Link to="/team" className={z.dropdownItem}>Материнский капитал</Link>
+          <Link to="/materials" className={z.dropdownItem}>Технология</Link>
+          <Link to="/reviews" className={z.dropdownItem}>Статьи</Link>
         </div>
       )}
     </div>

@@ -1,15 +1,14 @@
-
-.headerButtons {
+.headerButtons{
     position: fixed; 
     width: 45%;
     z-index: 9999;      
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
-
-.svo {
+.svo{
     width: 100%;
-    height: 120px;
+    height: 130px;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -18,8 +17,7 @@
     z-index: 100;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.containerButtons {
+.containerButtons{
     width: 100%;
     height: 120px;
     position: fixed;
@@ -30,18 +28,17 @@
     justify-content: center;
     overflow: hidden;
 }
-
 .svo:not(.scrolled) .backgroundBlur {
     opacity: 1;
 }
-
-
 .svo.scrolled {
     height: 80px;
     background-color: rgb(24, 24, 24);
 }
-
-
+.rightContainer{
+    display: flex;
+    gap: 20px;
+}
 .catalogButton, .signUpButton, .callbackButton, 
 .contactsButton, .aboutusButton, .mainButton {
     height: 60px;
@@ -81,11 +78,10 @@
     border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 0;
 }
 
-.favButton { width: 5%; }
-.profileButton { width: 5%; }
+.favButton { width: 50%; }
+.profileButton { width: 50%; }
 
 .heartIcon, .profileIcon {
     transition: all 0.3s ease;

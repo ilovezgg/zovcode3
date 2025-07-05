@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Footer from '../home/footer/Footer';
-import Buttons from '../home/header/Buttons';
+import Buttons2 from '../home/header/Buttons2';
 import FilterPage from './catalogBar/FilterPage';
 import CatalogMain from './homes/CatalogMain';
 import houseData from './housedata/houseData';
@@ -65,7 +65,7 @@ const Catalog = () => {
 
   return (
     <div>
-      <Buttons />
+      <Buttons2 />
       
       <FilterPage 
         searchTerm={searchTerm}

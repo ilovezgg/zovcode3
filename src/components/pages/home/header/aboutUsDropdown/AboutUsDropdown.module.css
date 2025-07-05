@@ -10,7 +10,7 @@
 
 .dropdownContent {
   position: absolute;
-   top: calc(100% - 60px);
+   top: 100%;
   left: 0;
   background: white;
   min-width: 200px;
@@ -38,11 +38,13 @@
   display: block;
   padding: 12px 16px;
   color: #333;
+  font-size: 20px;
   text-decoration: none;
   transition: background 0.2s;
 }
 
 .dropdownItem:hover {
+  border-radius: 8px;
   background: #f5f5f5;
 }
 
