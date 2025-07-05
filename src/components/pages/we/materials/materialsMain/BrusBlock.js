@@ -6,7 +6,7 @@ const BrusBlock = ({
   mainText = '',
   imageUrl = '',
   secondImageUrl = '',
-  features = [],       
+  features = [],      
 }) => {
   return (
     <div className={z.brusCont}>

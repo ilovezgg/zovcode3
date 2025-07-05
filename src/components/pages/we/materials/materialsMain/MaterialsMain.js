@@ -12,7 +12,18 @@ const MaterialsMain = () => {
       
       <BrusBlock {...brusData.brus} />
       
-      <BrusBlock {...brusData.jute} />
+      <BrusBlock {...brusData.jute}  />
+
+      <BrusBlock {...brusData.nagels} />
+
+      <BrusBlock {...brusData.krep} />
+
+      <BrusBlock {...brusData.kr} />
+
+      <BrusBlock {...brusData.svai}/>
+ 
+      <BrusBlock {...brusData.anti}/>
+     
     </div>
   );
 };
