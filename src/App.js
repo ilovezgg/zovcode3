@@ -17,6 +17,8 @@ import { supabase } from './components/lib/supabase.js'
 import useSmoothScroll from './components/smoothScroll/useSmoothScroll.js';
 import Sotrud from './components/pages/we/sotrud/Sotrud.js'
 import Materials from './components/pages/we/materials/Materials.js';
+import MatKap from './components/pages/we/matKap/MatKap.js';
+import Review from './components/pages/we/review/Review.js';
 function App() {
    useSmoothScroll();
   const [showPreloader, setShowPreloader] = useState(true);
@@ -58,6 +60,8 @@ function App() {
           <Route path="/house/:id" element={<FirstCardHouse />} />
           <Route path="/sotrud" element={<Sotrud />} />
           <Route path="/materials" element={<Materials />} />
+          <Route path="/matkap" element={<MatKap />} />
+           <Route path="/reviews" element={<Review />} />
         </Routes>
       </Router>
       

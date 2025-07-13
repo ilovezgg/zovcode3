@@ -1,0 +1,159 @@
+.main{
+    width: 100%;
+    height: 1600px;
+    background-color: rgb(87, 87, 87);
+    padding-top: 150px;
+}
+.title{
+    width: 100%;
+    font-size: 45px;
+    color: white;
+    font-weight: normal;
+    font-family: 'Bounded';
+    text-align: center;
+}
+.pics{
+    width: 100%;
+    height: 23%;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.picMomOne{
+    width: 27%;
+    height: 100%;
+    background-image: url(./pics/milaa-sem-a-igraet-v-letnem-pole.jpg);
+    background-size: cover;
+    border-radius: 15px;
+}
+.picMomTwo{
+    width: 27%;
+    height: 100%;
+    background-image: url(./pics/molodaa-sem-a-s-malen-kim-synom-doma.jpg);
+    background-size: cover;
+    border-radius: 15px;
+}
+.contInfo{
+    width: 37%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+.textOne{
+    width: 90%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.textTwo{
+    width: 90%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.containerInfo{
+    width: 100%;
+    height: 35%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.containerLeft{
+    width: 67%;
+    height: 100%;
+    border-radius: 15px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+}
+.upPart{
+    width: 100%;
+    height: 50%;
+}
+.priceOne, .priceTwo, .priceThree{
+    width: 30%;
+    height:140px;
+    border-radius: 15px;
+     backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contPrice{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.titlePrice{
+    width: 92%;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    padding-top: 7px;
+}
+.upTitle{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    width: 65%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+.bottomTitle{
+     font-size: 40px;
+    font-weight: bold;
+    color: white;
+    width: 66%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.price{
+    width: 92%;
+    font-size: 30px;
+    font-weight: normal;
+    color: white;
+}
+.containerRight{
+    width: 27%;
+    height: 100%;
+    border-radius: 15px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+.infoOne{
+width: 90%;
+    font-size: 25px;
+    padding-top: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+.infoTwo{
+width: 90%;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}

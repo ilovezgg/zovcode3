@@ -26,7 +26,7 @@ const AboutUsDropdown = () => {
           onMouseLeave={() => setIsOpen(false)}
         >
           <Link to="/sotrud" className={z.dropdownItem}>Оплата и работы</Link>
-          <Link to="/team" className={z.dropdownItem}>Материнский капитал</Link>
+          <Link to="/matkap" className={z.dropdownItem}>Материнский капитал</Link>
           <Link to="/materials" className={z.dropdownItem}>Технология</Link>
           <Link to="/reviews" className={z.dropdownItem}>Статьи</Link>
         </div>
