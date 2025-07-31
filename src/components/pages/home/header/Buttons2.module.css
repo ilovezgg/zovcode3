@@ -338,3 +338,19 @@
         background-color: #444;
     }
 }
+.logoImage{
+     display: flex;
+     width: 30%;
+     position: absolute;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-180%) translateY(-50%);
+  
+  height: 100%; 
+}
+.logo{
+    height: 50px; 
+  width: 50px;
+    background-image: url(./img/Group\ 3\ \(1\).png);
+    background-size: cover;
+}

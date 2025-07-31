@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import z from "./Buttons2.module.css";
 import { Link } from "react-router-dom";
 import AboutUsDropdown from "./aboutUsDropdown/AboutUsDropdown";
+import logo from './img/Group 3 (2).png'
 const Buttons2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
@@ -56,6 +57,15 @@ const Buttons2 = () => {
 
           {!isMobile && (
             <>
+            <div className={z.logoContainer}>
+           <Link to="/">
+        <img 
+          src={logo} 
+          alt="Логотип компании"
+          className={z.logoImage}
+        />
+      </Link>
+          </div>
               <Link to="/" className={z.mainButton}>
                 Главная
               </Link>
