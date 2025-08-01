@@ -8,8 +8,7 @@ const Header = () => {
           <div className={z.mainHeaderTwo}></div>
 
           <div className={z.headerTitle}>
-            Качественные дома из профилированного бруса. Мы - синоним слову
-            "Надежность"
+           Точность в каждом венце.
           </div>
         </div>
       </div>

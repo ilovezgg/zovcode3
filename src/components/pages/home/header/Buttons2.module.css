@@ -348,9 +348,3 @@
   
   height: 100%; 
 }
-.logo{
-    height: 50px; 
-  width: 50px;
-    background-image: url(./img/Group\ 3\ \(1\).png);
-    background-size: cover;
-}
