@@ -7,7 +7,7 @@
     height: 800px;
     background-color: #181818;
     transform: translateY(20%);
-    border-radius: 20px;
+    border-radius: 15px;
 }
 .imagesTitle{
     width: 100%;
@@ -159,12 +159,14 @@ width: 30%;
     width: 100%;
     display: flex;
     justify-content: center;
+       border-radius: 15px;
 }
 .bigContainer{
     width: 100%;
     height: 120px;
     display: flex;
     justify-content: space-between;
+    border-radius: 15px;
 }
 .timeContainer{
     width: 47%;
@@ -178,4 +180,217 @@ width: 30%;
   box-shadow: 
     0 4px 30px rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+       border-radius: 15px;
 }
+.main{
+    height:1000px;
+    background-color: rgb(87, 87, 87);
+}
+.contactsMain{
+    width: 100%;
+    height: 800px;
+    background-color: #181818;
+    transform: translateY(20%);
+    border-radius: 15px;
+}
+.imagesTitle{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 110px;
+    
+}
+.allInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around; 
+    transform: translateY(5%);
+}
+.workingTime{
+    width: 30%;
+    height: 69%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+.socialMedia{
+width: 30%;
+    height: 29%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactInfo{
+width: 30%;
+    height: 69%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+.icons{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 17px;
+}
+.whats{
+    width: 95%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+     transition: all 0.3s ease-in;
+}
+.tg{
+    width: 95%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: none;
+}
+.gmail{
+     width: 95%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    border: none;
+}
+.icon{
+    transition: all 0.3s ease-in;
+}
+.tg:hover{
+    background-color: #181818;
+}
+.whats:hover{
+    background-color: #181818;
+}
+.gmail:hover{
+    background-color: #181818;
+}
+.whats:hover .icon{
+    fill: white;
+}
+.tg:hover .icon{
+    fill: white;
+}
+.gmail:hover .icon{
+    fill: white;
+}
+.timeTitle{
+    font-size: 40px;
+    color: white;
+}
+.timeSubTitle{
+    font-size: 40px;
+    color: white;
+}
+.iconTime{
+    width: 33px;
+    height: 33px;
+    background-image: url(./img/icons8-часы-48.png);
+    background-size: contain;
+    transform: translateY(7px);
+}
+.bottomTime{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    justify-content: center;
+}
+.upTime{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+       border-radius: 15px;
+}
+.bigContainer{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    transform: translateY(5%);
+    margin-bottom: 20px;
+}
+.bigContainerOne{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    row-gap: 20px;
+    transform: translateY(8%);
+    margin-bottom: 20px;
+}
+.timeContainerOne{
+    width: 97%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+       border-radius: 15px;
+}
+.timeContainer{
+    width: 47%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+       border-radius: 15px;
+    gap :10px;
+}
+

@@ -72,6 +72,17 @@ const MainContacts = () => {
                   </div>
                 </div>
               </div>
+              <div className={z.bigContainerOne}>
+                <div className={z.timeContainerOne}>
+                  <div className={z.upTime}>
+                    <div className={z.timeTitle}>Воскресенье</div>
+                  </div>
+                  <div className={z.bottomTime}>
+                    <div className={z.iconTime}></div>
+                    <div className={z.timeSubTitle}>9:00 - 18:00</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className={z.socialMedia}>
@@ -88,7 +99,9 @@ const MainContacts = () => {
             </div>
           </div>
           <div className={z.contactInfo}>
-            <div classNa me={z.containerForInfo}></div>
+            <div classNa me={z.containerForInfo}>
+              
+            </div>
           </div>
         </div>
       </div>
