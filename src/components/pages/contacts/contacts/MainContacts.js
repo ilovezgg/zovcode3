@@ -99,8 +99,24 @@ const MainContacts = () => {
             </div>
           </div>
           <div className={z.contactInfo}>
-            <div classNa me={z.containerForInfo}>
-              
+            <div className={z.containerForInfoTwo}>
+              <div className={z.documents}>
+               <div className={z.inn}>
+ИНН 531300377926
+               </div>
+               <div className={z.ogrn}>
+ОГРН 315533100001310
+               </div>
+               <div className={z.adress}>
+174510, Новгородская область, г. Пестово, Устюженское шоссе, 4
+               </div>
+               <div className={z.ip}>
+ИП Долгачёв И.А.
+               </div>
+               <div className={z.schet}>
+Р/счет 40802810501090000458
+               </div>
+              </div>
             </div>
           </div>
         </div>
