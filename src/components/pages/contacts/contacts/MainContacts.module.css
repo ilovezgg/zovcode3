@@ -245,6 +245,9 @@ width: 30%;
     0 4px 30px rgba(0, 0, 0, 0.1),
     inset 0 0 0 1px rgba(255, 255, 255, 0.2);
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
 .icons{
     width: 100%;
@@ -394,8 +397,8 @@ width: 30%;
     gap :10px;
 }
 .documents{
-    width: 95%;
-    height: 50%;
+    width: 97%;
+    height: 100%;
     backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   background-color: rgba(255, 255, 255, 0.08);
@@ -406,17 +409,106 @@ width: 30%;
        display: flex;
        flex-direction: column;
        transform: translateY(2%);
-
+      justify-content: space-around;
 }
 .containerForInfoTwo{
     width: 100%;
-    height: 100%;
+    height: 70%;
     display: flex;
     justify-content: center;
 }
 .inn, .ogrn, .schet, .adress, .ip{
     font-size: 30px;
     color: white;
-
+    transform: translateX(2%);
 }
-
+.docIcon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 20%;
+}
+.phoneIcon{
+    width: 40px;
+    height: 40px;
+    transform: translateX(-20%);
+}
+.mailIcon{
+    width: 40px;
+    height: 40px;
+    transform: translateX(-20%);
+}
+.documentsIcon{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 91%;
+    top: 3%;
+}
+.phoneNumberOne{
+     width: 97%;
+    height: 45%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.phoneNumberTwo{
+     width: 97%;
+    height: 45%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+}
+.containerForPhones{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+.number{
+    color: white;
+    font-size: 30px;
+    transform: translateX(5%)
+}
+.containerForMail{
+   width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+.mail{
+     width: 97%;
+    height: 45%;
+    backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+}
+.mailAdress{
+    color: white;
+    font-size: 30px;
+    transform: translateX(5%)
+}

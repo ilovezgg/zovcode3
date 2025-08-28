@@ -3,7 +3,9 @@ import z from "./MainContacts.module.css";
 import { ReactComponent as TelegramIcon } from "./img/icons8-телеграм (1).svg";
 import { ReactComponent as WhatsIcon } from "./img/icons8-whatsapp (2).svg";
 import { ReactComponent as GmailIcon } from "./img/icons8-почта.svg";
-
+import {ReactComponent as DocumentsIcon} from "./img/document-add-svgrepo-com (1).svg"
+import {ReactComponent as PhoneIcon} from "./img/phone-outgoing-svgrepo-com (1).svg"
+import {ReactComponent as MailIcon} from "./img/email-svgrepo-com (1).svg"
 const MainContacts = () => {
   return (
     <div className={z.main}>
@@ -100,6 +102,9 @@ const MainContacts = () => {
           </div>
           <div className={z.contactInfo}>
             <div className={z.containerForInfoTwo}>
+              <div className={z.documentsIcon}>
+             <DocumentsIcon className={z.docIcon}/>
+              </div>
               <div className={z.documents}>
                <div className={z.inn}>
 ИНН 531300377926
@@ -117,6 +122,28 @@ const MainContacts = () => {
 Р/счет 40802810501090000458
                </div>
               </div>
+            </div>
+            <div className={z.containerForPhones}>
+<div className={z.phoneNumberOne}>
+             <div className={z.number}>
+8 (921) 730-24-66
+             </div>
+              <PhoneIcon className={z.phoneIcon}/>
+            </div>
+            <div className={z.phoneNumberTwo}>
+<div className={z.number}>
+8 (8162) 90-24-66
+             </div>
+             <PhoneIcon className={z.phoneIcon}/>
+            </div>
+            </div>
+            <div className={z.containerForMail}>
+            <div className={z.mail}>
+           <div className={z.mailAdress}>
+            srub-dom53@yandex.ru
+           </div>
+           <MailIcon className={z.mailIcon}/>
+            </div>
             </div>
           </div>
         </div>
