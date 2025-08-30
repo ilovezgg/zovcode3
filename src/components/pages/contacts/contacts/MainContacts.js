@@ -88,18 +88,29 @@ const MainContacts = () => {
             </div>
           </div>
           <div className={z.socialMedia}>
-            <div className={z.icons}>
-              <button className={z.tg}>
-                <TelegramIcon className={z.icon} />
-              </button>
-              <button className={z.whats}>
-                <WhatsIcon className={z.icon} />
-              </button>
-              <button className={z.gmail}>
-                <GmailIcon className={z.icon} />
-              </button>
-            </div>
-          </div>
+  <div className={z.icons}>
+    <button className={z.tg}><TelegramIcon /></button>
+    <button className={z.whats}><WhatsIcon /></button>
+    <button className={z.gmail}><GmailIcon /></button>
+  </div>
+  
+<div className={z.mapContainer}>
+  <iframe
+  src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2078.5915107928895!2d35.827!3d58.60239346888754!2m3!1f0!2f0!3f0!3m2!1i1024!2i1000!4f13.1!2m1!1zLy8g0JrQvtC-0YDQtNC40L3QsNGC0Ysg0YLQstC-0LXQs9C-INC80LXRgdGC0LAgKNCf0LXRgdGC0L7QstC-LCDQo9GB0YLRjtC20LXQvdGB0LrQvtC1INGI0L7RgdGB0LUsIDQp!5e0!3m2!1sru!2sru!4v1756593854006!5m2!1sru!2sru"
+  width="100%"
+  height="100%"
+  style={{ 
+    border: 0, 
+    borderRadius: '15px',
+    filter: 'grayscale(30%) invert(92%) hue-rotate(180deg) contrast(90%)' 
+  }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Google Maps"
+></iframe>
+</div>
+</div>
           <div className={z.contactInfo}>
             <div className={z.containerForInfoTwo}>
               <div className={z.documentsIcon}>
