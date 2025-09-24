@@ -102,13 +102,14 @@ width: 90%;
 .pic{
     width: 98%;
     border-radius: 15px;
-    height: 80%;
+    height: 75%;
     background-image: url(../header/img/5555.png);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+    background-position: center top;
     justify-content: left;
-    align-items: top;
+    align-items: end;
 }
 .textContainer{
     width: 50%;
@@ -126,7 +127,7 @@ width: 90%;
 }
 .textTitle{
     width: 100%;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin-left: 10px;

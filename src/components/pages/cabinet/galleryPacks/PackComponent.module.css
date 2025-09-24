@@ -3,6 +3,7 @@
     width: 100%;
     height: 800px;
     position: relative;
+    transform: translateY(17.5%);
 }
 
 .topPack {

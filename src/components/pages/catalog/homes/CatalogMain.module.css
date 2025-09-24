@@ -1,5 +1,5 @@
 .catalogMain{
-    height: 14500px;
+    height: 14700px;
     row-gap: 50px;
     display: flex;
     flex-direction: column;
@@ -16,6 +16,7 @@
     height: 800px;
     display: flex;
     justify-content: space-around;
+    transform: translateY(10%);
 }
 .noResults{
     width: 100%;

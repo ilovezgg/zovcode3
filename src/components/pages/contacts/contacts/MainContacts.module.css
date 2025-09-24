@@ -7,7 +7,7 @@
     height: 800px;
     background-color: #181818;
     transform: translateY(20%);
-    border-radius: 15px;
+    border-radius: 20px;
 }
 .imagesTitle{
     width: 100%;
@@ -20,14 +20,14 @@
 }
 .allInfo{
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     justify-content: space-around; 
     transform: translateY(5%);
 }
 .workingTime{
     width: 30%;
-    height: 69%;
+    height: 89%;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     background-color: rgba(255, 255, 255, 0.08);
@@ -38,7 +38,7 @@
 }
 .socialMedia{
     width: 30%;
-    height: 69%;
+    height: 89%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ justify-content: space-between;
 }
 .contactInfo{
     width: 30%;
-    height: 69%;
+    height: 89%;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     background-color: rgba(255, 255, 255, 0.08);
@@ -86,16 +86,16 @@ justify-content: space-between;
     align-items: center;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in !important; 
 }
 .icon{
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in !important;
 }
 .tg:hover, .whats:hover, .gmail:hover{
     background-color: #181818;
 }
-.whats:hover .icon, .tg:hover .icon, .gmail:hover .icon{
-    fill: white;
+.whats:hover path, .tg:hover path, .gmail:hover path{
+    fill: white !important;
 }
 .timeTitle, .timeSubTitle{
     font-size: 40px;
@@ -182,7 +182,7 @@ justify-content: space-between;
     justify-content: center;
 }
 .inn, .ogrn, .schet, .adress, .ip{
-    font-size: 30px;
+    font-size: 35px;
     color: white;
     transform: translateX(2%);
 }
@@ -228,7 +228,7 @@ justify-content: space-between;
 }
 .number, .mailAdress{
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     transform: translateX(5%)
 }
 .containerForMail{
