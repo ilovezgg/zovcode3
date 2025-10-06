@@ -243,3 +243,252 @@ justify-content: space-between;
     background-color: white;
     border-radius: 15px;
 }
+@media(max-width:768px){
+    .main{
+    height:1000px;
+    background-color: rgb(87, 87, 87);
+}
+.contactsMain{
+    width: 100%;
+    height: 900px;
+    background-color: #181818;
+    transform: translateY(8.5%);
+    border-radius: 20px;
+}
+.imagesTitle{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+}
+.allInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    transform: none;
+    flex-direction: column;
+}
+.workingTime{
+    width: 89%;
+    height: 30%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+.socialMedia{
+  width: 89%;
+    height: 30%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+justify-content: space-between;
+}
+.contactInfo{
+  width: 89%;
+    height: 30%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.icons{
+    width: 100%;
+    height: 45%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 17px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+.whats, .tg, .gmail{
+    width: 95%;
+    height: 60px;
+    background-color: rgb(255, 255, 255);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease-in !important; 
+}
+.icon{
+    transition: all 0.3s ease-in !important;
+}
+.tg:hover, .whats:hover, .gmail:hover{
+    background-color: #181818;
+}
+.whats:hover path, .tg:hover path, .gmail:hover path{
+    fill: white !important;
+}
+.timeTitle, .timeSubTitle{
+    font-size: 25px;
+    color: white;
+}
+.iconTime{
+    width: 0px;
+    height: 0px;
+    background-image: url(./img/icons8-часы-48.png);
+    background-size: contain;
+    transform: translateY(7px);
+}
+.bottomTime{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.upTime{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+.bigContainer{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 15px;
+    transform: translateY(5%);
+    margin-bottom: 20px;
+}
+.bigContainerOne{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+    row-gap: 20px;
+    transform: translateY(8%);
+    margin-bottom: 20px;
+}
+.timeContainerOne, .timeContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    gap: 20px;
+}
+.timeContainerOne{
+    width: 97%;
+    height: 95%;
+}
+.timeContainer{
+    width: 47%;
+    height: 95%;
+    gap: 10px;
+}
+.documents{
+    width: 97%;
+    height: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(2%);
+    justify-content: space-around;
+}
+.containerForInfoTwo{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+.inn, .ogrn, .schet, .adress, .ip{
+    font-size: 15px;
+    color: white;
+    transform: translateX(2%);
+}
+.docIcon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 20%;
+}
+.phoneIcon, .mailIcon{
+    width: 40px;
+    height: 40px;
+    transform: translateX(-20%);
+}
+.documentsIcon{
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    left: 91%;
+    top: 3%;
+}
+.phoneNumberOne, .phoneNumberTwo, .mail{
+    width: 97%;
+    height: 45%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.containerForPhones{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.number, .mailAdress{
+    color: white;
+    font-size: 15px;
+    transform: translateX(5%)
+}
+.containerForMail{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+.mapContainer{
+    width: 100%;
+    height: 1%;
+    background-color: white;
+    border-radius: 15px;
+}
+}

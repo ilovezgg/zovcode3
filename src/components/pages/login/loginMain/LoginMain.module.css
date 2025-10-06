@@ -1,6 +1,6 @@
 .main{
     width: 100%;
-    height: 700px;
+    height: 850px;
     background-color: rgb(87, 87, 87);
     display: flex;
     justify-content: center;
@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
+    transform: translateY(11%);
 }
 .container{
     width: 60%;
@@ -84,4 +85,97 @@
     border-width: 1px;
     border-radius: 15px;
     font-size: 30px;
+}
+@media(max-width: 768px){
+    .main{
+    width: 100%;
+    height: 850px;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.field{
+    width: 90%;
+    height:85%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.pic{
+    width: 100%;
+    height: 20%;
+    background-image: url(../../signup/signUpMain/signuppic/af441dda1ce51207335c34086cdac31c.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-position: right 30%;
+}
+.email {
+    width: 90%;
+    height: 15%;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .error{
+    font-size: 20px;
+    color: red;
+    font-weight: 600;
+  }
+.password{
+    width: 90%;
+    height: 15%;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    font-size: 25px;
+    margin-bottom: 15px;;
+
+}
+.text{
+    font-size: 40px;
+}
+.bigButton{
+    width: 90%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    border-width: 1px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+.registr{
+    width: 90%;
+    height: 15%;
+    background-color: transparent;
+    border-width: 1px;
+    border-radius: 15px;
+    font-size:25px;
+}
+.loginLink{
+    width: 90%;
+    height: 15%;
+    background-color: black;
+    color: white;
+    border-width: 1px;
+    border-radius: 15px;
+    font-size: 25px;
+}
 }
