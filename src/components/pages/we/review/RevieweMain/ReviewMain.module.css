@@ -41,6 +41,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 .reviewText p{
     font-size: 25px;
@@ -91,6 +92,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 10px;
+     cursor: pointer;
 }
 .reviewText p{
     font-size: 17px;

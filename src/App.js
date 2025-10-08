@@ -19,6 +19,7 @@ import Sotrud from './components/pages/we/sotrud/Sotrud.js'
 import Materials from './components/pages/we/materials/Materials.js';
 import MatKap from './components/pages/we/matKap/MatKap.js';
 import Review from './components/pages/we/review/Review.js';
+import WinterForest from './components/pages/we/review/reviewPages/winterForest/WinterForest.js';
 function App() {
    useSmoothScroll();
   const [showPreloader, setShowPreloader] = useState(true);
@@ -62,6 +63,7 @@ function App() {
           <Route path="/materials" element={<Materials />} />
           <Route path="/matkap" element={<MatKap />} />
            <Route path="/reviews" element={<Review />} />
+           <Route path="/winterforest" element={<WinterForest />} />
         </Routes>
       </Router>
       

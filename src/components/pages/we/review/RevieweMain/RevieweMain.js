@@ -1,6 +1,6 @@
 import React from 'react'
 import z from './ReviewMain.module.css'
-
+import { useNavigate } from 'react-router-dom'
 const RevieweMain = () => {
   const articlesData = [
     [
@@ -8,7 +8,8 @@ const RevieweMain = () => {
         id: 1,
         title: "Зимний лес для сруба: мифы и реальность",
         subtitle: "Преимущества зимней заготовки древесины и особенности строительства",
-        image: require('./pics/dom-so-sneznymi-sosnami-zimoi.jpg')
+        image: require('./pics/dom-so-sneznymi-sosnami-zimoi.jpg'),
+       link: "/winterforest"
       },
       {
         id: 2,
@@ -47,7 +48,7 @@ const RevieweMain = () => {
     ]
   ]
 
-  return (
+return (
     <div className={z.main}>
       {articlesData.map((row, rowIndex) => (
         <div key={rowIndex} className={z.three}>
@@ -57,6 +58,7 @@ const RevieweMain = () => {
               image={article.image}
               title={article.title}
               subtitle={article.subtitle}
+              link={article.link}
             />
           ))}
         </div>
@@ -65,12 +67,19 @@ const RevieweMain = () => {
   )
 }
 
-const ArticleCard = ({ image, title, subtitle }) => {
+const ArticleCard = ({ image, title, subtitle, link }) => {
+  const navigate = useNavigate()
+
+  const handleImageClick = () => {
+    navigate(link)
+  }
+
   return (
     <div className={z.review}>
       <div 
         className={z.reviewPic}
         style={{ backgroundImage: `url(${image})` }}
+        onClick={handleImageClick}
       />
       <div className={z.reviewText}>
         <h3>{title}</h3>
