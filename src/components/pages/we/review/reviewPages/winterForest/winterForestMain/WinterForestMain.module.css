@@ -1,12 +1,12 @@
 .main{
     width: 100%;
-    height: 2600px;
+    height: 3250px;
     background-color: rgb(87, 87, 87);
     padding-top: 150px;
 }
 .containerForPic{
    width: 100%;
-   height: 20%;
+   height: 448px;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -69,27 +69,27 @@
 }
 .containerForText{
     width: 100%;
-    height: 10%;
+    height: 9%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .containerForTextSecond{
     width: 100%;
-    height: 11%;
+    height: 9%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .containerForTextTwo{
     width: 100%;
-    height: 20%;
+    height: 18%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .picWork{
     width: 65%;
@@ -158,11 +158,12 @@
 }
 .infoPart{
     width: 100%;
-    height: 30%;
+    height: 24%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .containerInfo{
    width: 90%;
@@ -355,4 +356,47 @@ font-size: 35px;
         padding: 20px;
         font-size: 35px;
 }
-
+.lastPart{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerLastPart{
+      width: 90%;
+    height: 100%;
+    display: flex; 
+    justify-content: space-between;
+    gap: 20px; 
+    align-items: center; 
+}
+.lastPicOne{
+    width: 30%;
+    height: 100%;
+    background-image: url(../pics//high-angle-shot-road-forest-with-person-standing-it-covered-snow.jpg);
+     background-size: cover;
+      border-radius: 10px;
+}
+.lastPicTwo{
+    width: 35%;
+    height: 100%;
+    background-image: url(../pics/fir-tree-house-winter.jpg);
+    background-size: cover;
+    border-radius: 10px;
+}
+.lastText{
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    backdrop-filter: blur(12px);
+    text-align: justify;
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 20px;
+        font-size: 35px;
+}

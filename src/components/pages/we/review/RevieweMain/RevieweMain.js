@@ -15,7 +15,8 @@ const RevieweMain = () => {
         id: 2,
         title: "Экологичность сруба: здоровье и комфорт",
         subtitle: "Как натуральная древесина влияет на микроклимат в доме",
-        image: require('./pics/ziznennyi-stil-kantri-muzykantov-v-pomesenii.jpg')
+        image: require('./pics/ziznennyi-stil-kantri-muzykantov-v-pomesenii.jpg'),
+        link: "/ecohouse"
       }
     ],
     [

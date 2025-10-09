@@ -99,11 +99,11 @@ const WinterForestMain = () => {
     </div>
     <div className={z.legendRow}>
       <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: '#b8860b'}}></div>
+        <div className={z.colorCircle} style={{background: 'rgb(95, 180, 115)'}}></div>
         <span>Летний брус</span>
       </div>
       <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: '#f0e6d2'}}></div>
+        <div className={z.colorCircle} style={{background: '#ffffffff'}}></div>
         <span>Сушеный брус</span>
       </div>
     </div>
@@ -116,6 +116,21 @@ const WinterForestMain = () => {
   Зимний брус естественным образом приближается к этим идеальным значениям благодаря особенностям сезонной заготовки. Естественная сушка сохраняет уникальную структуру древесных волокон и природную прочность значительно лучше многих современных технологичных методов.
       </div>
         </div>
+      </div>
+      <div className={z.lastPart}>
+       <div className={z.containerLastPart}>
+        <div className={z.lastPicOne}>
+
+        </div>
+        <div className={z.lastText}>
+Строительство сруба из зимнего леса — это разумный выбор для тех, кто ценит натуральность, долговечность и здоровый микроклимат. Природные преимущества зимней древесины в сочетании с современными технологиями создают идеальный симбиоз традиций и инноваций.
+  
+  Правильный зимний брус сохраняет все преимущества дерева и обеспечивает стабильность конструкции. Ваш дом — это не просто жилье, а наследие для поколений.
+        </div>
+        <div className={z.lastPicTwo}>
+
+        </div>
+       </div>
       </div>
     </div>
   )

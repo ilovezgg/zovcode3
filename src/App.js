@@ -20,6 +20,7 @@ import Materials from './components/pages/we/materials/Materials.js';
 import MatKap from './components/pages/we/matKap/MatKap.js';
 import Review from './components/pages/we/review/Review.js';
 import WinterForest from './components/pages/we/review/reviewPages/winterForest/WinterForest.js';
+import EcoHouse from './components/pages/we/review/reviewPages/ecoHouse/EcoHouse.js';
 function App() {
    useSmoothScroll();
   const [showPreloader, setShowPreloader] = useState(true);
@@ -64,6 +65,7 @@ function App() {
           <Route path="/matkap" element={<MatKap />} />
            <Route path="/reviews" element={<Review />} />
            <Route path="/winterforest" element={<WinterForest />} />
+            <Route path="/ecohouse" element={<EcoHouse />} />
         </Routes>
       </Router>
       
