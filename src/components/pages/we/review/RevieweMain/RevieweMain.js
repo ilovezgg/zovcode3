@@ -1,6 +1,7 @@
 import React from 'react'
 import z from './ReviewMain.module.css'
 import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const RevieweMain = () => {
   const articlesData = [
     [
@@ -69,24 +70,25 @@ return (
 }
 
 const ArticleCard = ({ image, title, subtitle, link }) => {
-  const navigate = useNavigate()
-
-  const handleImageClick = () => {
-    navigate(link)
+  const handleClick = (e) => {
+    e.preventDefault()
+    window.history.pushState(null, '', link)
+    window.dispatchEvent(new PopStateEvent('popstate'))
   }
 
   return (
-    <div className={z.review}>
-      <div 
-        className={z.reviewPic}
-        style={{ backgroundImage: `url(${image})` }}
-        onClick={handleImageClick}
-      />
-      <div className={z.reviewText}>
-        <h3>{title}</h3>
-        <p>{subtitle}</p>
+    <a href={link} className={z.cardLink} onClick={handleClick}>
+      <div className={z.review}>
+        <div 
+          className={z.reviewPic}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className={z.reviewText}>
+          <h3>{title}</h3>
+          <p>{subtitle}</p>
+        </div>
       </div>
-    </div>
+    </a>
   )
 }
 
