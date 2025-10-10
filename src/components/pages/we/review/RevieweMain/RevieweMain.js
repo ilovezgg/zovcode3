@@ -25,13 +25,15 @@ const RevieweMain = () => {
         id: 3,
         title: "Технология строительства сруба из бруса",
         subtitle: "Пошаговое руководство от фундамента до кровли",
-       image: require('./pics/vysokii-vid-celoveka-derzasego-perforator.jpg')
+       image: require('./pics/vysokii-vid-celoveka-derzasego-perforator.jpg'),
+         link: "/winterforest"
       },
       {
         id: 4,
         title: "Профилированный или клееный брус?",
         subtitle: "Сравнительный анализ материалов для вашего проекта",
-       image: require('./pics/kuca-derevannyh-dosok.jpg')
+       image: require('./pics/kuca-derevannyh-dosok.jpg'),
+         link: "/winterforest"
       }
     ],
     [
@@ -39,13 +41,15 @@ const RevieweMain = () => {
         id: 5,
         title: "Фундамент для сруба: виды и особенности",
         subtitle: "Опыт профессионалов: как избежать распространенных ошибок",
-     image: require('./pics/stal-noi-prutok-na-stroitel-noi-plosadke.jpg')
+     image: require('./pics/stal-noi-prutok-na-stroitel-noi-plosadke.jpg'),
+         link: "/winterforest"
       },
       {
         id: 6,
         title: "Кровля для сруба: современные материалы",
         subtitle: "Все о естественных процессах и правильных сроках",
-       image: require('./pics/krupnyi-plan-sistemy-ventilacii.jpg')
+       image: require('./pics/krupnyi-plan-sistemy-ventilacii.jpg'),
+         link: "/winterforest"
       }
     ]
   ]
@@ -70,6 +74,23 @@ return (
 }
 
 const ArticleCard = ({ image, title, subtitle, link }) => {
+  // Если нет ссылки - рендери просто div вместо Link
+  if (!link) {
+    return (
+      <div className={z.review}>
+        <div 
+          className={z.reviewPic}
+          style={{ backgroundImage: `url(${image})` }}
+        />
+        <div className={z.reviewText}>
+          <h3>{title}</h3>
+          <p>{subtitle}</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Если есть ссылка - рендери Link
   return (
     <Link to={link} className={z.cardLink}>
       <div className={z.review}>
