@@ -70,14 +70,8 @@ return (
 }
 
 const ArticleCard = ({ image, title, subtitle, link }) => {
-  const handleClick = (e) => {
-    e.preventDefault()
-    window.history.pushState(null, '', link)
-    window.dispatchEvent(new PopStateEvent('popstate'))
-  }
-
   return (
-    <a href={link} className={z.cardLink} onClick={handleClick}>
+    <Link to={link} className={z.cardLink}>
       <div className={z.review}>
         <div 
           className={z.reviewPic}
@@ -88,7 +82,7 @@ const ArticleCard = ({ image, title, subtitle, link }) => {
           <p>{subtitle}</p>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }
 
