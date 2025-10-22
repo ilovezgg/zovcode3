@@ -1,0 +1,45 @@
+.main{
+    width: 100%;
+    height: auto;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.container{
+    width: 90%;
+    height: 630px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.leftInfo{
+    width: 30%;
+    height: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        color: white;
+        font-size: 34px;
+        padding: 10px 25px;
+        text-align: justify;
+        letter-spacing: 1.4px;
+}
+.rightInfo{
+    width: 66%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-size: cover;
+    background-image: url(../../pic/krasivaa-makro-derevannaa-koncepcia.jpg);
+}
+.textPart{
+    width: 45%;
+    height: 100%;
+}

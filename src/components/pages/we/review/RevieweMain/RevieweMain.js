@@ -1,6 +1,5 @@
 import React from 'react'
 import z from './ReviewMain.module.css'
-import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 const RevieweMain = () => {
   const articlesData = [
@@ -74,7 +73,6 @@ return (
 }
 
 const ArticleCard = ({ image, title, subtitle, link }) => {
-  // Если нет ссылки - рендери просто div вместо Link
   if (!link) {
     return (
       <div className={z.review}>
@@ -89,8 +87,6 @@ const ArticleCard = ({ image, title, subtitle, link }) => {
       </div>
     )
   }
-
-  // Если есть ссылка - рендери Link
   return (
     <Link to={link} className={z.cardLink}>
       <div className={z.review}>

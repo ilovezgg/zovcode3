@@ -8,7 +8,7 @@
 }
 .container{
     width: 90%;
-    height: 800px;
+    height: 830px;
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -16,12 +16,12 @@
 .pic{
     width: 40%;
     height: 100%;
-    background-image: url(../pic/3d-rendering-wooden-house_23-2151264420.jpg);
+    background-image: url(../pic/3d-rendering-wooden-house_23-2151264420.webp);
     background-size: cover;
     border-radius: 10px;
 }
 .text{
-    width: 38%;
+    width: 35%;
     height: 100%;
     font-size: 30px;
     backdrop-filter: blur(12px);
@@ -38,6 +38,132 @@
         letter-spacing: 1.5px;
 }
 .facts{
-    width: 15%;
+    width: 18%;
     height: 100%;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
 }
+.title{
+    display: flex;
+    justify-content: center;
+}
+.titleMain{
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    width: 90%;
+    text-align: justify;
+    padding-top: 10px;
+}
+.factsContent {
+  padding: 20px 15px;
+  height: calc(100% - 20px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+
+.factItemOne, .factItemTwo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;;
+  transition: all 0.2s ease;
+  min-height: 170px; 
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+.factItemThree{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;;
+  transition: all 0.2s ease;
+  min-height: 170px; 
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+.factItemOne{
+  margin-top: 10px;
+}
+.factItemOne::before, .factItemTwo::before, .factItemThree::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.factText {
+  color: white;
+  font-size: 30px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+
+.factItemOne:hover::before, .factItemTwo:hover::before, 
+.factItemThree:hover::before{
+  opacity: 1;
+}
+
+.factItemOne:hover .factText, .factItemTwo:hover .factText,
+.factItemThree:hover .factText{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.factItemOne:hover, .factItemTwo:hover, .factItemThree:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.factItemOne {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                   url(../pic/lesnoi-peizaz-s-gustym-tumanom.webp);
+}
+.factItemTwo {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                   url(../pic/vid-speredi-zelenogo-kusta_1.webp);
+}
+.factItemThree {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                   url(../pic/vertikal-nyi-snimok-derevannogo-domika-v-zasnezennoi-mestnosti-v-norvegii_1\ \(1\).webp);
+}
+
+
+.factText {
+  color: white;
+  font-size: 30px;
+  line-height: 1.4;
+  text-align: center;
+   cursor: crosshair;
+}
+
