@@ -1,0 +1,95 @@
+.main{
+    width: 100%;
+    height: auto;
+    background-color: rgb(87, 87, 87);
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.container{
+    width: 90%;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+.kirp{
+    width: 22%;
+    height: 100%;
+    border-radius: 10px;
+    background-image:url(../../pic/Group\ 11\ \(4\).png) ;
+    background-size: cover;
+}
+.brus{
+ width: 22%;
+    height: 100%;
+    border-radius: 10px;
+     background-image:url(../../pic/Group\ 1\ \(2\).png) ;
+     background-size: cover;
+}
+.gazobeton{
+ width: 22%;
+    height: 100%;
+    border-radius: 10px;
+     background-image:url(../../pic/Group\ 2\ \(5\).png) ;
+     background-size: cover;
+}
+.karkas{
+ width: 22%;
+    height: 100%;
+    border-radius: 10px;
+     background-image:url(../../pic/Group\ 13\ \(1\).png) ;
+     background-size: cover;
+}
+.brusLine {
+  list-style-type: disc;
+  padding-left: 35px;
+  line-height: 1.6;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.gazobetonLine {
+  list-style-type: disc;
+  padding-left: 35px;
+  line-height: 1.6;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.kirpLine {
+  list-style-type: disc;
+  padding-left: 35px;
+  line-height: 1.6;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.karkasLine {
+  list-style-type: disc;
+  padding-left: 35px;
+  line-height: 1.6;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.brusTitle, .kirpTitle, .gazobetonTitle, .karkasTitle{
+    width: 90%;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+      backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transform: translateX(18px);
+}

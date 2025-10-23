@@ -8,8 +8,126 @@
 }
 .container{
     width: 90%;
-    height: 1300px;
+    height: 800px;
     display: flex;
     justify-content: space-between;
     align-items: start;
+    gap: 20px;
 }
+.elka{
+    width: 25%;
+    height: 100%;
+    background-image: url(../../pic/elovo-pihtovyi-les-vo-vrema-snezinki-v-tumannyi-den.jpg);
+    background-size: cover;
+    background-position: left center; 
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    overflow: hidden; 
+        position: relative;
+}
+.sosna{
+    width: 25%;
+    height: 100%;
+    background-image: url(../../pic/panoramnyi_snimok_sosnovogo_lesa_na_fone_asnogo_neba_vo_vrema_voshoda.jpg);
+    background-size: cover;
+    background-position: left center; 
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+.listv{
+    width: 25%;
+    height: 100%;
+    background-image: url(../../pic/i\ \(4\).webp);
+    background-size: cover;
+    background-position: right center; 
+    border-radius: 10px;
+        position: relative;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+.kedr{
+    width: 25%;
+    height: 100%;
+    background-image: url(../../pic/i\ \(7\).webp);
+    background-size: cover;
+    background-position: right center; 
+    border-radius: 10px;
+        position: relative;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+.elka:hover, .listv:hover, .sosna:hover, .kedr:hover {
+    width: 45%; 
+    background-size: cover;
+    background-position: center center; 
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
+}
+.elkaTitle, .elkaText, .sosnaTitle, .sosnaText, .listvTitle, .listvText, .kedrTitle, .kedrText{
+    position: absolute;
+  left: 15px;
+  right: 15px;
+  color: white;
+   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  padding: 8px 12px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.4s ease;
+  transform: translateY(-10px);
+}
+.elkaTitle, .sosnaTitle, .listvTitle, .kedrTitle{
+ top: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+  
+}
+.elkaText, .sosnaText, .listvText, .kedrText{
+bottom: 15px;
+  font-size: 25px;
+  transition-delay: 0.1s;
+   font-weight: bold;
+   color: rgb(255, 255, 255);
+}
+.elka:hover .elkaTitle{
+    opacity: 1;
+  transform: translateY(0);
+}
+.elka:hover .elkaText{
+opacity: 1;
+  transform: translateY(0);
+}
+.sosna:hover .sosnaTitle{
+    opacity: 1;
+  transform: translateY(0);
+}
+.sosna:hover .sosnaText{
+opacity: 1;
+  transform: translateY(0);
+}
+.listv:hover .listvTitle{
+    opacity: 1;
+  transform: translateY(0);
+}
+.listv:hover .listvText{
+opacity: 1;
+  transform: translateY(0);
+}
+.kedr:hover .kedrTitle{
+    opacity: 1;
+  transform: translateY(0);
+}
+.kedr:hover .kedrText{
+opacity: 1;
+  transform: translateY(0);
+}
+

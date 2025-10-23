@@ -3,18 +3,17 @@ import z from './SotrudMain.module.css'
 import dogovor from './dog/dogovor.rtf'
 const SotrudMain = () => {
    const handleDownload = () => {
-    // Для RTF лучше использовать fetch
     fetch(dogovor)
       .then(response => response.blob())
       .then(blob => {
         const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'Договор_строительный.rtf'; // Имя файла при скачивании
+        link.download = 'Договор_строительный.rtf'; 
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        window.URL.revokeObjectURL(url); // Освобождаем память
+        window.URL.revokeObjectURL(url); 
       })
       .catch(error => {
         console.error('Ошибка при загрузке файла:', error);
