@@ -3,27 +3,25 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// Для development - загружаем из config/.env
-if (process.env.NODE_ENV === 'development') {
-  require('dotenv').config({ path: './config/.env' });
-}
-
+// ЕБУЧАЯ КОНФИГУРАЦИЯ - НЕ КОММИТИТЬ В ГИТ!
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  apiKey: "AIzaSyB142glraY7SqqEjoZWWntjNAYnb_pSugI",
+  authDomain: "zovcode3.firebaseapp.com",
+  projectId: "zovcode3",
+  storageBucket: "zovcode3.firebasestorage.app",
+  messagingSenderId: "458713282869",
+  appId: "1:458713282869:web:46b006d8cd3ea0cef1f47c"
 };
 
-// Проверяем что переменные загружены
-if (!firebaseConfig.apiKey) {
-  console.error('Firebase API Key not found! Check .env file');
-}
-
+// ЕБУЧАЯ ИНИЦИАЛИЗАЦИЯ
 const app = initializeApp(firebaseConfig);
+
+// ЕБУЧИЕ ЭКСПОРТЫ
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export default app;
+
+// ⚠️ ЭТОТ ФАЙЛ ДОЛЖЕН БЫТЬ В .gitignore!
+// ⚠️ НЕ КОММИТИТЬ ЕГО НАХУЙ!
+// ⚠️ КЛЮЧИ ВИДНЫ ТОЛЬКО ТЕБЕ!
