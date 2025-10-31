@@ -10,7 +10,7 @@ const ProfilePicture = () => {
   const [error, setError] = useState('');
   const [user, setUser] = useState(null);
 
-  // Загрузка текущей аватарки
+  // Загрузка текущей аватарки из Firestore
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -29,18 +29,57 @@ const ProfilePicture = () => {
     return () => unsubscribe();
   }, []);
 
-  // ЗАГРУЗКА НА FREEIMAGE.HOST
+  // Сжатие изображения (опционально, но рекомендуется)
+  const compressImage = (file, maxWidth = 300, quality = 0.7) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+
+          let { width, height } = img;
+          if (width > maxWidth) {
+            height = (height * maxWidth) / width;
+            width = maxWidth;
+          }
+
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+
+          canvas.toBlob(
+            (blob) => {
+              if (!blob) return reject(new Error('Canvas toBlob failed'));
+              const compressedFile = new File([blob], file.name, { type: 'image/jpeg' });
+              const reader2 = new FileReader();
+              reader2.onloadend = () => resolve(reader2.result);
+              reader2.readAsDataURL(compressedFile);
+            },
+            'image/jpeg',
+            quality
+          );
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  };
+
   const handleFileUpload = async (file) => {
     if (!file) return;
 
-    // Проверка размера (32MB)
-    if (file.size > 32 * 1024 * 1024) {
-      setError('Файл слишком большой (макс 32MB)');
+    if (!file.type.startsWith('image/')) {
+      setError('Выберите изображение');
       return;
     }
 
-    if (!file.type.startsWith('image/')) {
-      setError('Выберите изображение');
+    // Ограничение: не более 5 МБ исходного файла (Base64 будет ~1.3x больше)
+    if (file.size > 5 * 1024 * 1024) {
+      setError('Файл слишком большой (макс. 5 МБ)');
       return;
     }
 
@@ -48,38 +87,29 @@ const ProfilePicture = () => {
     setError('');
 
     try {
-      const formData = new FormData();
-      formData.append('image', file);
+      // Сжимаем и конвертируем в Base64
+      const base64String = await compressImage(file);
 
-      // ⬇️ ВОТ ЭТУ ЧАСТЬ ВСТАВЛЯЕМ ⬇️
-      const response = await fetch('https://freeimage.host/api/1/upload?key=6d207e02198a847aa98d0a2a901485a5', {
-        method: 'POST',
-        body: formData
-      });
-
-      if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
-
-      const data = await response.json();
-      
-      if (data.status_code === 200) {
-        const imageUrl = data.image.url;
-        setAvatarUrl(imageUrl);
-        
-        // Сохраняем URL в Firestore
-        if (user) {
-          await setDoc(doc(db, 'users', user.uid), {
-            avatarUrl: imageUrl,
-            updatedAt: new Date().toISOString()
-          }, { merge: true });
-        }
-
-        alert('Аватарка сохранена!');
-      } else {
-        throw new Error(data.error?.message || 'Ошибка загрузки');
+      // Проверка длины (Firestore лимит ~1 МБ на документ)
+      if (base64String.length > 900_000) {
+        setError('Изображение слишком большое после сжатия. Выберите меньше.');
+        return;
       }
+
+      setAvatarUrl(base64String);
+
+      // Сохраняем в Firestore
+      if (user) {
+        await setDoc(doc(db, 'users', user.uid), {
+          avatarUrl: base64String,
+          updatedAt: new Date().toISOString()
+        }, { merge: true });
+      }
+
+      alert('Аватарка сохранена!');
     } catch (err) {
       console.error('Upload error:', err);
-      setError(`Ошибка загрузки: ${err.message}`);
+      setError(`Ошибка: ${err.message}`);
     } finally {
       setIsLoading(false);
     }
@@ -115,7 +145,7 @@ const ProfilePicture = () => {
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Ваша аватарка</h3>
-      
+
       {error && <div className={styles.error}>{error}</div>}
 
       <div className={styles.avatarPreview}>
@@ -136,7 +166,7 @@ const ProfilePicture = () => {
           disabled={isLoading}
         />
         <label htmlFor="avatar-upload" className={styles.uploadButton}>
-          {isLoading ? 'Загрузка...' : 'Выбрать фото (до 32MB)'}
+          {isLoading ? 'Загрузка...' : 'Выбрать фото (до 5 МБ)'}
         </label>
 
         {avatarUrl && (
