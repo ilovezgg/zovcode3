@@ -10,9 +10,6 @@ const ProfilePicture = () => {
   const [error, setError] = useState('');
   const [user, setUser] = useState(null);
 
-  // Твой API ключ ImgBB
-  const IMGBB_API_KEY = '365c0710b66d914e1f2412da859bced1';
-
   // Загрузка текущей аватарки
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -32,7 +29,7 @@ const ProfilePicture = () => {
     return () => unsubscribe();
   }, []);
 
-  // Загрузка файла в ImgBB
+  // ЗАГРУЗКА НА FREEIMAGE.HOST
   const handleFileUpload = async (file) => {
     if (!file) return;
 
@@ -54,20 +51,18 @@ const ProfilePicture = () => {
       const formData = new FormData();
       formData.append('image', file);
 
-      // Загружаем в ImgBB с обработкой ошибок
-      const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+      // ⬇️ ВОТ ЭТУ ЧАСТЬ ВСТАВЛЯЕМ ⬇️
+      const response = await fetch('https://freeimage.host/api/1/upload?key=6d207e02198a847aa98d0a2a901485a5', {
         method: 'POST',
-        body: formData,
+        body: formData
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
       const data = await response.json();
-
-      if (data.success) {
-        const imageUrl = data.data.url;
+      
+      if (data.status_code === 200) {
+        const imageUrl = data.image.url;
         setAvatarUrl(imageUrl);
         
         // Сохраняем URL в Firestore
@@ -80,7 +75,7 @@ const ProfilePicture = () => {
 
         alert('Аватарка сохранена!');
       } else {
-        throw new Error(data.error?.message || 'Ошибка загрузки на ImgBB');
+        throw new Error(data.error?.message || 'Ошибка загрузки');
       }
     } catch (err) {
       console.error('Upload error:', err);
@@ -95,7 +90,6 @@ const ProfilePicture = () => {
     if (file) {
       handleFileUpload(file);
     }
-    // Сбрасываем значение чтобы можно было выбрать тот же файл снова
     event.target.value = '';
   };
 
