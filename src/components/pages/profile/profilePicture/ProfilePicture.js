@@ -54,11 +54,15 @@ const ProfilePicture = () => {
       const formData = new FormData();
       formData.append('image', file);
 
-      // Загружаем в ImgBB
+      // Загружаем в ImgBB с обработкой ошибок
       const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
         method: 'POST',
         body: formData,
       });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       const data = await response.json();
 
@@ -76,10 +80,11 @@ const ProfilePicture = () => {
 
         alert('Аватарка сохранена!');
       } else {
-        throw new Error(data.error?.message || 'Ошибка загрузки');
+        throw new Error(data.error?.message || 'Ошибка загрузки на ImgBB');
       }
     } catch (err) {
-      setError('Ошибка загрузки: ' + err.message);
+      console.error('Upload error:', err);
+      setError(`Ошибка загрузки: ${err.message}`);
     } finally {
       setIsLoading(false);
     }
@@ -90,6 +95,8 @@ const ProfilePicture = () => {
     if (file) {
       handleFileUpload(file);
     }
+    // Сбрасываем значение чтобы можно было выбрать тот же файл снова
+    event.target.value = '';
   };
 
   const handleRemove = async () => {
@@ -117,7 +124,6 @@ const ProfilePicture = () => {
       
       {error && <div className={styles.error}>{error}</div>}
 
-      {/* Превью аватарки */}
       <div className={styles.avatarPreview}>
         {avatarUrl ? (
           <img src={avatarUrl} alt="Аватар" className={styles.avatarImage} />
@@ -126,7 +132,6 @@ const ProfilePicture = () => {
         )}
       </div>
 
-      {/* Кнопки управления */}
       <div className={styles.controls}>
         <input
           type="file"
@@ -154,4 +159,4 @@ const ProfilePicture = () => {
   );
 };
 
- export default ProfilePicture;
+export default ProfilePicture;
