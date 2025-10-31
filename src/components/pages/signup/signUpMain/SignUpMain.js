@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
-import { supabase } from '../../../lib/supabase';
+import { useState } from 'react';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+import { auth, db } from '../../../lib/firebase';
 import { useNavigate } from 'react-router-dom';
 import z from './SignUpMain.module.css';
 
@@ -26,49 +28,34 @@ const SignUpMain = () => {
     setError('');
 
     try {
-      // 1. Регистрация с автоматическим подтверждением
-      const { data, error: authError } = await supabase.auth.signUp({
+      // 1. Регистрация пользователя
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password.trim()
+      );
+
+      const user = userCredential.user;
+
+      // 2. Создаем профиль в Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        id: user.uid,
         email: email.trim(),
-        password: password.trim(),
-        options: {
-          data: {
-            email_confirmed_at: new Date().toISOString() // Подтверждаем email сразу
-          }
-        }
+        createdAt: new Date().toISOString(),
+        emailVerified: false
       });
 
-      if (authError) throw authError;
-
-      // 2. Принудительно подтверждаем email (для локальной разработки)
-      await supabase
-        .from('auth.users')
-        .update({ email_confirmed_at: new Date().toISOString() })
-        .eq('email', email.trim());
-
-      // 3. Автоматический вход
-      const { error: signInError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password: password.trim()
-      });
-
-      if (signInError) throw signInError;
-
-      // 4. Создаем профиль
-      await supabase
-        .from('profiles')
-        .upsert({
-          id: data.user?.id,
-          email: email.trim(),
-          created_at: new Date().toISOString()
-        });
-
-      // 5. Переходим в профиль
+      // 3. Автоматический вход уже выполнен при регистрации
+      // Переходим в профиль
       navigate('/profile');
 
     } catch (err) {
+      console.error('Ошибка регистрации:', err);
       setError(
-        err.message.includes('already registered') ? 'Этот email уже зарегистрирован' :
-        'Ошибка: ' + err.message
+        err.code === 'auth/email-already-in-use' ? 'Этот email уже зарегистрирован' :
+        err.code === 'auth/weak-password' ? 'Пароль слишком слабый' :
+        err.code === 'auth/invalid-email' ? 'Неверный формат email' :
+        'Ошибка регистрации: ' + err.message
       );
     } finally {
       setLoading(false);

@@ -2,6 +2,7 @@ import React from 'react'
 import z from './Profile.module.css'
 import RegionSelector from '../russianSities/RegionSelector'
 import PhoneInput from '../PhoneForm/PhoneForm'
+import ProfilePicture from '../profilePicture/ProfilePicture'
 const ProfileMain = () => {
   return (
     <div className={z.main}>
@@ -41,6 +42,7 @@ const ProfileMain = () => {
       <div className={z.topRight}>
       <PhoneInput/>
       <RegionSelector/>
+      <ProfilePicture/>
       </div>
       </div>
     </div>

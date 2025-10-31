@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import z from './PhoneForm.module.css';
-import { supabase } from '../../../lib/supabase';
+import { auth, db } from '../../../lib/firebase';
+import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const PhoneInput = () => {
   const [phone, setPhone] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
+  const [user, setUser] = useState(null);
 
   // Форматируем телефон при изменении
   const formatPhone = (input) => {
@@ -48,37 +51,40 @@ const PhoneInput = () => {
     setPhone(formatPhone(input));
   };
 
-  // Загрузка текущего телефона
+  // Загрузка текущего пользователя и телефона
   useEffect(() => {
-    const fetchUserPhone = async () => {
-      try {
-        setIsLoading(true);
-        setError('');
-        
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) throw new Error('Требуется авторизация');
-
-        const { data, error: dbError } = await supabase
-          .from('profiles')
-          .select('phone')
-          .eq('id', user.id)
-          .single();
-
-        if (dbError) throw dbError;
-        
-        if (data?.phone) {
-          setPhone(formatPhone(data.phone));
-        } else {
-          setPhone('+7 ');
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        try {
+          setIsLoading(true);
+          setError('');
+          
+          // Получаем данные пользователя из Firestore
+          const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+          
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            if (userData?.phone) {
+              setPhone(formatPhone(userData.phone));
+            } else {
+              setPhone('+7 ');
+            }
+          } else {
+            setPhone('+7 ');
+          }
+        } catch (err) {
+          setError('Ошибка загрузки данных: ' + err.message);
+        } finally {
+          setIsLoading(false);
         }
-      } catch (err) {
-        setError(err.message);
-      } finally {
+      } else {
+        setError('Требуется авторизация');
         setIsLoading(false);
       }
-    };
+    });
 
-    fetchUserPhone();
+    return () => unsubscribe();
   }, []);
 
   // Сохранение телефона
@@ -88,30 +94,27 @@ const PhoneInput = () => {
       return;
     }
 
+    if (!user) {
+      setError('Требуется авторизация');
+      return;
+    }
+
     try {
       setIsLoading(true);
       setError('');
 
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) throw new Error('Требуется авторизация');
-
       // Удаляем пробелы для сохранения в БД
       const phoneToSave = phone.replace(/\s/g, '');
 
-      const { error } = await supabase
-        .from('profiles')
-        .upsert({
-          id: user.id,
-          phone: phoneToSave,
-          updated_at: new Date().toISOString()
-        }, {
-          onConflict: 'id'
-        });
+      // Обновляем документ пользователя в Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        phone: phoneToSave,
+        updatedAt: new Date().toISOString()
+      }, { merge: true }); // merge: true объединяет с существующими данными
 
-      if (error) throw error;
       alert('Телефон сохранён!');
     } catch (err) {
-      setError(err.message);
+      setError('Ошибка сохранения: ' + err.message);
     } finally {
       setIsLoading(false);
     }

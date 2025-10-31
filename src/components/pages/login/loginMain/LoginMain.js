@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { supabase } from '../../../lib/supabase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../lib/firebase';
 import { useNavigate } from 'react-router-dom';
 import z from './LoginMain.module.css';
 
@@ -26,22 +27,23 @@ const LoginMain = () => {
     setError('');
 
     try {
-      // 1. Авторизация
-      const { error: authError } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password: password.trim(),
-      });
+      // Авторизация
+      await signInWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password.trim()
+      );
 
-      if (authError) throw authError;
-
-      // 2. Переход в профиль после успешного входа
+      // Переход в профиль после успешного входа
       navigate('/profile');
 
     } catch (err) {
+      console.error('Ошибка входа:', err);
       setError(
-        err.message.includes('Invalid login credentials') 
-          ? 'Неверный email или пароль' 
-          : 'Ошибка: ' + err.message
+        err.code === 'auth/invalid-credential' ? 'Неверный email или пароль' :
+        err.code === 'auth/user-not-found' ? 'Пользователь не найден' :
+        err.code === 'auth/wrong-password' ? 'Неверный пароль' :
+        'Ошибка входа: ' + err.message
       );
     } finally {
       setLoading(false);
@@ -52,9 +54,8 @@ const LoginMain = () => {
     <div className={z.main}>
       <div className={z.field}>
         <div className={z.container}>
-          <div className={z.text}>Вход в аккаунт</div> {/* Изменили заголовок */}
+          <div className={z.text}>Вход в аккаунт</div>
           
-          {/* Поля формы (такие же, как в регистрации) */}
           <input 
             className={z.email} 
             type="email" 
@@ -74,16 +75,14 @@ const LoginMain = () => {
             required
           />
           
-          {/* Кнопка "Войти" вместо "Создать аккаунт" */}
           <button 
-            className={z.registr} // Используем тот же класс для стилей
+            className={z.registr}
             onClick={handleLogin}
             disabled={loading}
           >
             {loading ? 'Вход...' : 'Войти'}
           </button>
 
-          {/* Ссылка на регистрацию */}
           <button 
             className={z.loginLink} 
             onClick={() => navigate('/signup')}
@@ -93,7 +92,7 @@ const LoginMain = () => {
 
           {error && <div className={z.error}>{error}</div>}
         </div>
-        <div className={z.pic}></div> {/* Оставляем графический элемент */}
+        <div className={z.pic}></div>
       </div>
     </div>
   );

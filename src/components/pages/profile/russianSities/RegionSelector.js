@@ -1,82 +1,80 @@
 import { useState, useEffect } from 'react';
-import z from './RegionSelector.module.css'
-import { supabase } from '../../../lib/supabase';
+import z from './RegionSelector.module.css';
+import { auth, db } from '../../../lib/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const REGIONS = [
-    'Москва',
-    'Санкт-Петербург',
-    'Московская область',
-    'Краснодарский край',
-    'Свердловская область',
-    'Ростовская область',
-    'Республика Татарстан',
-    'Челябинская область',
-    'Нижегородская область',
-    'Самарская область'
-  ];
+  'Москва',
+  'Санкт-Петербург',
+  'Московская область',
+  'Краснодарский край',
+  'Свердловская область',
+  'Ростовская область',
+  'Республика Татарстан',
+  'Челябинская область',
+  'Нижегородская область',
+  'Самарская область'
+];
 
 const RegionSelector = () => {
   const [selectedRegion, setSelectedRegion] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
+  const [user, setUser] = useState(null);
 
- 
+  // Загрузка текущего пользователя и региона
   useEffect(() => {
-    const fetchUserRegion = async () => {
-      try {
-        setIsLoading(true);
-        setError('');
-        
-        const { data: { user } } = await supabase.auth.getUser();
-        if (!user) throw new Error('Требуется авторизация');
-
-      
-        const { data, error: dbError } = await supabase
-          .from('profiles')
-          .select('address_region')
-          .eq('id', user.id);
-
-        if (dbError) throw dbError;
-        
-        
-        if (data && data.length > 0) {
-          setSelectedRegion(data[0].address_region || '');
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        setUser(currentUser);
+        try {
+          setIsLoading(true);
+          setError('');
+          
+          // Получаем данные пользователя из Firestore
+          const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
+          
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            // Используем поле 'region' вместо 'address_region'
+            setSelectedRegion(userData?.region || '');
+          }
+        } catch (err) {
+          setError('Ошибка загрузки данных: ' + err.message);
+        } finally {
+          setIsLoading(false);
         }
-      } catch (err) {
-        setError(err.message);
-      } finally {
+      } else {
+        setError('Требуется авторизация');
         setIsLoading(false);
       }
-    };
+    });
 
-    fetchUserRegion();
+    return () => unsubscribe();
   }, []);
 
   const handleSave = async () => {
     if (!selectedRegion) return;
 
+    if (!user) {
+      setError('Требуется авторизация');
+      return;
+    }
+
     try {
       setIsLoading(true);
       setError('');
 
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) throw new Error('Требуется авторизация');
+      // Обновляем документ пользователя в Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        region: selectedRegion,
+        updatedAt: new Date().toISOString()
+      }, { merge: true }); // merge: true объединяет с существующими данными
 
-     
-      const { error } = await supabase
-        .from('profiles')
-        .upsert({
-          id: user.id,
-          address_region: selectedRegion,
-          updated_at: new Date().toISOString()
-        }, {
-          onConflict: 'id' 
-        });
-
-      if (error) throw error;
       alert('Регион сохранен!');
     } catch (err) {
-      setError(err.message);
+      setError('Ошибка сохранения: ' + err.message);
     } finally {
       setIsLoading(false);
     }
@@ -97,7 +95,7 @@ const RegionSelector = () => {
           onChange={(e) => setSelectedRegion(e.target.value)}
           disabled={isLoading}
         >
-          <option value=""> Выберите регион </option>
+          <option value="">Выберите регион</option>
           {REGIONS.map(region => (
             <option key={region} value={region} className={z.option}>
               {region}
