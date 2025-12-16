@@ -1,7 +1,7 @@
 .main{
     width: 100%;
     height: auto;
-    background-color: rgb(87, 87, 87);
+background-color: rgb(42, 42, 42);
     display: flex;
     justify-content: center;
     padding-top: 40px;
@@ -17,7 +17,7 @@
 .elka{
     width: 25%;
     height: 100%;
-    background-image: url(../../pic/elovo-pihtovyi-les-vo-vrema-snezinki-v-tumannyi-den.jpg);
+    background-image: url(../../pic/elovo-pihtovyi-les-vo-vrema-snezinki-v-tumannyi-den.webp);
     background-size: cover;
     background-position: left center; 
     border-radius: 10px;
@@ -28,7 +28,7 @@
 .sosna{
     width: 25%;
     height: 100%;
-    background-image: url(../../pic/panoramnyi_snimok_sosnovogo_lesa_na_fone_asnogo_neba_vo_vrema_voshoda.jpg);
+    background-image: url(../../pic/panoramnyi_snimok_sosnovogo_lesa_na_fone_asnogo_neba_vo_vrema_voshoda.webp);
     background-size: cover;
     background-position: left center; 
     border-radius: 10px;

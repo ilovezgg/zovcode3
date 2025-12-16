@@ -1,181 +1,135 @@
-.mainHeaderBackground{
-    width: 100%;
-    height: 1050px;
-    background-color: rgb(87, 87, 87);
-    position: relative; 
-    z-index: -1; 
+.mainHeaderBackground {
+  width: 100%;
+  height: 1050px;
+ background-color: rgb(24, 24, 24);
+  position: relative;
 }
+
 @font-face {
-    font-family: 'Bounded';
-    src: url(../../../../fonts/ofont.ru_Bounded.ttf) ;
-} 
-.mainHeader{
-    width: 100%;
-    height: 1050px;
-    background-image: url(../../cabinet/img/2225.png);
-    background-size: cover;
-   
-    background-position: center center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-   
-    
-}
-.mainHeader:before {
-	content: '';
-	display: block;
-    z-index: 100;
-	width: 100%;
-	height: 980px;
-	position: absolute;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color:rgba(0, 0, 0, .2);
-}
-.headerTitle{
-    width: 40%;
-    height: 58%;
-    color: white;
-    font-size: 75px;  
-    text-align: left;
-    margin-left: 50px;
-    font-weight: 500;  
-    position: absolute;
-   
-
-}
-.mainHeaderTwo{
-    width: 100%;
-    height: 980px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items:start;
+  font-family: 'Bounded';
+  src: url(../../../../fonts/ofont.ru_Bounded.ttf);
 }
 
-@media(max-width: 393px) {
-   .mainHeaderBackground{
-    width: 100%;
-      height: 350px;
-       background-color: rgb(87, 87, 87);
-    position: relative; 
-    z-index: -1; 
+.mainHeader {
+  width: 100%;
+  height: 1050px;
+  background-image: url(./img/facee_no_watermark\(1\).jpg);
+  background-size: cover;
+  background-position: center center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
-.mainHeader{
-    width: 100%;
+
+.mainHeader::before {
+  content: '';
+  display: block;
+  z-index: 1;
+  width: 100%;
+  height: 1050px; 
+  position: absolute;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.blackCube {
+  width: 40%;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  position: absolute;
+  margin-left: 50px;
+  font-family: 'Bounded', sans-serif;
+  z-index: 200; 
+}
+
+.cubeTitle {
+  font-size: 75px;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.cubeSubtitle {
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 25px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.cubeButton {
+  margin-top: 35px;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  padding-bottom: 6px;
+  transition: all 0.3s ease;
+  opacity: 0.95;
+}
+
+.cubeButton:hover {
+  border-bottom-color: white;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .mainHeaderBackground,
+  .mainHeader {
     height: 350px;
-    background-image: url(../../cabinet/img/2225.png);
-    background-size: cover;
-   
-    background-position: center center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-   
-    
-}
-.mainHeader:before {
-	display: block;
-    z-index: 100;
-	width: 100%;
-	height: 980px;
-	position: absolute;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color:rgba(0, 0, 0, 0.164);
-}
-.headerTitle{
-    width: 100%;
-    height: 58%;
-    color: white;
-    font-size: 25px;  
-    text-align: left;
-    margin-top: 60px;
-    margin-left: 50px;
-    font-weight: 500;  
-    position: absolute;
-}
-.mainHeaderTwo{
-    width: 100%;
-    height: 980px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items:start;
-    border-radius: 20px;
-}
-}
-@media(max-width: 480px) {
-   .mainHeaderBackground{
-    width: 100%;
-      height: 350px;
-       background-color: rgb(87, 87, 87);
-    position: relative; 
-    z-index: -1; 
-}
-.mainHeader{
-    width: 100%;
+  }
+
+  .mainHeader::before {
     height: 350px;
+  }
+
+  .mainHeader {
     background-image: url(../../cabinet/img/2225.png);
-    background-size: cover;
-   
-    background-position: center center;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 10;
-   
-    
-}
-.mainHeader:before {
-	display: block;
-    z-index: 100;
-	width: 100%;
-	height: 980px;
-	position: absolute;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color:rgba(0, 0, 0, 0.164);
-}
-.headerTitle{
-    width: 100%;
-    height: 58%;
-    color: white;
-    font-size: 25px;  
-    text-align: left;
-    margin-top: 60px;
-    margin-left: 50px;
-    font-weight: 500;  
-    position: absolute;
-}
-.mainHeaderTwo{
-    width: 100%;
-    height: 980px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items:start;
-    border-radius: 20px;
-}
+  }
+
+  .blackCube {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    margin-top: 30px;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .cubeTitle {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .cubeSubtitle {
+    font-size: 24px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .cubeButton {
+    font-size: 20px;
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

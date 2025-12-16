@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from "react";
-import z from "./Buttons2.module.css";
 import { Link } from "react-router-dom";
-import AboutUsDropdown from "./aboutUsDropdown/AboutUsDropdown";
-import logo from './img/Group 4.png'
+import z from "./Buttons2.module.css";
+import logo from "./img/Group 4.png";
+import AboutUsDropdown from './aboutUsDropdown/AboutUsDropdown'
 const Buttons2 = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const [isProfileActive, setIsProfileActive] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  
   useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+
+    window.addEventListener("resize", handleResize);
     if (!isMobile) {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 10);
-      };
       window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
     }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [isMobile]);
+
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -27,143 +30,86 @@ const Buttons2 = () => {
     } else {
       document.body.style.overflow = "unset";
     }
-    
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const toggleMobileMenu = () => setIsMenuOpen((prev) => !prev);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className={`${z.svo} ${!isMobile && isScrolled ? z.scrolled : ""}`}>
+    <div className={`${z.svo} ${isScrolled ? z.scrolled : ""}`}>
       <div className={z.containerButtons}>
-        <div className={z.backgroundBlur}></div>
-        
+  
+        <div className={z.leftSection}>
+          <img src={logo} alt="Логотип" className={z.logoImage} />
+          <div className={z.hamburger} onClick={toggleMobileMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+      
         <div className={z.headerButtons}>
-          {isMobile && (
-            <div 
-              className={`${z.hamburger} ${isMenuOpen ? z.active : ""}`}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          )}
+          <Link to="/" className={z.mainButton} onClick={closeMenu}>
+            Главная
+          </Link>
+          <Link to="/catalog" className={z.catalogButton} onClick={closeMenu}>
+            Каталог
+          </Link>
+           <AboutUsDropdown/>
+          <Link to="/contacts" className={z.contactsButton} onClick={closeMenu}>
+            Контакты
+          </Link>
+          <Link to="/signup" className={z.signUpButton} onClick={closeMenu}>
+            Регистрация
+          </Link>
+          <Link to="/callback" className={z.callbackButton} onClick={closeMenu}>
+            Обратный звонок
+          </Link>
+        </div>
 
-          {!isMobile && (
-            <>
-            <div className={z.logoContainer}>
-           <Link to="/">
-        <img 
-          src={logo} 
-          alt="Логотип компании"
-          className={z.logoImage}
-        />
-      </Link>
-          </div>
-              <Link to="/" className={z.mainButton}>
-                Главная
-              </Link>
-              <AboutUsDropdown/>
-              <Link to="/contacts" className={z.contactsButton}>
-                Контакты
-              </Link>
-              <Link to="/catalog" className={z.catalogButton}>
-                Каталог
-              </Link>
-              <Link to="/cabinet" className={z.callbackButton}>
-                Галерея
-              </Link>
-              <Link to="/signup" className={z.signUpButton}>
-                Личный кабинет
-              </Link>
-            </>
-          )}
-
-          <div className={z.rightContainer}>
-            <Link 
-              to="/favourites" 
-              className={`${z.favButton} ${isFavorite ? z.active : ''}`}
-              onClick={() => {
-                setIsFavorite(!isFavorite);
-                if (isMobile) closeMenu();
-              }}
-            >
-              <svg 
-                width="30" 
-                height="30" 
-                viewBox="0 0 24 24" 
-                fill={isFavorite ? "#ff0000" : "none"} 
-                xmlns="http://www.w3.org/2000/svg"
-                className={z.heartIcon}
-              >
-                <path
-                  d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.03L12 21.35Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-            <Link 
-              to="/profile" 
-              className={`${z.profileButton} ${isProfileActive ? z.active : ''}`}
-              onClick={() => {
-                setIsProfileActive(!isProfileActive);
-                if (isMobile) closeMenu();
-              }}
-            >
-              <svg 
-                width="30" 
-                height="30" 
-                viewBox="0 0 24 24" 
-                fill={isProfileActive ? "#4285F4" : "none"} 
-                xmlns="http://www.w3.org/2000/svg"
-                className={z.profileIcon}
-              >
-                <path
-                  d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12ZM12 14C7.58172 14 4 15.7909 4 18V20H20V18C20 15.7909 16.4183 14 12 14Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </div>
+       
+        <div className={z.rightContainer}>
+          <button className={z.favButton}>
+            <svg className={z.heartIcon} viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </button>
+          <button className={z.profileButton}>
+            <svg className={z.profileIcon} viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M20 20h-1a5 5 0 01-5-5v-1H10v1a5 5 0 01-5 5H4a1 1 0 01-1-1v-4a8 8 0 0114 0v4a1 1 0 01-1 1z" />
+            </svg>
+          </button>
         </div>
       </div>
 
-      {isMobile && (
+      {/* Мобильное меню */}
+      {isMenuOpen && (
         <>
-          <div 
-            className={`${z.overlay} ${isMenuOpen ? z.active : ""}`} 
-            onClick={closeMenu}
-          />
-          
-          <div className={`${z.mobileMenu} ${isMenuOpen ? z.active : ""}`}>
+          <div className={z.overlay} onClick={toggleMobileMenu}></div>
+          <div className={z.mobileMenu}>
             <div className={z.mobileMenuContent}>
               <Link to="/" className={z.mobileMenuButton} onClick={closeMenu}>
                 Главная
               </Link>
-              <Link to="/we" className={z.mobileMenuButton} onClick={closeMenu}>
+              <Link to="/catalog" className={z.mobileMenuButton} onClick={closeMenu}>
+                Каталог
+              </Link>
+              <Link to="/about" className={z.mobileMenuButton} onClick={closeMenu}>
                 О нас
               </Link>
               <Link to="/contacts" className={z.mobileMenuButton} onClick={closeMenu}>
                 Контакты
               </Link>
-              <Link to="/catalog" className={z.mobileMenuButton} onClick={closeMenu}>
-                Каталог
-              </Link>
-              <Link to="/cabinet" className={z.mobileMenuButton} onClick={closeMenu}>
-                Галерея
-              </Link>
               <Link to="/signup" className={z.mobileMenuButton} onClick={closeMenu}>
-                Личный кабинет
+                Регистрация
+              </Link>
+              <Link to="/callback" className={z.mobileMenuButton} onClick={closeMenu}>
+                Обратный звонок
               </Link>
             </div>
           </div>

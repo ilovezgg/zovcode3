@@ -3,6 +3,9 @@ import z from './EcoHouseTables.module.css'
 const EcoHouseTables = () => {
   return (
     <div className={z.main}>
+        <div className={z.titleTables}>
+           Сравнение разных материалов для строительства дома
+        </div>
  <div className={z.container}>
     <div className={z.brus}>
         <div className={z.brusTitle}>
