@@ -1,29 +1,36 @@
 import { useState, useEffect } from 'react';
 import z from './PhoneForm.module.css';
 import { auth, db } from '../../../lib/firebase';
-import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
+import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore'; // ДОБАВИЛ
 
 const PhoneInput = () => {
-  const [phone, setPhone] = useState('');
+  const [phone, setPhone] = useState('+7 ');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
   const [user, setUser] = useState(null);
+  const [isSaving, setIsSaving] = useState(false); // ОТДЕЛЬНО для кнопки
 
-  // Форматируем телефон при изменении
   const formatPhone = (input) => {
-    // Удаляем всё кроме цифр
     let numbers = input.replace(/\D/g, '');
     
-    // Если начинается не с 7 или 8 - ставим +7
-    if (!numbers.startsWith('7') && !numbers.startsWith('8')) {
+    // Если пусто или только +7
+    if (!numbers || numbers === '7') {
+      return '+7 ';
+    }
+    
+    // Если начинается с 8 - меняем на 7
+    if (numbers.startsWith('8')) {
+      numbers = '7' + numbers.substring(1);
+    }
+    
+    // Если не с 7 - добавляем 7
+    if (!numbers.startsWith('7')) {
       numbers = '7' + numbers;
     }
     
-    // Обрезаем до 11 цифр (первая 7 или 8)
     numbers = numbers.substring(0, 11);
     
-    // Форматируем по шаблону
     let formatted = '+7';
     if (numbers.length > 1) {
       formatted += ' ' + numbers.substring(1, 4);
@@ -43,15 +50,23 @@ const PhoneInput = () => {
 
   const handlePhoneChange = (e) => {
     const input = e.target.value;
-    // Если пытаются стереть +7 - не даём
-    if (input.length < 3 && input !== '+7') {
+    
+    // Не даем стереть +7
+    if (input.length < 2) {
       setPhone('+7 ');
       return;
     }
+    
     setPhone(formatPhone(input));
   };
 
-  // Загрузка текущего пользователя и телефона
+  const handleKeyDown = (e) => {
+    // Блочим backspace на позиции 0-2 чтобы не стерли +7
+    if (e.key === 'Backspace' && e.target.selectionStart <= 3) {
+      e.preventDefault();
+    }
+  };
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
@@ -60,18 +75,13 @@ const PhoneInput = () => {
           setIsLoading(true);
           setError('');
           
-          // Получаем данные пользователя из Firestore
           const userDoc = await getDoc(doc(db, 'users', currentUser.uid));
           
           if (userDoc.exists()) {
             const userData = userDoc.data();
             if (userData?.phone) {
               setPhone(formatPhone(userData.phone));
-            } else {
-              setPhone('+7 ');
             }
-          } else {
-            setPhone('+7 ');
           }
         } catch (err) {
           setError('Ошибка загрузки данных: ' + err.message);
@@ -87,9 +97,10 @@ const PhoneInput = () => {
     return () => unsubscribe();
   }, []);
 
-  // Сохранение телефона
   const handleSave = async () => {
-    if (!phone || phone.length < 16) { // +7 000 000 00 00 - 16 символов
+    const phoneNumbers = phone.replace(/\D/g, '');
+    
+    if (phoneNumbers.length < 11) {
       setError('Введите полный номер телефона');
       return;
     }
@@ -100,27 +111,29 @@ const PhoneInput = () => {
     }
 
     try {
-      setIsLoading(true);
+      setIsSaving(true); // отдельный стейт для кнопки
       setError('');
 
-      // Удаляем пробелы для сохранения в БД
-      const phoneToSave = phone.replace(/\s/g, '');
+      const phoneToSave = '+7' + phoneNumbers.substring(1);
 
-      // Обновляем документ пользователя в Firestore
       await setDoc(doc(db, 'users', user.uid), {
         phone: phoneToSave,
-        updatedAt: new Date().toISOString()
-      }, { merge: true }); // merge: true объединяет с существующими данными
+        updatedAt: serverTimestamp() // лучше чем new Date()
+      }, { merge: true });
 
-      alert('Телефон сохранён!');
+      setError(''); // убираем alert
+      // Можно добавить toast или success state
     } catch (err) {
       setError('Ошибка сохранения: ' + err.message);
     } finally {
-      setIsLoading(false);
+      setIsSaving(false);
     }
   };
 
   if (isLoading) return <div>Загрузка...</div>;
+
+  const phoneNumbers = phone.replace(/\D/g, '');
+  const isValid = phoneNumbers.length === 11;
 
   return (
     <div className={z.container}>
@@ -134,18 +147,19 @@ const PhoneInput = () => {
           className={z.input}
           value={phone}
           onChange={handlePhoneChange}
+          onKeyDown={handleKeyDown} // ДОБАВИЛ
           placeholder="+7 000 000 00 00"
-          disabled={isLoading}
-          maxLength={16} // +7 000 000 00 00
+          disabled={isLoading || isSaving}
+          maxLength={16}
         />
       </div>
       
       <button
-        className={`${z.button} ${isLoading ? z.buttonLoading : ''}`}
+        className={`${z.button} ${isSaving ? z.buttonLoading : ''}`}
         onClick={handleSave}
-        disabled={phone.length < 16 || isLoading}
+        disabled={!isValid || isLoading || isSaving}
       >
-        {isLoading ? 'Сохранение...' : 'Сохранить телефон'}
+        {isSaving ? 'Сохранение...' : 'Сохранить телефон'}
       </button>
     </div>
   );

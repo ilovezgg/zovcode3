@@ -34,8 +34,20 @@ const Footer = () => {
               <div className={z.socials}>
                 <span className={z.socialsTitle}>Мы в соцсетях</span>
                 <div className={z.socialIcons}>
-                  <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className={z.iconTelegram} />
-                  <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className={z.iconWhatsapp} />
+                  <a 
+                    href="https://t.me/your_username" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={z.iconTelegram}
+                    aria-label="Наш Telegram"
+                  />
+                  <a 
+                    href="https://wa.me/79217302466" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={z.iconWhatsapp}
+                    aria-label="Наш WhatsApp"
+                  />
                 </div>
               </div>
 

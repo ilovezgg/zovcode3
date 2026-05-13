@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import z from './AboutUsDropdown.module.css'; 
-import Materials from '../../../we/materials/Materials';
 const AboutUsDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 

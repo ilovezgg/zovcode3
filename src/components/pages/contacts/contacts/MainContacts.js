@@ -51,9 +51,25 @@ const MainContacts = () => {
           <div className={`${z.card} ${inView ? z.visible : ''}`} style={{ transitionDelay: '200ms' }}>
             <h3 className={z.cardTitle}>Мессенджеры</h3>
             <div className={z.socialButtons}>
-              <a href="#" className={z.socialBtn}><TelegramIcon />Telegram</a>
-              <a href="#" className={z.socialBtn}><WhatsIcon />WhatsApp</a>
-              <a href="mailto:srub-dom53@yandex.ru" className={z.socialBtn}><GmailIcon />Email</a>
+              <a 
+                href="https://t.me/your_username" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={z.socialBtn}
+              >
+                <TelegramIcon />Telegram
+              </a>
+              <a 
+                href="https://wa.me/79217302466" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={z.socialBtn}
+              >
+                <WhatsIcon />WhatsApp
+              </a>
+              <a href="mailto:srub-dom53@yandex.ru" className={z.socialBtn}>
+                <GmailIcon />Email
+              </a>
             </div>
             <div className={z.mapWrapper}>
               <iframe
