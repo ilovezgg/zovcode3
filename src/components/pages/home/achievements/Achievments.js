@@ -8,20 +8,23 @@ const Counter = ({ target, isVisible }) => {
   useEffect(() => {
     if (!isVisible) return;
 
-    let start = 0;
-    const duration = 2000; // 2 секунды
-    const incrementTime = Math.floor(duration / target);
-    const timer = setInterval(() => {
-      start += 1;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, incrementTime);
+    let startTime;
+    const duration = 2000;
 
-    return () => clearInterval(timer);
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing для плавности
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    requestAnimationFrame(animate);
   }, [target, isVisible]);
 
   return <span>{count}</span>;

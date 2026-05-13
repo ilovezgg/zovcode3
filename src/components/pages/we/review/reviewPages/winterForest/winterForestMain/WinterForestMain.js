@@ -1,139 +1,132 @@
-import React from 'react'
-import z from './WinterForestMain.module.css'
-const WinterForestMain = () => {
+import React from "react";
+import { useInView } from 'react-intersection-observer';
+import z from "./WinterForestMain.module.css";
+
+const FadeIn = ({ children, delay = 0 }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   return (
-    <div className={z.main}>
-      <div className={z.containerForPic}>
-       <div className={z.pic}>
-         <div className={z.blackCube}>
-          <div className={z.title}>
-           Зимний лес для сруба: мифы и реальность
+    <div 
+      ref={ref} 
+      className={`${z.fadeIn} ${inView ? z.visible : ''}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const WinterForestMain = () => {
+  const advantages = [
+    "Естественная низкая влажность — дерево \"спит\", сокодвижение остановлено",
+    "Повышенная плотность волокон — мороз делает структуру древесины более однородной", 
+    "Защита от грибка и плесени — низкие температуры предотвращают развитие микроорганизмов",
+    "Равномерная усадка — минимальное образование трещин и деформаций"
+  ];
+
+  const humidityData = [
+    { name: 'Клееный брус', value: 10, color: '#a8a08a' },
+    { name: 'Сушеный брус', value: 15, color: '#d7c9a9' },
+    { name: 'Зимний брус', value: 35, color: '#d2b48c' },
+    { name: 'Летний брус', value: 60, color: 'rgb(95, 180, 115)' }
+  ];
+
+  return (
+    <section className={z.section}>
+      <div className={z.container}>
+        
+        <FadeIn>
+          <div className={z.hero}>
+            <div className={z.heroBg} />
+            <div className={z.heroContent}>
+              <h1 className={z.heroTitle}>Зимний лес для сруба: мифы и реальность</h1>
+              <p className={z.heroSubtitle}>
+                Преимущества зимней заготовки древесины и особенности строительства
+              </p>
+            </div>
           </div>
-          <div className={z.subTitle}>
-Преимущества зимней заготовки древесины и особенности строительства
+        </FadeIn>
+
+        <FadeIn delay={100}>
+          <div className={z.textBlock}>
+            В сфере деревянного домостроения давно укрепилось мнение, что для строительства качественного сруба идеально подходит древесина, заготовленная в зимний период. Но что из этого правда, а что — устоявшийся миф? Давайте разберемся, какие реальные преимущества имеет зимний лес и на что стоит обратить внимание при строительстве сруба из бруса в холодное время года.
           </div>
-         </div>
-       </div>
-      </div>
-      <div className={z.containerForText}>
-<div className={z.textFirst}>
-  В сфере деревянного домостроения давно укрепилось мнение, что для строительства качественного сруба идеально подходит древесина, заготовленная в зимний период. Но что из этого правда, а что — устоявшийся миф? Давайте разберемся, какие реальные преимущества имеет зимний лес и на что стоит обратить внимание при строительстве сруба из бруса в холодное время года.
-      </div>
-      </div>
-      <div className={z.containerForTextTwo}>
-        <div className={z.containerForTwo}>
-<div className={z.picWork}>
+        </FadeIn>
 
-        </div>
-        <div className={z.textTwo}>
-      <div className={z.titleParts}>
-    Преимущества зимней древесины:
-      </div>
-      <div className={z.subTitleParts}>
- • Естественная низкая влажность — дерево "спит", сокодвижение остановлено
-      </div>
-      <div className={z.subTitleParts}>
-  • Повышенная плотность волокон — мороз делает структуру древесины более однородной
-      </div>
-      <div className={z.subTitleParts}>
-• Защита от грибка и плесени — низкие температуры предотвращают развитие микроорганизмов
-      </div>
-      <div className={z.subTitleParts}>
-• Равномерная усадка — минимальное образование трещин и деформаций
-      </div>
-        </div>
-        </div>
-      </div>
-      <div className={z.containerForTextSecond}>
-<div className={z.textSecond}>
-  Однако важно понимать: преимущества зимней древесины не отменяют необходимости профессионального подхода к строительству. Даже самый качественный материал требует правильной обработки, сборки и последующего ухода. Современные технологии сушки позволяют достичь оптимальных показателей влажности и у летнего леса, но именно зимняя древесина сохраняет природную структуру волокон, что положительно сказывается на прочности и теплоизоляционных свойствах готового сруба.
-      </div>
-      </div>
-      <div className={z.infoPart}>
-        <div className={z.containerInfo}>
-<div className={z.infoPic}>
+        <FadeIn delay={200}>
+          <div className={z.splitBlock}>
+            <div className={z.splitImage} />
+            <div className={z.splitContent}>
+              <h3 className={z.splitTitle}>Преимущества зимней древесины:</h3>
+              <ul className={z.featureList}>
+                {advantages.map((item, i) => (
+                  <li key={i} className={z.featureItem}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={300}>
+          <div className={z.textBlock}>
+            Однако важно понимать: преимущества зимней древесины не отменяют необходимости профессионального подхода к строительству. Даже самый качественный материал требует правильной обработки, сборки и последующего ухода. Современные технологии сушки позволяют достичь оптимальных показателей влажности и у летнего леса, но именно зимняя древесина сохраняет природную структуру волокон, что положительно сказывается на прочности и теплоизоляционных свойствах готового сруба.
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={400}>
+          <div className={z.infoGrid}>
+            <div className={z.infoImage} />
+            
+            <div className={z.chartCard}>
+              <h3 className={z.chartTitle}>Сравнительный анализ влажности разной древесины (%)</h3>
+              <div className={z.chart}>
+                {humidityData.map((item, i) => (
+                  <div key={i} className={z.barWrapper}>
+                    <div 
+                      className={z.bar} 
+                      style={{ 
+                        height: `${item.value * 1.2}%`, 
+                        backgroundColor: item.color,
+                        transitionDelay: `${i * 100}ms`
+                      }}
+                    >
+                      <span className={z.barValue}>{item.value}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className={z.legend}>
+                {humidityData.map((item, i) => (
+                  <div key={i} className={z.legendItem}>
+                    <div className={z.legendDot} style={{ backgroundColor: item.color }} />
+                    <span>{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={z.textCard}>
+              Многолетние исследования подтверждают, что оптимальная влажность древесины для строительства составляет 12-18%. Именно в этом диапазоне материал проявляет свои лучшие качества: минимальную усадку, устойчивость к деформациям и максимальную долговечность.
+              <br/><br/>
+              Зимний брус естественным образом приближается к этим идеальным значениям благодаря особенностям сезонной заготовки. Естественная сушка сохраняет уникальную структуру древесных волокон и природную прочность значительно лучше многих современных технологичных методов.
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={500}>
+          <div className={z.finalBlock}>
+            <div className={z.finalImageOne} />
+            <div className={z.finalText}>
+              Строительство сруба из зимнего леса — это разумный выбор для тех, кто ценит натуральность, долговечность и здоровый микроклимат. Природные преимущества зимней древесины в сочетании с современными технологиями создают идеальный симбиоз традиций и инноваций.
+              <br/><br/>
+              Правильный зимний брус сохраняет все преимущества дерева и обеспечивает стабильность конструкции. Ваш дом — это не просто жилье, а наследие для поколений.
+            </div>
+            <div className={z.finalImageTwo} />
+          </div>
+        </FadeIn>
 
       </div>
-      <div className={z.infoStatistic}> 
-        <div className={z.upInfo}>
-<div className={z.titleGraph}>
-Сравнительный анализ влажности разной древесины (%)
-</div>
-<div className={z.containerForGraph}>
-<div className={z.glueWood}>
-<div className={z.numberGlue}>
-10
-</div>
-</div>
-<div className={z.dryWood}>
-<div className={z.numberDry}>
-15
-</div>
-</div>
-<div className={z.winterWood}>
-<div className={z.numberWinter}>
-35
-</div>
-</div>
-<div className={z.summerWood}>
-<div className={z.numberSummer}>
-60
-</div>
-</div>
-</div>
-        </div>
-        <div className={z.bottomInfo}>
-       <div className={z.bottomTitle}>
-       На графике предоставлены проценты влажности для:
-       </div>
-       <div className={z.legendGrid}>
-    <div className={z.legendRow}>
-      <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: '#a8a08a'}}></div>
-        <span>Клееный брус</span>
-      </div>
-      <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: '#d2b48c'}}></div>
-        <span>Зимний брус</span>
-      </div>
-    </div>
-    <div className={z.legendRow}>
-      <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: 'rgb(95, 180, 115)'}}></div>
-        <span>Летний брус</span>
-      </div>
-      <div className={z.legendItem}>
-        <div className={z.colorCircle} style={{background: '#ffffffff'}}></div>
-        <span>Сушеный брус</span>
-      </div>
-    </div>
-  </div>
-        </div>
-      </div>
-      <div className={z.infoText}>
- Многолетние исследования подтверждают, что оптимальная влажность древесины для строительства составляет 12-18%. Именно в этом диапазоне материал проявляет свои лучшие качества: минимальную усадку, устойчивость к деформациям и максимальную долговечность. 
-  
-  Зимний брус естественным образом приближается к этим идеальным значениям благодаря особенностям сезонной заготовки. Естественная сушка сохраняет уникальную структуру древесных волокон и природную прочность значительно лучше многих современных технологичных методов.
-      </div>
-        </div>
-      </div>
-      <div className={z.lastPart}>
-       <div className={z.containerLastPart}>
-        <div className={z.lastPicOne}>
+    </section>
+  );
+};
 
-        </div>
-        <div className={z.lastText}>
-Строительство сруба из зимнего леса — это разумный выбор для тех, кто ценит натуральность, долговечность и здоровый микроклимат. Природные преимущества зимней древесины в сочетании с современными технологиями создают идеальный симбиоз традиций и инноваций.
-  
-  Правильный зимний брус сохраняет все преимущества дерева и обеспечивает стабильность конструкции. Ваш дом — это не просто жилье, а наследие для поколений.
-        </div>
-        <div className={z.lastPicTwo}>
-
-        </div>
-       </div>
-      </div>
-    </div>
-  )
-}
-
-export default WinterForestMain
+export default WinterForestMain;

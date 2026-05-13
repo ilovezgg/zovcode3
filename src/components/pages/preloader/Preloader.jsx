@@ -7,18 +7,31 @@ const Preloader = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsExiting(true);
-      setTimeout(onComplete, 3000); // Ждем завершения анимации
-    }, 2000); // Показываем 1 секунду перед началом исчезновения
+      setTimeout(onComplete, 600);
+    }, 1400); // Чуть дольше из-за 7 букв
 
     return () => clearTimeout(timer);
   }, [onComplete]);
 
   return (
-    <div className={`${styles.preloaderOverlay} ${isExiting ? styles.fadeOut : ''}`}>
-      <div className={styles.waveContainer}>
-        <div className={styles.wave}></div>
-        <div className={styles.wave} style={{ animationDelay: '0.2s' }}></div>
-        <div className={styles.wave} style={{ animationDelay: '0.4s' }}></div>
+    <div className={`${styles.overlay} ${isExiting? styles.fadeOut : ''}`}>
+      <div className={styles.content}>
+        <div className={styles.logo}>
+          <span className={styles.letter}>С</span>
+          <span className={styles.letter}>Р</span>
+          <span className={styles.letter}>У</span>
+          <span className={styles.letter}>Б</span>
+          <span className={styles.letter}>Д</span>
+          <span className={styles.letter}>О</span>
+          <span className={styles.letter}>М</span>
+        </div>
+        <div className={styles.bars}>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+          <div className={styles.bar}></div>
+        </div>
       </div>
     </div>
   );

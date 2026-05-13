@@ -1,494 +1,250 @@
-.main{
-    height:1000px;
-    background-color: rgb(87, 87, 87);
+.section {
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  padding: 100px 0 120px;
 }
-.contactsMain{
-    width: 100%;
-    height: 800px;
-    background-color: #181818;
-    transform: translateY(20%);
-    border-radius: 20px;
+
+.container {
+  width: 95%;
+  margin: 0 auto;
 }
-.imagesTitle{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 110px;
+
+.title {
+  font-size: 56px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 0 0 56px 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.allInfo{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: space-around; 
-    transform: translateY(5%);
+
+.title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.workingTime{
-    width: 30%;
-    height: 89%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
 }
-.socialMedia{
-    width: 30%;
-    height: 89%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-justify-content: space-between;
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.contactInfo{
-    width: 30%;
-    height: 89%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.icons{
-    width: 100%;
-    height: 45%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 17px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-.whats, .tg, .gmail{
-    width: 95%;
-    height: 60px;
-    background-color: rgb(255, 255, 255);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease-in !important; 
+
+.titleIcon {
+  width: 28px;
+  height: 28px;
 }
-.icon{
-    transition: all 0.3s ease-in !important;
+
+/* График работы */
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
-.tg:hover, .whats:hover, .gmail:hover{
-    background-color: #181818;
+
+.timeCard {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s ease;
 }
-.whats:hover path, .tg:hover path, .gmail:hover path{
-    fill: white !important;
+
+.timeCard:hover {
+  background: rgba(255, 255, 255, 0.12);
 }
-.timeTitle, .timeSubTitle{
+
+.timeCard:last-child {
+  grid-column: span 2;
+}
+
+.timeDay {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 6px;
+}
+
+.timeHours {
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+/* Соцсети */
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialBtn {
+  width: 100%;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(24, 24, 24);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.socialBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.socialBtn:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+.mapWrapper {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Реквизиты */
+.requisites {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.address {
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
+.contactRow a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 300;
+  transition: opacity 0.2s ease;
+}
+
+.contactRow a:hover {
+  opacity: 0.7;
+}
+
+.contactRow > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactIcon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0 80px;
+  }
+  
+  .title {
     font-size: 40px;
-    color: white;
-}
-.iconTime{
-    width: 33px;
-    height: 33px;
-    background-image: url(./img/icons8-часы-48.png);
-    background-size: contain;
-    transform: translateY(7px);
-}
-.bottomTime{
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    justify-content: center;
-}
-.upTime{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-}
-.bigContainer{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 15px;
-    transform: translateY(5%);
-    margin-bottom: 20px;
-}
-.bigContainerOne{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-    row-gap: 20px;
-    transform: translateY(8%);
-    margin-bottom: 20px;
-}
-.timeContainerOne, .timeContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-}
-.timeContainerOne{
-    width: 97%;
-    height: 95%;
-}
-.timeContainer{
-    width: 47%;
-    height: 95%;
-    gap: 10px;
-}
-.documents{
-    width: 97%;
-    height: 100%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    transform: translateY(2%);
-    justify-content: space-around;
-}
-.containerForInfoTwo{
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-}
-.inn, .ogrn, .schet, .adress, .ip{
-    font-size: 35px;
-    color: white;
-    transform: translateX(2%);
-}
-.docIcon{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 20%;
-}
-.phoneIcon, .mailIcon{
-    width: 40px;
-    height: 40px;
-    transform: translateX(-20%);
-}
-.documentsIcon{
-    width: 100%;
-    height: 30px;
-    position: absolute;
-    left: 91%;
-    top: 3%;
-}
-.phoneNumberOne, .phoneNumberTwo, .mail{
-    width: 97%;
-    height: 45%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.containerForPhones{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.number, .mailAdress{
-    color: white;
-    font-size: 35px;
-    transform: translateX(5%)
-}
-.containerForMail{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-}
-.mapContainer{
-    width: 100%;
-    height: 50%;
-    background-color: white;
-    border-radius: 15px;
-}
-@media(max-width:768px){
-    .main{
-    height:1000px;
-    background-color: rgb(87, 87, 87);
-}
-.contactsMain{
-    width: 100%;
-    height: 900px;
-    background-color: #181818;
-    transform: translateY(8.5%);
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    padding: 28px 24px;
     border-radius: 20px;
+  }
+  
+  .cardTitle {
+    font-size: 22px;
+  }
+  
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeCard:last-child {
+    grid-column: span 1;
+  }
 }
-.imagesTitle{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 35px;
-}
-.allInfo{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    transform: none;
-    flex-direction: column;
-}
-.workingTime{
-    width: 89%;
-    height: 30%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-}
-.socialMedia{
-  width: 89%;
-    height: 30%;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-justify-content: space-between;
-}
-.contactInfo{
-  width: 89%;
-    height: 30%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
-}
-.icons{
-    width: 100%;
-    height: 45%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 17px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-}
-.whats, .tg, .gmail{
-    width: 95%;
-    height: 60px;
-    background-color: rgb(255, 255, 255);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    transition: all 0.3s ease-in !important; 
-}
-.icon{
-    transition: all 0.3s ease-in !important;
-}
-.tg:hover, .whats:hover, .gmail:hover{
-    background-color: #181818;
-}
-.whats:hover path, .tg:hover path, .gmail:hover path{
-    fill: white !important;
-}
-.timeTitle, .timeSubTitle{
-    font-size: 25px;
-    color: white;
-}
-.iconTime{
-    width: 0px;
-    height: 0px;
-    background-image: url(./img/icons8-часы-48.png);
-    background-size: contain;
-    transform: translateY(7px);
-}
-.bottomTime{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-.upTime{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-}
-.bigContainer{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 15px;
-    transform: translateY(5%);
-    margin-bottom: 20px;
-}
-.bigContainerOne{
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    border-radius: 15px;
-    row-gap: 20px;
-    transform: translateY(8%);
-    margin-bottom: 20px;
-}
-.timeContainerOne, .timeContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    gap: 20px;
-}
-.timeContainerOne{
-    width: 97%;
-    height: 95%;
-}
-.timeContainer{
-    width: 47%;
-    height: 95%;
-    gap: 10px;
-}
-.documents{
-    width: 97%;
-    height: 100%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    transform: translateY(2%);
-    justify-content: space-around;
-}
-.containerForInfoTwo{
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-}
-.inn, .ogrn, .schet, .adress, .ip{
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 32px;
+  }
+  
+  .card {
+    padding: 24px 20px;
+  }
+  
+  .socialBtn {
+    height: 52px;
     font-size: 15px;
-    color: white;
-    transform: translateX(2%);
-}
-.docIcon{
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    bottom: 20%;
-}
-.phoneIcon, .mailIcon{
-    width: 40px;
-    height: 40px;
-    transform: translateX(-20%);
-}
-.documentsIcon{
-    width: 100%;
-    height: 30px;
-    position: absolute;
-    left: 91%;
-    top: 3%;
-}
-.phoneNumberOne, .phoneNumberTwo, .mail{
-    width: 97%;
-    height: 45%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.containerForPhones{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.number, .mailAdress{
-    color: white;
-    font-size: 15px;
-    transform: translateX(5%)
-}
-.containerForMail{
-    width: 100%;
-    height: 40%;
-    display: flex;
-    justify-content: center;
-}
-.mapContainer{
-    width: 100%;
-    height: 1%;
-    background-color: white;
-    border-radius: 15px;
-}
+  }
 }

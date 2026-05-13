@@ -5,16 +5,22 @@ import z from "./CatalogMain.module.css";
 
 const CatalogMain = ({ houses = [] }) => {
   const { favorites, toggleFavorite } = useFavorites();
-  const groupedHouses = [];
-  for (let i = 0; i < houses.length; i += 3) {
-    groupedHouses.push(houses.slice(i, i + 3));
+
+  if (!houses.length) {
+    return (
+      <div className={z.catalogMain}>
+        <div className={z.container}>
+          <div className={z.noResults}>Ничего не найдено</div>
+        </div>
+      </div>
+    );
   }
 
   return (
     <div className={z.catalogMain}>
-      {groupedHouses.map((group, index) => (
-        <div key={index} className={z.houseRow}>
-          {group.map(house => (
+      <div className={z.container}>
+        <div className={z.grid}>
+          {houses.map(house => (
             <HouseCard
               key={house.id}
               {...house}
@@ -23,7 +29,7 @@ const CatalogMain = ({ houses = [] }) => {
             />
           ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

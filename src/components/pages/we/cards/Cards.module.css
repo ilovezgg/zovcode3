@@ -1,304 +1,148 @@
-.cardsMain{
-    width: 100%;
-    height: 750px;
-background-color: rgb(42, 42, 42);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(10%);
+.cardsMain {
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  padding: 100px 0 120px;
 }
 
-.hoverwraptext {
-    position: relative;
-    display: inline-block;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-    padding: 10px;
-  }
-  
-  .hoverwraptext span {
-    position: relative;
-    z-index: 2;
-  }
-  
-  .hoverwraptext::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #007bff;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .hoverwraptext::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 100%;
-    background-color: #007bff;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform 0.3s ease-in-out 0.3s; 
-  }
-  
-  .hoverwraptext:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .hoverwraptext:hover::after {
-    transform: scaleY(1);
-  }
-  
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
 
-  .hover-wrap-text .bottom-line,
-  .hover-wrap-text .left-line {
-    position: absolute;
-    background-color: #007bff;
-    transition: transform 0.3s ease-in-out;
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 48px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:first-child {
+  grid-row: span 2;
+  padding: 56px 40px;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+.cardValue {
+  font-size: 88px;
+  font-weight: 300;
+  color: white;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.card:first-child .cardValue {
+  font-size: 120px;
+}
+
+.cardLabel {
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+.card:first-child .cardLabel {
+  font-size: 28px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
   
-  .hoverwraptext .bottom-line {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition-delay: 0.6s; 
+  .card:first-child {
+    grid-row: span 1;
+    grid-column: span 2;
   }
   
-  .hoverwraptext .left-line {
-    bottom: 0;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition-delay: 0.9s; 
+  .cardValue {
+    font-size: 72px;
   }
   
-  .hoverwraptext:hover .bottom-line {
-    transform: scaleX(1);
+  .card:first-child .cardValue {
+    font-size: 96px;
   }
-  
-  .hoverwraptext:hover .left-line {
-    transform: scaleY(1);
-  }
-.cards{
-    width: 100%;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
-.cardsTop{
-    width: 98%;
-    height: 50%;
-    display: flex;
-}
-.cardsBottom{
-    width: 100%;
-    height: 50%;
-    display: flex;
-}
-.card1{
-    width: 60%;
-    height: 100%;
-    color: white;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white ;
-}
-.card2{
-    width: 40%;
-    height: 100%;
-    color: white;
-    border-bottom: 2px solid white;
-}
-.card3{
-    width: 40%;
-    height: 100%;
-    border-right: 2px solid white ;
-    color: white;
-}
-.card4{
-    width: 40%;
-    height: 100%;
-    border-right: 2px solid white ;
-    color: white;
-}
-.card5{
-    width: 40%;
-    height: 100%;
-    color: white;
-}
-.card1Info{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(10%);
-}
-.card2Info{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.card3Info{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.card4Info{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-   
-}
-.card5Info{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-}
-.card1Title{
-    font-size: 240px;
-    font-weight: bold;
-    margin-right: 15px;
-}
-.card1SubTitle{
-    font-size: 120px;
-    font-weight: bold;
-    transform: translateY(22%);
-}
-.card2Title{
-    font-size: 150px;
-    font-weight: bold;
-}
-.card2SubTitle{
-    font-size: 50px;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-.card3Title{
-    font-size: 130px;
-    font-weight: bold;
-}
-.card3SubTitle{
-    font-size: 70px;
-    font-weight: bold;
-transform: translateY(-20%);
-letter-spacing: 3px;
-}
-.card4Title{
-    font-size: 130px;
-    font-weight: bold;
-}
-.card4SubTitle{
-    font-size: 70px;
-    font-weight: bold;
-    transform: translateY(-20%);
-    letter-spacing: 3px;
-}
-.card5Title{
-    font-size: 130px;
-    font-weight: bold;
-}
-.card5SubTitle{
-    font-size: 70px;
-    font-weight: bold;
-    transform: translateY(-20%);
-    letter-spacing: 3px;
-}
+
 @media (max-width: 768px) {
-    .cardsMain {
-        height: auto;
-        padding: 20px 0;
-        transform: translateY(0); 
-    }
-    
-    .cards {
-        height: auto;
-        flex-direction: column;
-        gap: 0; 
-    }
-    
-    .cardsTop, .cardsBottom {
-        flex-direction: column;
-        height: auto;
-        width: 100%;
-    }
-    
-    .card1, .card2, .card3, .card4, .card5 {
-        width: 100% !important;
-        height: 250px !important; 
-        border-right: none !important;
-        border-bottom: 1px solid white;
-        margin: 0 !important; 
-        padding: 0 !important;
-    }
-    
-    
-    .card5 {
-        border-bottom: none !important;
-    }
-    
+  .cardsMain {
+    padding: 80px 0 80px;
+  }
   
-    .card1Title { font-size: 80px !important; }
-    .card1SubTitle { font-size: 40px !important; transform: none !important; }
-    .card2Title { font-size: 60px !important; }
-    .card2SubTitle { font-size: 24px !important; }
-    .card3Title, .card4Title, .card5Title { font-size: 50px !important; }
-    .card3SubTitle, .card4SubTitle, .card5SubTitle { 
-        font-size: 28px !important; 
-        transform: none !important;
-    }
-    
-    
-    .card1Info, .card2Info, .card3Info, .card4Info, .card5Info {
-        transform: none !important;
-        padding: 20px;
-        height: 100%;
-        justify-content: center;
-    }
-    
-    .hoverwraptext::before,
-    .hoverwraptext::after,
-    .hoverwraptext .bottom-line,
-    .hoverwraptext .left-line {
-        display: none; 
-    }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .card {
+    padding: 36px 24px;
+    border-radius: 20px;
+  }
+  
+  .card:first-child {
+    grid-column: span 1;
+    padding: 40px 28px;
+  }
+  
+  .cardValue {
+    font-size: 56px;
+  }
+  
+  .card:first-child .cardValue {
+    font-size: 72px;
+  }
+  
+  .cardLabel {
+    font-size: 18px;
+  }
+  
+  .card:first-child .cardLabel {
+    font-size: 22px;
+  }
 }
-
 
 @media (max-width: 480px) {
-    .card1, .card2, .card3, .card4, .card5 {
-        height: 200px !important; 
-    }
-    
-    .card1Title { font-size: 60px !important; }
-    .card1SubTitle { font-size: 30px !important; }
-    .card2Title { font-size: 45px !important; }
-    .card3Title, .card4Title, .card5Title { font-size: 40px !important; }
+  .card {
+    padding: 32px 20px;
+    border-radius: 16px;
+  }
+  
+  .cardValue {
+    font-size: 48px;
+  }
+  
+  .card:first-child .cardValue {
+    font-size: 60px;
+  }
+  
+  .cardLabel {
+    font-size: 16px;
+  }
 }

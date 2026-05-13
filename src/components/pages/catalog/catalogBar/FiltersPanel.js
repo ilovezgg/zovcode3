@@ -5,37 +5,44 @@ const FiltersPanel = ({
   onFloorChange, 
   onSizeChange,
   activeFloor,
-  activeSize,
-  width = "100%"
+  activeSize
 }) => {
   const floorOptions = [1, 1.5, 2];
-  const sizeOptions = ['6х6','6х8','6х7.5','6x9','7x9','7.5x8','8x8.5','8x8','8x9','8.5x9','9x9','8x10','10x10'];
+  const sizeOptions = ['6×6','6×8','6×7.5','6×9','7×9','7.5×8','8×8.5','8×8','8×9','8.5×9','9×9','8×10','10×10'];
+
+  const handleFloorClick = (floor) => {
+    onFloorChange(activeFloor === floor? null : floor); // toggle
+  };
+
+  const handleSizeClick = (size) => {
+    onSizeChange(activeSize === size? null : size); // toggle
+  };
 
   return (
-    <div className={z.filtersPanel} style={{ width }}>
+    <div className={z.filtersPanel}>
       <div className={z.filterGroup}>
-        <h3>Этажность:</h3>
+        <h3 className={z.filterTitle}>Этажность</h3>
         <div className={z.buttonsContainer}>
           {floorOptions.map(floor => (
             <button
               key={floor}
-              className={`${z.filterButton} ${activeFloor === floor ? z.active : ''}`}
-              onClick={() => onFloorChange(floor)}
+              className={`${z.filterButton} ${activeFloor === floor? z.active : ''}`}
+              onClick={() => handleFloorClick(floor)}
             >
-              {floor} этаж
+              {floor}
             </button>
           ))}
         </div>
       </div>
 
       <div className={z.filterGroup}>
-        <h3>Размер:</h3>
+        <h3 className={z.filterTitle}>Размер</h3>
         <div className={z.buttonsContainer}>
           {sizeOptions.map(size => (
             <button
               key={size}
-              className={`${z.filterButton} ${activeSize === size ? z.active : ''}`}
-              onClick={() => onSizeChange(size)}
+              className={`${z.filterButton} ${activeSize === size? z.active : ''}`}
+              onClick={() => handleSizeClick(size)}
             >
               {size}
             </button>

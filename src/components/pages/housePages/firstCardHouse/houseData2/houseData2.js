@@ -2,8 +2,9 @@ const houseData2 = [
     {
   id: 1,
   image: [
-    require("../imgForSlider/2025-05-21_20-11-57_9753.png"), 
-    require("../../../catalog/imgHouses/house1.jpg") 
+      ('/images/myhome1-summer-day.jpeg'), 
+    require("../../../catalog/imgHouses/myhome1-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome1-1.jpeg"),
   ],
   title: "Проект Д1", 
   description: "6х6", 
@@ -12,40 +13,49 @@ const houseData2 = [
   floors: 1 
 },
   { id: 2,  image: [
-    require("../../../catalog/imgHouses/house2.jpg"), 
-    require("../../../catalog/imgHouses/house2.jpg") 
+    require("../../../catalog/imgHouses/myhome2-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome2-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome2-3.jpeg"),
   ], title: "Проект Д2", description: "6х6", price: "623 000 ₽", pricetwo: "647 000 ₽", floors: 1  },
   { id: 3, image: [
-    require("../../../catalog/imgHouses/house3.jpg"), 
-    require("../../../catalog/imgHouses/house3.jpg") 
+     require("../../../catalog/imgHouses/myhome3-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome3-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome3-3.jpeg"),
   ], title: "Проект Д3", description: "6х6", price: "630 000 ₽", pricetwo: "653 000 ₽", floors: 1  },
   { id: 4, image:   [
-    require("../../../catalog/imgHouses/house4.jpg"), 
-    require("../../../catalog/imgHouses/house4.jpg") 
+     require("../../../catalog/imgHouses/myhome4-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome4-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome4-3.jpeg"),
   ], title: "Проект Д4", description: "6х6", price: "613 000 ₽", pricetwo: "636 000 ₽", floors: 1  },
   { id: 5, image:  [
-    require("../../../catalog/imgHouses/house5.jpg"), 
-    require("../../../catalog/imgHouses/house5.jpg") 
+    require("../../../catalog/imgHouses/myhome5-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome5-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome5-3.jpeg"),
   ], title: "Проект Д5", description: "6х6", price: "636 000 ₽", pricetwo: "659 000 ₽", floors: 1  },
   { id: 6, image:   [
-    require("../../../catalog/imgHouses/house6.jpg"), 
-    require("../../../catalog/imgHouses/house6.jpg") 
+   require("../../../catalog/imgHouses/myhome6-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome6-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome6-3.jpeg"),
   ], title: "Проект Д6", description: "6х6", price: "636 000 ₽", pricetwo: "664 000 ₽", floors: 1  },
   { id: 7, image:   [
-    require("../../../catalog/imgHouses/house7.jpg"), 
-    require("../../../catalog/imgHouses/house7.jpg") 
+   require("../../../catalog/imgHouses/myhome7-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome7-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome7-3.jpeg"),
   ], title: "Проект Д7", description: "6х6", price: "647 000 ₽", pricetwo: "670 000 ₽", floors: 1  },
   { id: 8, image:   [
-    require("../../../catalog/imgHouses/house8.jpg"), 
-    require("../../../catalog/imgHouses/house8.jpg") 
+   require("../../../catalog/imgHouses/myhome8-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome8-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome8-3.jpeg"),
   ], title: "Проект Д8", description: "6х6", price: "664 000 ₽", pricetwo: "687 000 ₽", floors: 1  },
   { id: 9,  image: [
-    require("../../../catalog/imgHouses/house9.jpg"), 
-    require("../../../catalog/imgHouses/house9.jpg") 
+   require("../../../catalog/imgHouses/myhome9-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome9-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome9-3.jpeg"),
   ], title: "Проект Д9", description: "6х6", price: "659 000 ₽", pricetwo: "682 000 ₽", floors: 1  },
   { id: 10,  image: [
-    require("../../../catalog/imgHouses/house10.jpg"), 
-    require("../../../catalog/imgHouses/house10.jpg") 
+   require("../../../catalog/imgHouses/myhome10-1.jpeg"), 
+    require("../../../catalog/imgHouses/myhome10-2.jpeg"),
+    require("../../../catalog/imgHouses/myhome10-3.jpeg"),
   ], title: "Проект Д10", description: "6х6", price: "636 000 ₽", pricetwo: "659 000 ₽", floors: 1  },
   { id: 11,  image: [
     require("../../../catalog/imgHouses/house10-1.jpg"), 

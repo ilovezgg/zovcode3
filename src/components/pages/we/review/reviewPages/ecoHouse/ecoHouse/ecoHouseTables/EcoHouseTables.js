@@ -1,63 +1,61 @@
 import React from 'react'
+import { useInView } from 'react-intersection-observer';
 import z from './EcoHouseTables.module.css'
-const EcoHouseTables = () => {
+
+const MaterialCard = ({ title, items, bgClass, delay }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  
   return (
-    <div className={z.main}>
-        <div className={z.titleTables}>
-           Сравнение разных материалов для строительства дома
-        </div>
- <div className={z.container}>
-    <div className={z.brus}>
-        <div className={z.brusTitle}>
-         Брус
-        </div>
-<ul className={z.brusLine}>
-    <li className={z.brusItem}>Eстественная регуляция влажности </li>
-    <li className={z.brusItem}>Выделяет фитонциды</li>
-    <li className={z.brusItem}>Полностью перерабатывается и разлагается</li>
-    <li className={z.brusItem}>Требует защиты от влаги и вредителей</li>
-</ul>
+    <div 
+      ref={ref} 
+      className={`${z.card} ${z[bgClass]} ${inView ? z.visible : ''}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <div className={z.cardTitle}>{title}</div>
+      <ul className={z.cardList}>
+        {items.map((item, i) => (
+          <li key={i} className={z.cardItem}>{item}</li>
+        ))}
+      </ul>
     </div>
-    <div className={z.gazobeton}>
-        <div className={z.gazobetonTitle}>
-          Газобетон
+  );
+};
+
+const EcoHouseTables = () => {
+  const materials = [
+    {
+      title: 'Брус',
+      bgClass: 'bgBrus',
+      items: ['Естественная регуляция влажности', 'Выделяет фитонциды', 'Полностью перерабатывается и разлагается', 'Требует защиты от влаги и вредителей']
+    },
+    {
+      title: 'Газобетон',
+      bgClass: 'bgGaz',
+      items: ['Хорошая теплоизоляция', 'Нетоксичен при эксплуатации', 'Долговечен', 'Энергоемкое производство', 'Высокий углеродный след']
+    },
+    {
+      title: 'Кирпич',
+      bgClass: 'bgKirp',
+      items: ['Натуральные компоненты', 'Долговечность', 'Хорошая тепловая инерция', 'Высокий углеродный след от обжига', 'Очень энергоемкое производство']
+    },
+    {
+      title: 'Каркас',
+      bgClass: 'bgKarkas',
+      items: ['Экономное использование древесины', 'Хорошая теплоизоляция', 'Синтетические утеплители', 'Паробарьеры нарушают естественную вентиляцию']
+    }
+  ];
+
+  return (
+    <section className={z.section}>
+      <div className={z.container}>
+        <h2 className={z.title}>Сравнение разных материалов для строительства дома</h2>
+        <div className={z.grid}>
+          {materials.map((mat, i) => (
+            <MaterialCard key={i} {...mat} delay={i * 80} />
+          ))}
         </div>
-<ul className={z.gazobetonLine}>
-    <li className={z.gazobetonItem}>Хорошая теплоизоляция </li>
-    <li className={z.gazobetonItem}>Нетоксичен при эксплуатации</li>
-    <li className={z.gazobetonItem}>Долговечен</li>
-    <li className={z.gazobetonItem}>Энергоемкое производство</li>
-    <li className={z.gazobetonItem}>Высокий углеродный след</li>
-    
-</ul>
-    </div>
-    <div className={z.kirp}>
-        <div className={z.kirpTitle}>
-         Кирпич
-        </div>
-<ul className={z.kirpLine}>
-    <li className={z.kirpItem}>Натуральные компоненты </li>
-    <li className={z.kirpItem}>Долговечность </li>
-     <li className={z.kirpItem}> Хорошая тепловая инерция </li>
-    <li className={z.kirpItem}>Высокий углеродный след от обжига</li>
-    <li className={z.kirpItem}>Очень энергоемкое производство</li>
-</ul>
-    </div>
-    <div className={z.karkas}>
-        <div className={z.karkasTitle}>
-         Каркас
-        </div>
-<ul className={z.karkasLine}>
-    <li className={z.karkasItem}> Экономное использование древесины </li>
-    <li className={z.karkasItem}>Хорошая теплоизоляция</li>
-    <li className={z.karkasItem}>Синтетические утеплители</li>
-    <li className={z.karkasItem}>Синтетические утеплители</li>
-    <li className={z.karkasItem}>Паробарьеры нарушают естественную вентиляцию</li>
-</ul>
-    </div>
- </div>
-    </div>
+      </div>
+    </section>
   )
 }
-
 export default EcoHouseTables

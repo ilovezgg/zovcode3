@@ -4,27 +4,33 @@ import BrusBlock from './BrusBlock';
 import { brusData } from './brusData';
 
 const MaterialsMain = () => {
+  const blocks = [
+    brusData.brus,
+    brusData.jute,
+    brusData.nagels,
+    brusData.krep,
+    brusData.kr,
+    brusData.svai,
+    brusData.anti
+  ];
+
   return (
-    <div className={z.main}>
-      <div className={z.titleMaterials}>
-        Материалы для строительства сруба дома из бруса под усадку: фундамент надёжности
+    <section className={z.section}>
+      <div className={z.container}>
+        <h2 className={z.title}>
+          Материалы для строительства сруба из бруса под усадку
+        </h2>
+        <p className={z.subtitle}>
+          Фундамент надёжности вашего будущего дома
+        </p>
+        
+        <div className={z.blocksWrapper}>
+          {blocks.map((block, index) => (
+            <BrusBlock key={index} {...block} />
+          ))}
+        </div>
       </div>
-      
-      <BrusBlock {...brusData.brus} />
-      
-      <BrusBlock {...brusData.jute}  />
-
-      <BrusBlock {...brusData.nagels} />
-
-      <BrusBlock {...brusData.krep} />
-
-      <BrusBlock {...brusData.kr} />
-
-      <BrusBlock {...brusData.svai}/>
- 
-      <BrusBlock {...brusData.anti}/>
-     
-    </div>
+    </section>
   );
 };
 

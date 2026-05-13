@@ -1,45 +1,55 @@
-.main{
-    width: 100%;
-    height: auto;
-background-color: rgb(42, 42, 42);
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
+.section {
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  padding: 48px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.container{
-    width: 90%;
-    height: 630px;
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.leftInfo{
-    width: 30%;
-    height: 100%;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background-color: rgba(255, 255, 255, 0.08);
-    box-shadow: 
-        0 4px 30px rgba(0, 0, 0, 0.1),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-        color: white;
-        font-size: 34px;
-        padding: 10px 25px;
-        text-align: justify;
-        letter-spacing: 1.4px;
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  align-items: stretch;
 }
-.rightInfo{
-    width: 66%;
-    height: 100%;
-    background-color: transparent;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-around;
-    background-size: cover;
-    background-image: url(../../pic/krasivaa-makro-derevannaa-koncepcia.jpg);
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 40px 36px;
 }
-.textPart{
-    width: 45%;
-    height: 100%;
+
+.text {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 20px;
+  background-image: url(../../pic/krasivaa-makro-derevannaa-koncepcia.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .image { aspect-ratio: 16/9; }
 }

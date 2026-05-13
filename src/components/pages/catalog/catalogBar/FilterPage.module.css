@@ -1,52 +1,78 @@
-.main{
-    width: 100%;
-    height: 500px;
-    background-color: rgb(87, 87, 87);
-    display: flex;
-    align-items: center;
+.main {
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  padding: 120px 0 80px; /* было 40px 0 80px */
+}
 
+.container {
+  width: 95%;
+  margin: 0 auto;
 }
-.filters{
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    transform: translateY(20%);
-    
+
+.filters {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
+
+.leftPart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rightPart {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .resetButton {
-    height: 80%;
-    border-radius: 15px;
-    flex-grow: 1;
-    border-color: transparent;
-    background-color: rgb(35, 35, 35);
-    font-size: 40px;
-    color: white;
-    position: relative;     
-    overflow: hidden;
-    z-index: 1;
-    transition: color 0.5s ease-in-out 0.2s;
-    cursor: pointer;
-    
+  width: 100%;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: white;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.resetButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.resetButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+  .filters {
+    flex-direction: column;
+    gap: 16px;
   }
-.resetButton{
+  
+  .leftPart,
+  .rightPart {
     width: 100%;
-    height: 70px;
-    border-radius: 10px;
+  }
 }
-.rightPart{
-    width: 49%;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-gap: 20px;
-}
-.leftPart{
-    width: 49%;
-    height: 100%;
-    display: flex;
-flex-direction: column;
-gap: 20px;
-justify-content: flex-end;
+
+@media (max-width: 768px) {
+  .main {
+    padding: 32px 0 60px;
+  }
+  
+  .resetButton {
+    height: 52px;
+    font-size: 16px;
+  }
 }

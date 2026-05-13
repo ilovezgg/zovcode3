@@ -1,361 +1,230 @@
-
 .footerBackground {
   width: 100%;
-  height: 650px;
-background-color: rgb(42, 42, 42);
-  z-index: -1;
-  display: flex;
-  align-items: end;
-  overflow: hidden; 
+  background-color: rgb(24, 24, 24);
+  padding: 80px 0 0;
 }
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .footerMain {
   width: 100%;
-  height: 600px;
-  background-color: #181818;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  z-index: 1;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(32px) saturate(1.2);
+  -webkit-backdrop-filter: blur(32px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px 24px 0 0;
+  padding: 56px 48px;
   display: flex;
+  gap: 64px;
 }
-.footLeft {
-  width: 50%;
-  height: 100%;
+
+.left {
+  flex: 1;
   display: flex;
+  gap: 56px;
 }
-.footRight {
-  width: 50%;
-  height: 100%;
+
+.nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 180px;
 }
+
+.navLink {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.socialsTitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+}
+
+.iconTelegram,
+.iconWhatsapp {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.25s ease;
+}
+
+.iconTelegram {
+  background-image: url(./pics/icons8-телеграм-150.png);
+}
+
+.iconWhatsapp {
+  background-image: url(./pics/icons8-whatsapp-150.png);
+}
+
+.iconTelegram:hover,
+.iconWhatsapp:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.contactItem {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.contactLink {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contactLink:hover {
+  color: white;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+
 .map {
-  height: 90%;
-  width: 90%;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 16px;
   overflow: hidden;
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease, transform 0.5s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
-.urls{
-  height: 100%;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transform: translateX(10%) translateY(10%);
-  row-gap: 20px;
-}
-.infoFooter {
-  font-size: 30px;
-  color: white;
-  text-decoration: none;
-}
+
 .mapVisible {
   opacity: 1;
   transform: translateY(0);
 }
-.mainPageUrl {
-  font-size: 50px;
-  color: white;
-  text-decoration: none;
-}
-.contactsPageUrl {
-  font-size: 50px;
-  color: white;
-  text-decoration: none;
-}
-.aboutUsPageUrl {
-  font-size: 50px;
-  color: white;
-  text-decoration: none;
-}
-.catalogPageUrl {
-  font-size: 50px;
-  color: white;
-  text-decoration: none;
-}
-.callbackPageUrl {
-  font-size: 50px;
-  color: white;
-  text-decoration: none;
-}
-.infoFooter{
-    width: 60%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    flex-direction: column;
-    color: white;
-    text-decoration: none;
-    transform: translateY(10%);
-    row-gap: 10px;
-}
-.socialMedia{
-    width: 80%;
-    font-size: 50px;
-}
-.icons{
-    display: flex;
-    gap: 15px;
-    
-}
-.telegram{
-    width: 50px;
-    height: 50px;
-    background-image: url(./pics/telegram.png);
-    background-size: cover;
-}
-.whatsapp{
-    width: 50px;
-    height: 50px;
-    background-image: url(./pics/whatsapp.png);
-    background-size: cover;
-}
-.adress{
-    width: 80%;
-    display: flex;
-    justify-content: left;
-    font-size: 40px;
-}
-.email{
-    width: 80%;
-    display: flex;
-    justify-content: left;
-    font-size: 40px;
-}
-.phoneNumber1{
-    width: 80%;
-    display: flex;
-    justify-content: left;
-    font-size: 40px;
-}
-.phoneNumber2{
-    width: 80%;
-    display: flex;
-    justify-content: left;
-    font-size: 40px;
-}
-@media (max-width: 393px) {
-  .footerBackground {
-    width: 100%;
- height: 500px;
-    background-color: rgb(87, 87, 87);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
 
+.bottom {
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: center;
+}
+
+.copyright {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
   .footerMain {
-    width: 100%;
-    height: 500px;
-    background-color: #181818;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 48px 36px;
+    gap: 48px;
   }
-
-  .footLeft, .infoFooter, .urls {
-    display: none;
-  }
-.footRight{
-  width: 100%;
-  height: 200px;
-
-}
-
-  .mobileFooter {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-    .mobileUrls {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileLink {
-    width: 100%;
-    height: 75px;
-    background-color: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    transition: transform 0.2s;
-    border-bottom: 0.5px solid rgb(85, 85, 85);
-  }
-
-  .mobileLink:hover,
-  .backToTopButton:hover {
-    transform: scale(1.02);
-    background-color: #333;
-  }
-  .backToTopButton {
-    position: static;
-    width: 100%;
-    height: 60px;
-    box-shadow: none;
-    z-index: auto;
-  }
-  .backToTopButton:hover {
-    transform: scale(1.1);
-    background-color: #0069d9;
-  }
-   .map {
-    width: 100%;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .containerForNew{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding-top: 10px;
-  }
-  .tg{
-    width: 15%;
-    height: 85%;
-    background-image: url(./pics/icons8-телеграм-150.png);
-    background-size: cover;
-  }
-  .whats{
-width: 15%;
-    height: 85%;
-    background-image: url(./pics/icons8-whatsapp-150.png);
-    background-size: cover;
-  }
-  .mapVisible {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .left {
+    gap: 40px;
   }
 }
+
+@media (max-width: 768px) {
+  .footerBackground {
+    padding: 60px 0 0;
+  }
+  
+  .footerMain {
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 40px;
+    border-radius: 20px 20px 0 0;
+  }
+  
+  .left {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    min-width: auto;
+  }
+  
+  .navLink {
+    font-size: 16px;
+  }
+  
+  .map {
+    height: 280px;
+    border-radius: 14px;
+  }
+  
+  .socialIcons {
+    gap: 10px;
+  }
+  
+  .iconTelegram,
+  .iconWhatsapp {
+    width: 44px;
+    height: 44px;
+  }
+}
+
 @media (max-width: 480px) {
-  .footerBackground {
-    width: 100%;
- height: 500px;
-    background-color: rgb(87, 87, 87);
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-  }
-
   .footerMain {
-    width: 100%;
-    height: 500px;
-    background-color: #181818;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 32px 20px;
+    border-radius: 16px 16px 0 0;
   }
-
-  .footLeft, .infoFooter, .urls {
-    display: none;
+  
+  .navLink {
+    font-size: 15px;
   }
-.footRight{
-  width: 100%;
-  height: 200px;
-
-}
-
-  .mobileFooter {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  
+  .contactItem,
+  .contactLink {
+    font-size: 15px;
   }
-
-    .mobileUrls {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .mobileLink {
-    width: 100%;
-    height: 75px;
-    background-color: #181818;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    transition: transform 0.2s;
-    border-bottom: 0.5px solid rgb(85, 85, 85);
-  }
-
-  .mobileLink:hover,
-  .backToTopButton:hover {
-    transform: scale(1.02);
-    background-color: #333;
-  }
-  .backToTopButton {
-    position: static;
-    width: 100%;
-    height: 60px;
-    box-shadow: none;
-    z-index: auto;
-  }
-  .backToTopButton:hover {
-    transform: scale(1.1);
-    background-color: #0069d9;
-  }
-   .map {
-    width: 100%;
-    height: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .containerForNew{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding-top: 10px;
-  }
-  .tg{
-    width: 15%;
-    height: 85%;
-    background-image: url(./pics/icons8-телеграм-150.png);
-    background-size: cover;
-  }
-  .whats{
-width: 15%;
-    height: 85%;
-    background-image: url(./pics/icons8-whatsapp-150.png);
-    background-size: cover;
-  }
-  .mapVisible {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .map {
+    height: 240px;
   }
 }

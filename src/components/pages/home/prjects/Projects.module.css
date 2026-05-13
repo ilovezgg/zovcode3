@@ -4,311 +4,319 @@
 
 .mainProjects {
   width: 100%;
-  background-color: rgb(42, 42, 42);
-  display: flex;
-  flex-direction: column;
-  padding: 60px 0;
+  background-color: rgb(24, 24, 24);
+  padding: 80px 0 120px;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
 }
 
 .projectsTitle {
-  width: 100%;
-  font-size: 65px;
-  font-weight: bold;
+  font-size: 56px;
+  font-weight: 400;
   color: white;
-  display: flex;
-  justify-content: center;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0 0 64px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-.totalContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 64px;
 }
 
-
-.desktopRowsContainer {
-  width: 95%;
-  max-width: 1950px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-
-}
-
-.desktopRow {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-}
-
-.desktopCard {
-  width: 50%;
-  height: 500px;
-  border-radius: 8px;
+.card {
+  height: 480px;
+  border-radius: 24px;
   overflow: hidden;
   display: flex;
-  background: rgba(104, 104, 104, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.desktopCardImage {
-  width: 70%;
+.card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cardImage {
+  width: 60%;
   height: 100%;
   background-size: cover;
   background-position: center;
-  border-radius: 8px;
 }
 
-.desktopCardGlass {
-  width: 35%;
-  height: 100%;
-  padding: 24px;
+.cardContent {
+  width: 40%;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.desktopCardTitle {
-  font-size: 32px;
-  font-weight: 500;
-  color: white;
-  text-transform: uppercase;
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.desktopCardText {
-  font-size: 18px;
+.cardTitle {
+  font-size: 28px;
+  font-weight: 400;
   color: white;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cardDesc {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
   line-height: 1.5;
 }
 
-.desktopCardDetail {
-  margin: 8px 0;
-  font-size: 16px;
-  opacity: 0.9;
+.cardSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.desktopCardButton {
+.cardSpec {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+}
+
+.cardButton {
   width: 100%;
-  height: 50px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   color: white;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.cardButton:active {
+  transform: translateY(0);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.actionButtons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.actionCard {
+  height: 200px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.desktopCardButton:hover {
-  background-color: rgba(255, 255, 255, 0.25);
+.actionCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%);
 }
 
+.actionCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.actionLabel {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  z-index: 1;
+}
+
+.mainActions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.primaryButton {
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.primaryButton:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.secondaryButton:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .projectsTitle {
+    font-size: 48px;
+  }
+  
+  .card {
+    height: 440px;
+  }
+  
+  .cardTitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 968px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .card {
+    height: 400px;
+  }
+}
 
 @media (max-width: 768px) {
-  .projectsTitle {
-    width: 95%;
-    font-size: 24px;
-    padding-top: 5%;
-    margin-bottom: 30px;
-  }
-
   .mainProjects {
+    padding: 60px 0 80px;
+  }
+  
+  .projectsTitle {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    flex-direction: column;
     height: auto;
-    background-color: rgb(87, 87, 87);
-    padding: 0;
   }
-
-  .totalContainer {
+  
+  .cardImage {
     width: 100%;
-    gap: 50px;
-    padding: 20px 0;
+    height: 240px;
   }
-
-  .mobileProjectsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  
+  .cardContent {
     width: 100%;
-    padding: 0 10px;
-  }
-
-  .mobileProjectRow {
-    width: 100%;
-  }
-
-  .containerWith {
-    width: 96%;
-    height: 300px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px;
-  }
-
-  .picIn2,
-  .picIn3,
-  .picIn4,
-  .picIn5 {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    border-radius: 15px;
-    background-position: center;
-    display: block;
-  }
-
-  .textTitleContainer {
-    font-size: 28px;
-    color: white;
-    margin-left: 0;
-    text-align: left;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .textContainer {
-    font-size: 25px;
-    margin-left: 0;
-    color: white;
-  }
-
-  .containerButton {
-    width: 95%;
-    height: 50px;
-    border-radius: 15px;
-    background-color: rgb(35, 35, 35);
-    font-size: 24px;
-    color: white;
-    margin-top: 15px;
-    cursor: pointer;
-    border: none;
-  }
-
-  .buttonsContainer {
-    width: 100%;
-    padding: 0 10px;
-  }
-
-  .upContainer {
-    width: 100%;
-    height: 60%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    padding: 24px 20px;
     gap: 20px;
   }
-
-  .buttonWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 45%;
-  }
-
-  .buttonRight,
-  .buttonLeft {
-    width: 100%;
-    height: 170px;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .buttonTitleMobile {
-    display: block;
-    font-size: 25px;
-    color: white;
-    text-align: center;
-    margin-top: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-    width: 100%;
-  }
-
-  .bottomContainer {
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .bigButton {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(45, 45, 45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    user-select: none;
-    border: none;
-  }
-
-  .bigButton:active {
-    transform: scale(0.98);
-    background-color: rgb(65, 65, 65);
-  }
-
-  .modalButton {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(45, 45, 45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
+  .cardTitle {
     font-size: 24px;
-    color: white;
-    border-radius: 20px;
-    border: none;
-    cursor: pointer;
   }
-
-  .modalButtonText {
-    font-size: 24px;
-    text-transform: uppercase;
+  
+  .actionButtons {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .actionCard {
+    height: 160px;
+  }
+  
+  .actionLabel {
+    font-size: 20px;
+    left: 20px;
+    bottom: 16px;
+  }
+  
+  .mainActions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    height: 56px;
+    font-size: 16px;
   }
 }
-
-
 
 @media (max-width: 480px) {
-  ::-webkit-scrollbar {
-    display: none;
+  .projectsTitle {
+    font-size: 28px;
   }
-  html {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  
+  .card {
+    border-radius: 20px;
+  }
+  
+  .cardContent {
+    padding: 20px 16px;
   }
 }
 
-
-
 @media (hover: none) {
-  .desktopCardButton:hover,
-  .containerButton:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: white !important;
+  .card:hover,
+  .cardButton:hover,
+  .actionCard:hover,
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: none;
   }
 }

@@ -1,37 +1,41 @@
-import React from "react";
-import z from "./CallUs.module.css"; // Замените на путь к вашему файлу стилей
+import React, { useState } from "react";
+import z from "./CallUs.module.css";
 import PhoneInput from "./PhoneInput";
 
 const CallUs = () => {
-  return (
-    <div className={z.callUsBackground}>
-      <div className={z.callUsMain}>
-        <div className={z.callUsLeft}>
-          <div className={z.titleCallUs}>
-            {" "}
-            Не можете подобрать вариант для себя? Позвоните нам!
-          </div>
+  const [name, setName] = useState("");
 
-          <div className={z.textCallUs}>
-            Заполните форму и наш менеджер свяжется с вами в ближайшее время, а
-            так же поможет с выбором идеального дома для вас и вашей семьи.
+  return (
+    <section className={z.callUsBackground}>
+      <div className={z.container}>
+        <div className={z.callUsMain}>
+          <div className={z.left}>
+            <h2 className={z.title}>
+              Остались вопросы?
+            </h2>
+            <p className={z.text}>
+              Оставьте заявку. Перезвоним за 15 минут и подберем проект под ваш бюджет.
+            </p>
           </div>
-        </div>
-        <div className={z.callUsRight}>
-          <div className={z.callUsForms}>
-            <div className={z.inputOne}>
-<PhoneInput />
+          
+          <div className={z.right}>
+            <div className={z.form}>
+              <input
+                type="text"
+                className={z.input}
+                placeholder="Ваше имя"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <PhoneInput />
+              <button className={z.submit}>
+                Заказать звонок
+              </button>
             </div>
-            <div className={z.inputTwo}>
-<PhoneInput />
-            </div>     
-          </div>
-          <div className={z.callUsButton}>
-            <button className={z.callUsSubmit}>Заказать звонок</button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,5 +1,4 @@
-/* Основной контейнер шапки */
-.svo {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,183 +7,237 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background: transparent;
   z-index: 2000;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0 20px;
-  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.svo.scrolled {
+.scrolled {
   height: 70px;
-  background-color: rgb(24, 24, 24);
+  background: rgba(24, 24, 24, 0.8);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Контейнер всех элементов */
-.containerButtons {
-  width: 100%;
-  max-width: 1400px;
+.container {
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 32px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
   gap: 20px;
 }
 
-/* Левая секция: логотип + гамбургер */
-.leftSection {
+.logoLink {
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-.logoImage {
-  height: 50px;
+.logo {
+  height: 48px;
   width: auto;
   display: block;
 }
 
-/* Центр: основные кнопки навигации */
-.headerButtons {
+.burger {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger span:nth-child(1) { top: 6px; }
+.burger span:nth-child(2) { top: 13px; }
+.burger span:nth-child(3) { top: 20px; }
+
+.burgerActive span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+
+.burgerActive span:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerActive span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 13px;
+}
+
+.nav {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   align-items: center;
   flex: 1;
   justify-content: center;
 }
 
-.catalogButton, .signUpButton, .callbackButton,
-.contactsButton, .aboutusButton, .mainButton {
-  height: 50px;
-  background: transparent;
-  color: white;
-  border: none;
-  border-radius: 5px;
+.navLink {
+  padding: 10px 16px;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
-.logoImage{
-    margin-left: -120px;
+
+.navLink:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.mainButton,
-.catalogButton,
-.aboutusButton,
-.contactsButton,
-.callbackButton {
-  padding: 0 16px;
-}
-
-.signUpButton {
-  padding: 0 24px;
-}
-
-
-.rightContainer {
+.actions {
   display: flex;
-  gap: 16px;
+  gap: 8px;
   align-items: center;
 }
 
-.favButton, .profileButton {
-  height: 50px;
-  width: 50px;
+.iconButton {
+  width: 44px;
+  height: 44px;
   background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  border-radius: 10px;
+  transition: all 0.2s ease;
 }
 
-.heartIcon {
-  width: 24px;
-  height: 24px;
-  fill: white;
+.iconButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: none;
   stroke: white;
+  stroke-width: 1.8;
+  transition: stroke 0.3s ease;
 }
 
-.profileIcon {
-  width: 26px;
-  height: 26px;
-  fill: white;
-  stroke: white;
-  stroke-width: 1.5;
+.scrolled.icon {
+  stroke: rgba(255, 255, 255, 0.9);
 }
 
-
-.svo.scrolled .heartIcon,
-.svo.scrolled .profileIcon {
-  stroke: black;
-  fill: transparent;
+.mobileOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1998;
 }
 
-
-.hamburger {
-  display: block;
-  position: relative;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  z-index: 1001;
+.overlayVisible {
+  opacity: 1;
+  pointer-events: auto;
 }
 
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: rgba(24, 24, 24, 0.95);
+  backdrop-filter: blur(32px) saturate(1.2);
+  -webkit-backdrop-filter: blur(32px) saturate(1.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateX(-100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1999;
+  padding: 100px 0 40px;
+}
 
+.menuVisible {
+  transform: translateX(0);
+}
 
-@media (min-width: 769px) {
-  .hamburger {
-    display: none !important;
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 20px;
+}
+
+.mobileLink {
+  padding: 16px 20px;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.mobileLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+@media (max-width: 1024px) {
+ .navLink {
+    padding: 10px 12px;
+    font-size: 15px;
   }
-
-  .headerButtons {
-    display: flex !important;
-  }
 }
 
-/* Мобильная адаптация */
 @media (max-width: 768px) {
-  .svo {
-    padding: 0 16px;
+ .header {
+    height: 70px;
   }
-
-  .headerButtons {
+  
+ .scrolled {
+    height: 64px;
+  }
+  
+ .burger {
+    display: block;
+  }
+  
+ .nav {
     display: none;
   }
-
-  .logoImage {
+  
+ .logo {
     height: 40px;
   }
-
-  .favButton, .profileButton {
-    width: 44px;
-    height: 44px;
+  
+ .iconButton {
+    width: 40px;
+    height: 40px;
   }
-
-  .heartIcon {
-    width: 22px;
-    height: 22px;
-  }
-
-  .profileIcon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .svo.scrolled {
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    backdrop-filter: blur(10px);
-  }
-
-  .svo.scrolled .heartIcon,
-  .svo.scrolled .profileIcon {
-    stroke: white !important;
-    fill: transparent;
+  
+ .icon {
+    width: 20px;
+    height: 20px;
   }
 }

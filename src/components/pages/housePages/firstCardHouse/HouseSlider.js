@@ -1,58 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import z from './HouseSlider.module.css';
 
-const HouseSlider = ({ images = [] }) => { 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
-    }, 1200000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+const HouseSlider = ({ images = [] }) => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [mode, setMode] = useState('day');
+  const [season, setSeason] = useState('summer');
 
-  const goToPrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  if (!images.length) {
+    return <div className={z.empty}>Изображения не загружены</div>;
+  }
 
-  const goToNext = () => {
-    setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
+  const getImagePath = (index, originalPath) => {
+    if (index !== 0) return originalPath;
+    const basePath = originalPath.replace(/-summer-day\.jpeg$/, '');
+    return `${basePath}-${season}-${mode}.jpeg`;
   };
 
   return (
-    <div className={z.main}>
-      <div className={z.slider}>
-        <button className={z.navButtonPrev} onClick={goToPrev}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </button>
-        
-        <div className={z.slideContainer}>
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`${z.slide} ${index === currentIndex ? z.active : ''}`}
-              style={{ backgroundImage: `url(${image})` }}
-            />
-          ))}
-        </div>
-        
-        <button className={z.navButtonNext} onClick={goToNext}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          </svg>
-        </button>
-        
-        <div className={z.dots}>
-          {images.map((_, index) => (
+    <div ref={ref} className={`${z.main} ${inView ? z.visible : ''}`}>
+      <div className={z.gallery}>
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className={z.imageCard}
+            style={{
+              backgroundImage: index === 0 
+                ? `url(${getImagePath(index, image)}), url(${image})`
+                : `url(${image})`,
+              animationDelay: `${index * 0.1}s`
+            }}
+          >
+            <div className={z.glassBar}>
+              <span className={z.logo}>
+                <span className={z.srub}>Сруб</span>
+                <span className={z.dom}>Дом</span>
+              </span>
+            </div>
+          </div>
+        ))}
+
+        <div className={z.controlsWrapper}>
+          <div className={z.controlsRow}>
             <button
-              key={index}
-              className={`${z.dot} ${index === currentIndex ? z.activeDot : ''}`}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Перейти к слайду ${index + 1}`}
-            />
-          ))}
+              className={`${z.squareBtn} ${mode === 'day' ? z.active : ''}`}
+              onClick={() => setMode('day')}
+            >
+              ☀️<span>День</span>
+            </button>
+            <button
+              className={`${z.squareBtn} ${mode === 'night' ? z.active : ''}`}
+              onClick={() => setMode('night')}
+            >
+              🌙<span>Ночь</span>
+            </button>
+          </div>
+          <div className={z.controlsRow}>
+            <button
+              className={`${z.squareBtn} ${season === 'summer' ? z.active : ''}`}
+              onClick={() => setSeason('summer')}
+            >
+              ☀️<span>Лето</span>
+            </button>
+            <button
+              className={`${z.squareBtn} ${season === 'winter' ? z.active : ''}`}
+              onClick={() => setSeason('winter')}
+            >
+              ❄️<span>Зима</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

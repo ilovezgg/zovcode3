@@ -2,73 +2,74 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import z from './WhyUs.module.css';
 
-const Panel = ({ className, picClassName, children }) => {
+const Feature = ({ icon, title, text, delay }) => {
   const { ref, inView } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
     triggerOnce: true,
   });
 
   return (
-    <div ref={ref} className={`${className} ${inView ? z.show : ''}`}>
-      <div className={picClassName}></div>
-      {children}
+    <div 
+      ref={ref} 
+      className={`${z.feature} ${inView ? z.visible : ''}`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <div className={z.featureIcon} style={{ backgroundImage: `url(${icon})` }} />
+      <div className={z.featureContent}>
+        <h3 className={z.featureTitle}>{title}</h3>
+        <p className={z.featureText}>{text}</p>
+      </div>
     </div>
   );
 };
 
 const WhyUs = () => {
-  const isMobile = window.innerWidth <= 768; 
+  const features = [
+    {
+      icon: require("../header/img/free-icon-search-6404717.png"),
+      title: "Контроль на всех этапах",
+      text: "От заготовки бруса до сдачи дома. Личный прораб и фотоотчеты каждую неделю."
+    },
+    {
+      icon: require("../header/img/free-icon-wood-939564.png"),
+      title: "Качественный брус",
+      text: "Зимний лес камерной сушки. Влажность 12-14%. Минимальная усадка, без трещин."
+    },
+    {
+      icon: require("../header/img/free-icon-save-money-2801811.png"),
+      title: "Фиксированная смета",
+      text: "Цена в договоре не меняется. Детальная смета по материалам и работам."
+    },
+    {
+      icon: require("../header/img/free-icon-validity-7870827.png"),
+      title: "Документы под ключ",
+      text: "Проект, разрешения, ввод в эксплуатацию. Берем бюрократию на себя."
+    }
+  ];
 
   return (
-    <div className={z.whyUsMain}>
-      <div className={z.backgroundBig}>
-        <div>
-          <div className={z.whyUsTitle}>Плюсы работы с нами</div>
-          <div className={z.whyUsText}>
-            Выбирая нас, вы выбираете удобство, скорость и надежность. Мы создаем те дома, в которых хочется жить.
-          </div>
+    <section className={z.whyUsMain}>
+      <div className={z.container}>
+        <div className={z.header}>
+          <h2 className={z.title}>Почему выбирают нас</h2>
+          <p className={z.subtitle}>
+            Строим дома, в которых хочется жить. Без нервов и переплат.
+          </p>
         </div>
-        <div className={z.containerForAll}>
-          <div className={z.whyUsPanels}>
-            <Panel className={z.panel1} picClassName={z.picPanel1}>
-              <div className={z.titlePanel1}>Контроль нашей работы на всех этапах</div>
-              <div className={z.textPanel1}>
-                {isMobile 
-                  ? "Строгий контроль качества на каждом этапе строительства." 
-                  : "Надежные срубы из бруса: строгий контроль качества на каждом этапе, от древесины до сборки."}
-              </div>
-            </Panel>
-            
-            <Panel className={z.panel2} picClassName={z.picPanel2}>
-              <div className={z.titlePanel2}>Качественный материал</div>
-              <div className={z.textPanel2}>
-                {isMobile 
-                  ? "Экологичный и долговечный брус с минимальной усадкой." 
-                  : "Наши срубы строятся из качественного, экологичного бруса, обеспечивающего долговечность и минимальную усадку."}
-              </div>
-            </Panel>
-            
-            <Panel className={z.panel3} picClassName={z.picPanel3}>
-              <div className={z.titlePanel3}>Финансовая прозрачность</div>
-              <div className={z.textPanel3}>
-                {isMobile 
-                  ? "Детальная смета и полный контроль бюджета на всех этапах строительства." 
-                  : "Финансовая прозрачность: детальная смета и отчетность на каждом этапе строительства. Полный контроль над бюджетом вашего проекта."}
-              </div>
-            </Panel>
-            
-            <Panel className={z.panel4} picClassName={z.picPanel4}>
-              <div className={z.titlePanel4}>Полный пакет документов</div>
-              <div className={z.textPanel4}>
-                {isMobile 
-                  ? "Все необходимые документы для вашего спокойствия." 
-                  : "Мы предоставляем полный пакет документов: от проекта до разрешений, все для вашего спокойствия и уверенности."}
-              </div>
-            </Panel>
-          </div>
+        
+        <div className={z.grid}>
+          {features.map((item, index) => (
+            <Feature
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              text={item.text}
+              delay={index * 80}
+            />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

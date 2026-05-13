@@ -1,205 +1,223 @@
-.main{
-     padding-top:80px;
-    width: 100%;
-    height: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-background-color: rgb(42, 42, 42);
-}
-.containerForPics{
-    width: 100%;
-    height: 90%;
-    display: flex;
-    justify-content: space-around;
-}
-.picWater{
-    width: 20%;
-    border-radius: 15px;
-    height: 100%;
-    background-image: url(./pics/premium_photo-1681589433923-33ea0898397f.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    transition: all 0.5s ease; 
-    position: relative; 
-    z-index: 1;
-    overflow: hidden; 
-}
-.picBit{
-    width: 20%;
-    border-radius: 15px;
-    height: 100%;
-    background-image: url(./pics/bit.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    transition: all 0.5s ease; 
-    position: relative; 
-    z-index: 1;
-    overflow: hidden; 
-}
-.picRoad{
-    width: 20%;
-    border-radius: 15px;
-    height: 100%;
-    background-image: url(./pics/elizabeth-mindra-mNLWR2Ta9Kk-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    transition: all 0.5s ease; 
-    position: relative; 
-    z-index: 1;
-    overflow: hidden; 
-}
-.picDost{
-     width: 20%;
-    border-radius: 15px;
-    height: 100%;
-    background-image: url(./pics/2222222.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
-    transition: all 0.5s ease;
-    position: relative; 
-    z-index: 1;
-    overflow: hidden; 
-}
-.picWater:hover, .picBit:hover, .picRoad:hover, .picDost:hover {
-    width: 45%; 
-    background-size: cover; 
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
+.section {
+  width: 100%;
+  background-color: rgb(24, 24, 24);
+  padding: 120px 0 100px;
 }
 
-
-.titleWater, .titleDost, .titleRoad, .titleBit,
-.textWater, .textDost, .textRoad, .textBit {
-  position: absolute;
-  left: 15px;
-  right: 15px;
-  color: white;
-   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
-    0 4px 30px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
-  padding: 8px 12px;
-  border-radius: 10px;
-  opacity: 0;
-  transition: all 0.4s ease;
-  transform: translateY(-10px);
+.container {
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
 
-
-.titleWater, .titleDost, .titleRoad, .titleBit {
-  top: 15px;
-  font-size: 25px;
-  font-weight: bold;
+/* Карточки с условиями */
+.cardsWrapper {
+  display: flex;
+  gap: 20px;
+  height: 600px;
 }
 
-
-.textWater, .textDost, .textRoad, .textBit {
-  bottom: 15px;
-  font-size: 25px;
-  transition-delay: 0.1s;
-   font-weight: bold;
-}
-
-
-.picWater:hover {
-  width: 45%;
-  z-index: 2;
-}
-.picWater:hover .titleWater,
-.picWater:hover .textWater {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.picDost:hover {
-  width: 45%;
-  z-index: 2;
-}
-.picDost:hover .titleDost,
-.picDost:hover .textDost {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-.picRoad:hover {
-  width: 45%;
-  z-index: 2;
-}
-.picRoad:hover .titleRoad,
-.picRoad:hover .textRoad {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.picBit:hover {
-  width: 45%;
-  z-index: 2;
-}
-.picBit:hover .titleBit,
-.picBit:hover .textBit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.topCont{
-  width: 90%;
-  height: 40%;
-  background-image: url(./pics/Group\ 1.png);
+.card {
+  flex: 1;
+  border-radius: 20px;
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
-}
-.bottomCont{
-  width: 90%;
-  height: 40%;
-    background-image: url(./pics/Group\ 2.png);
-    background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-.containerForInfo{
-    width: 40%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-}
-.download{
-  width: 90%;
-  height: 20%;
-  border-radius: 20px;
-  border: none;
-  font-size: 40px;
-  font-weight: bold;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.topTitle, .bottomTitle{
- width: 40%;
-  font-size: 40px;
-  color: white;
-  text-align: center;
-  font-weight: bold; 
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.topText{
- width: 60%;
+
+.card:hover {
+  flex: 2;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.picWater { background-image: url(./pics/premium_photo-1681589433923-33ea0898397f.jpg); }
+.picDost { background-image: url(./pics/2222222.jpg); }
+.picRoad { background-image: url(./pics/elizabeth-mindra-mNLWR2Ta9Kk-unsplash.jpg); }
+.picBit { background-image: url(./pics/bit.jpg); }
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+  backdrop-filter: blur(2px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 28px 24px;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardOverlay {
+  opacity: 1;
+  backdrop-filter: blur(8px);
+}
+
+.cardTitle {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
   font-size: 20px;
+  font-weight: 600;
   color: white;
   text-align: center;
-  font-weight: bold; 
+  transform: translateY(-20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
 }
-.bottomText{
-  width: 60%;
-  font-size: 20px;
+
+.cardText {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  text-align: left;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.card:hover .cardTitle,
+.card:hover .cardText {
+  transform: translateY(0);
+}
+
+/* Блок с оплатой */
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+}
+
+.infoWrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.paymentCard {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(1.1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.paymentTitle {
+  font-size: 28px;
+  font-weight: 400;
   color: white;
-  text-align: center;
-  font-weight: bold;
-  padding-left: 10px;
+  letter-spacing: -0.01em;
+}
+
+.paymentText {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.downloadBtn {
+  width: 100%;
+  padding: 24px 32px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.downloadBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.downloadBtn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .cardsWrapper {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 80px 0 80px;
+  }
+  
+  .cardsWrapper {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .card {
+    height: 400px;
+    flex: 1 !important;
+  }
+  
+  .card:hover {
+    flex: 1;
+  }
+  
+  .cardOverlay {
+    opacity: 1;
+  }
+  
+  .cardTitle,
+  .cardText {
+    transform: translateY(0);
+  }
+  
+  .paymentTitle {
+    font-size: 24px;
+  }
+  
+  .paymentText {
+    font-size: 16px;
+  }
+  
+  .downloadBtn {
+    font-size: 16px;
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardTitle {
+    font-size: 18px;
+  }
+  
+  .cardText {
+    font-size: 15px;
+  }
 }

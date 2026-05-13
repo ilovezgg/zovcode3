@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../../lib/firebase';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 import z from './SignUpMain.module.css';
 
 const SignUpMain = () => {
@@ -11,6 +12,7 @@ const SignUpMain = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -28,7 +30,6 @@ const SignUpMain = () => {
     setError('');
 
     try {
-      // 1. Регистрация пользователя
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email.trim(),
@@ -37,7 +38,6 @@ const SignUpMain = () => {
 
       const user = userCredential.user;
 
-      // 2. Создаем профиль в Firestore
       await setDoc(doc(db, 'users', user.uid), {
         id: user.uid,
         email: email.trim(),
@@ -45,67 +45,87 @@ const SignUpMain = () => {
         emailVerified: false
       });
 
-      // 3. Автоматический вход уже выполнен при регистрации
-      // Переходим в профиль
       navigate('/profile');
 
     } catch (err) {
       console.error('Ошибка регистрации:', err);
-      setError(
-        err.code === 'auth/email-already-in-use' ? 'Этот email уже зарегистрирован' :
-        err.code === 'auth/weak-password' ? 'Пароль слишком слабый' :
-        err.code === 'auth/invalid-email' ? 'Неверный формат email' :
-        'Ошибка регистрации: ' + err.message
-      );
+      const errorMessages = {
+        'auth/email-already-in-use': 'Этот email уже зарегистрирован',
+        'auth/weak-password': 'Пароль слишком слабый',
+        'auth/invalid-email': 'Неверный формат email',
+        'auth/network-request-failed': 'Ошибка сети. Проверьте подключение'
+      };
+      setError(errorMessages[err.code] || 'Ошибка регистрации');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className={z.main}>
-      <div className={z.field}>
-        <div className={z.container}>
-          <div className={z.text}>Регистрация</div>
-          
-          <input 
-            className={z.email} 
-            type="email" 
-            placeholder="Email" 
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          
-          <input 
-            className={z.password} 
-            type="password" 
-            placeholder="Пароль (минимум 6 символов)" 
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            minLength={6}
-            required
-          />
-          
-          <button 
-            className={z.registr} 
-            onClick={handleSignUp}
-            disabled={loading}
-          >
-            {loading ? 'Регистрация...' : 'Создать аккаунт'}
-          </button>
-          <button 
-            className={z.loginLink} 
-            onClick={() => navigate('/login')} 
-          >
-            Уже есть аккаунт? Войти
-          </button>
+    <section className={z.section}>
+      <div ref={ref} className={`${z.container} ${inView ? z.visible : ''}`}>
+        <div className={z.formWrapper}>
+          <div className={z.formContent}>
+            <h1 className={z.title}>Регистрация</h1>
+            
+            <form onSubmit={handleSignUp} className={z.form}>
+              <div className={z.inputGroup}>
+                <input 
+                  className={z.input} 
+                  type="email" 
+                  placeholder="Email" 
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setError('');
+                  }}
+                  disabled={loading}
+                  required
+                />
+              </div>
+              
+              <div className={z.inputGroup}>
+                <input 
+                  className={z.input} 
+                  type="password" 
+                  placeholder="Пароль (минимум 6 символов)" 
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    setError('');
+                  }}
+                  minLength={6}
+                  disabled={loading}
+                  required
+                />
+              </div>
+              
+              {error && <div className={z.error}>{error}</div>}
+              
+              <button 
+                className={z.submitBtn} 
+                type="submit"
+                disabled={loading || !email || !password}
+              >
+                {loading ? 'Регистрация...' : 'Создать аккаунт'}
+              </button>
+            </form>
 
-          {error && <div className={z.error}>{error}</div>}
+            <div className={z.divider}>
+              <span>или</span>
+            </div>
+
+            <Link to="/login" className={z.loginLink}>
+              Уже есть аккаунт? Войти
+            </Link>
+          </div>
         </div>
-        <div className={z.pic}></div>
+        
+        <div className={z.imageWrapper}>
+          <div className={z.image} />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
